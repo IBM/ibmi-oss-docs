@@ -7,3 +7,4 @@
 - [ruby-ibm_db](https://bitbucket.org/litmis/ruby-ibm_db) - Ruby DB2 for i adapter/driver
 - [xmlservice](https://bitbucket.org/litmis/xmlservice) - Ruby XMLSERVICE adapter
 - [xmlservice-rpg](https://bitbucket.org/inext/xmlservice-rpg) - Base XMLSERVICE that all other language toolkits are built on
+- [vlang-rpg](https://bitbucket.org/inext/vlang-rpg) - VLANG is a RPG SRVPGM (VLANG/VPHP), providing in-memory calling of RPG<memory>PHP, or any other scripting language implementing an ile callback extension. Everything is controlled by RPG, thereby, PHP, or any PASE language, is essentially a slave language to RPG.
