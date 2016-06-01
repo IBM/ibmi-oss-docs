@@ -6,3 +6,4 @@
 - [Relic Package Manager](https://github.com/Club-Seiden/RelicPackageManager)
 - [ruby-ibm_db](https://bitbucket.org/litmis/ruby-ibm_db) - Ruby DB2 for i adapter/driver
 - [xmlservice](https://bitbucket.org/litmis/xmlservice) - Ruby XMLSERVICE adapter
+- [xmlservice-rpg](https://bitbucket.org/inext/xmlservice-rpg) - Base XMLSERVICE that all other language toolkits are built on
