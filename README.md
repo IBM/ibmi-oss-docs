@@ -1,4 +1,5 @@
 #IBM i Open Source Repos (alphabetical)
+- [db2sock](https://bitbucket.org/litmis/db2sock) - PASE DB2 CLI asynchronous API driver (libdb400.a)
 - [IBM i Chroot](https://bitbucket.org/litmis/ibmichroot) - Delivered as 5733OPS option 3
 - [IBM i Perzl](https://bitbucket.org/litmis/ibmiperzl) - Before IBM i Chroot there was IBM i Perzl.
 - [Relic Package Manager](https://github.com/Club-Seiden/RelicPackageManager)
