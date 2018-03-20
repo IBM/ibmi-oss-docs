@@ -1,11 +1,14 @@
+[TOC]
+
 # RPM pile (beta) for IBM i 7.2+
 Much of the open source technology available in the 5733-OPS product is now available in RPM form. For instructions on getting started, please see [RPMs - Getting Started]()
 
 **Beta status general note:** While the software has been tested and meets quality guidelines, the RPM form of this software, as well as the "yum" package manager, are in "beta" form. This beta targets IBM i 7.2 and newer.
 
- 
 
-## What's included in the beta?
+
+
+## Included in the beta
 Many things are currently available in RPM form. The RPMs - Getting Started page demonstrates how to use the "yum" package manager to see the entire list of what packages are available.
 
 **Some notable deliveries include:**
@@ -38,3 +41,130 @@ No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. 
 **What if I am on IBM i 7.1?**
 
 With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the target for this beta.
+
+
+
+
+# Getting Started
+**There are two parts of this beta:**
+
+- Install bootstrap tarball (bootstrap.tar.Z)
+- Install from RPM repository
+
+You will need to first install the bootstrap. Installing the "bootstrap" is a one-time process! This will install yum, RPM, their dependencies as well as a few other bits of software. The download repository will have further software that you can install.
+
+ 
+
+## Installing the bootstrap
+Installing the bootstrap is really easy if your IBM i system can connect to the Internet. If not, skip to the section "Offline Install Instructions"
+
+## Online Install Instructions
+- Download [bootstrap.sql](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sql) to your PC
+
+- Open ACS Run SQL Scripts and connect to the IBM i you want to install to
+
+- Open bootstrap.sql in your Run SQL Scripts window
+
+- Execute "Run All" via Toolbar, Menu option, or Ctrl-Shift-A
+
+- If the result is "Bootstrapping Successful" you're all good. If not, consult /tmp/bootstrap.log.
+
+## Offline Install Instructions
+Download [bootstrap.sh](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sh) and [bootstrap.tar.Z](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.tar.Z) to your PC
+
+Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etc…). Make sure to transfer them in binary.
+
+From a 5250 terminal run the following.
+
+```
+QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1')
+```
+
+If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
+
+# Usage
+All software provided by the RPMs will install in to the `/QOpenSys/pkgs` prefix. You can fully qualify the path to the program or you can add `/QOpenSys/pkgs/bin` to your `PATH` to use the software. There are currently no plans to add symlinks in to `/QOpenSys/usr/bin` or `/QOpenSys/usr/lib`, though you can certainly do so if you like.
+
+**Fully Qualifying:**
+
+```
+$ /QOpenSys/pkgs/bin/bash --version
+GNU bash, version 4.4.12(1)-release (powerpc-ibm-os400)
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
+
+**Adjusting your PATH:**
+
+```
+$ PATH=/QOpenSys/pkgs/bin:$PATH
+$ export PATH
+
+$ bash --version
+GNU bash, version 4.4.12(1)-release (powerpc-ibm-os400)
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
+
+If you want to make your `PATH` setting permanent, add the above line to your `$HOME/.profile`. You can do this easily like so.
+
+```
+$ echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
+```
+
+## Installing additional software
+You no longer need to download all the rpms from the FTP to install them, as yum will do that for you.
+
+**Yum cheat sheet**
+
+If you don't know how to use yum, Red Hat has a handy "cheat sheet" available [here](https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf).
+
+**Common commands:**
+
+- Install a package: `yum install <package>`
+- Remove a package: `yum remove <package>`
+- Search for a package: `yum search <package>`
+- List installed packages: `yum list installed`
+- List available packages: `yum list available`
+- List all packages: `yum list all`
+
+**Install python 3 and some useful Python packages:**
+
+```
+yum install python3 python3-ibm_db python3-itoolkit python3-pip python3-setuptools python3-six python3-wheel
+```
+
+**Install Node.js:**
+
+```
+yum install nodejs
+```
+
+**Install gcc:**
+
+```
+yum install gcc-aix libstdcplusplus-devel
+```
+
+**Using a chroot:**
+
+If you'd like to install in to a chroot, you can use the scripts from [ibmichroot](https://bitbucket.org/litmis/ibmichroot) to set up a chroot using the `chroot_minimal.lst` and extract the bootstrap to there.
+
+If you install to the root of the OS, you can use rpm to help install chroots. Use the `chroot_minimal.lst` to set up the chroot and then use the `--installroot` option on rpm to install the rpm in to that chroot.
+
+```
+yum --installroot=<path too chroot> install <package list>
+```
+
+The following dummy packages exist to satisfy RPM dependencies inside the chroot.
+
+```
+pase-libs-dummy-7.1-0.ibmi7.1.fat.rpm
+coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
+```
