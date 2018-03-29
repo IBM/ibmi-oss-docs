@@ -72,7 +72,7 @@ Installing the bootstrap is really easy if your IBM i system can connect to the 
 ## Offline Install Instructions
 Download [bootstrap.sh](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sh) and [bootstrap.tar.Z](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.tar.Z) to your PC
 
-Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etcâ€¦). Make sure to transfer them in binary.
+Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etc…). Make sure to transfer them in binary.
 
 From a 5250 terminal run the following.
 
@@ -112,10 +112,11 @@ This is free software; you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 ```
 
-If you want to make your `PATH` setting permanent, add the above line to your `$HOME/.profile`. You can do this easily like so.
+If you want to make your `PATH` setting permanent, add the above line to your `$HOME/.profile`. You can do this easily (from a shell) like so.
 
 ```
-$ echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
+echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
+export PATH
 ```
 
 ## Installing additional software
