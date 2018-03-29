@@ -1,9 +1,9 @@
 [TOC]
 
-# RPM pile (beta) for IBM i 7.2+
+# RPM pile (technology preview) for IBM i 7.2+
 Much of the open source technology available in the 5733-OPS product is now available in RPM form. For instructions on getting started, please see [RPMs - Getting Started]()
 
-**Beta status general note:** While the software has been tested and meets quality guidelines, the RPM form of this software, as well as the "yum" package manager, are in "beta" form. This beta targets IBM i 7.2 and newer.
+**Technology preview status general note:** While the software has been tested and meets quality guidelines, the RPM form of this software, as well as the "yum" package manager, are in "technology preview" form. This beta targets IBM i 7.2 and newer.
 
 
 
@@ -40,7 +40,7 @@ No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. 
 
 **What if I am on IBM i 7.1?**
 
-With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the target for this beta.
+With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the target for this beta. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
 
 
 
@@ -72,7 +72,7 @@ Installing the bootstrap is really easy if your IBM i system can connect to the 
 ## Offline Install Instructions
 Download [bootstrap.sh](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sh) and [bootstrap.tar.Z](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.tar.Z) to your PC
 
-Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etc…). Make sure to transfer them in binary.
+Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etcï¿½). Make sure to transfer them in binary.
 
 From a 5250 terminal run the following.
 
