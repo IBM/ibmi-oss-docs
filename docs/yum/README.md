@@ -82,6 +82,16 @@ QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.s
 
 If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
 
+If FTP is blocked by a firewall between the IBM i and the IBM FTP Server You will have to: 
+
+1. Download the entire directory at ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo 
+2. Upload the entire directoy to IBM i ifs (EX: Upload it to /QOpenSys/etc/yum/IBMRepoLocalMirror/repo)
+3. Change the baseurl in /QOpenSys/etc/yum/repos.d/ibm.repo to point to ifs directory 
+       FROM: baseurl=ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
+         TO: baseurl=file:///path/to/local/repo
+ EXAMPLE TO: baseurl=file:///QOpenSys/etc/yum/IBMRepoLocalMirror/repo
+4. This will make yum look on the IFS for the programs to install instead of trying to go to the IBM FTP server.
+
 # Usage
 All software provided by the RPMs will install in to the `/QOpenSys/pkgs` prefix. You can fully qualify the path to the program or you can add `/QOpenSys/pkgs/bin` to your `PATH` to use the software. There are currently no plans to add symlinks in to `/QOpenSys/usr/bin` or `/QOpenSys/usr/lib`, though you can certainly do so if you like.
 
