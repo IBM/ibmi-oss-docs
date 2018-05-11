@@ -24,6 +24,10 @@ Many things are currently available in RPM form. The RPMs - Getting Started page
 - many, many more things.....
  
 ## FAQ
+**Is 5733-OPS required in order to install the RPM-based deliverables?**
+
+No. 5733-OPS does not need to be installed.
+
 **When will tools and language runtimes be 64-bit enabled?**
 
 Most of the software available in RPM form is 64-bit, including the Python and Node.js runtimes
