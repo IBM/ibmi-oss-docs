@@ -13,7 +13,7 @@ Many things are currently available in RPM form. The RPMs - Getting Started page
 
 **Some notable deliveries include:**
 
-- Node.js version 8
+- Node.js version 8 (need to invoke the nodever utility) 
 - Python 3.6
 - The 'less' utility
 - Git
@@ -96,6 +96,13 @@ If FTP is blocked by a firewall between the IBM i and the IBM FTP Server You wil
  EXAMPLE TO: baseurl=file:///QOpenSys/etc/yum/IBMRepoLocalMirror/repo
 4. This will make yum look on the IFS for the programs to install instead of trying to go to the IBM FTP server.
 
+
+# Node.js setup step (READ THIS FIRST)
+Before running Node.js, you must first run the `nodever` utility. For instance, to use version 8, first install the `nodejs8` package, then run:
+```
+/QOpenSys/pkgs/bin/nodever 8
+```
+
 # Usage
 All software provided by the RPMs will install in to the `/QOpenSys/pkgs` prefix. You can fully qualify the path to the program or you can add `/QOpenSys/pkgs/bin` to your `PATH` to use the software. There are currently no plans to add symlinks in to `/QOpenSys/usr/bin` or `/QOpenSys/usr/lib`, though you can certainly do so if you like.
 
@@ -110,6 +117,8 @@ License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software; you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 ```
+
+
 
 **Adjusting your PATH:**
 
@@ -132,6 +141,7 @@ If you want to make your `PATH` setting permanent, add the above line to your `$
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 export PATH
 ```
+
 
 ## Installing additional software
 You no longer need to download all the rpms from the FTP to install them, as yum will do that for you.
