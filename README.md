@@ -5,6 +5,7 @@ This repo will act as the authoritative documentation location for all things op
 
 # Table Of Contents
 - [yum](docs/yum/)
+- [open source troubleshooting (common problems)](docs/troubleshooting/)
 - [Using Node Version Manager (nvm) to manage and build Node.js versions from community source](docs/nvm/)
 
 # Collaboration
