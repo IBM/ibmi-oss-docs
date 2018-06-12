@@ -4,8 +4,8 @@
 This repo will act as the authoritative documentation location for all things open source on IBM i.  If you see a mistake or see a way to make some of the docs better then please issue a pull request.
 
 # Table Of Contents
-- [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/)
-- [Using Node Version Manager (nvm) to manage and build Node.js versions from community source](https://bitbucket.org/ibmi/opensource/src/master/docs/nvm/)
+- [yum](docs/yum/)
+- [Using Node Version Manager (nvm) to manage and build Node.js versions from community source](docs/nvm/)
 
 # Collaboration
 - [Questions/comments about this site](https://bitbucket.org/ibmi/opensource/issues).
