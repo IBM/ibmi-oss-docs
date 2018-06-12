@@ -33,6 +33,7 @@ export CXX
 
 # Step 4: Run nvm!
 NVM, like many open source commands, are best run from an SSH terminal. See the [nvm project page](https://github.com/creationix/nvm/) for example usages of the command. Some examples include:
+
 * `nvm install stable` : install the latest stable version
 * `nvm install --lts` : install the latest LTS release
 * `nvm use --lts` : use the latest LTS release
