@@ -5,6 +5,7 @@ This repo will act as the authoritative documentation location for all things op
 
 # Table Of Contents
 - [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/)
+- [Using Node Version Manager (nvm) to manage and build Node.js versions from community source](https://bitbucket.org/ibmi/opensource/src/master/docs/nvm/)
 
 # Collaboration
 - [Questions/comments about this site](https://bitbucket.org/ibmi/opensource/issues).
