@@ -1,6 +1,6 @@
 # Step 1: Install NVM
 
-First, install necessary prerequisites using [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/) to verify that you have curl and/or wget installed. Make sure you [set your PATH](https://bitbucket.org/ibmi/opensource/src/master/docs/troubleshooting/SETTING_PATH.md) to utilize the new open source technology.
+First, install necessary prerequisites using [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/) to verify that you have curl and/or wget installed. Make sure you [set your PATH](../troubleshooting/SETTING_PATH.md) to utilize the new open source technology.
 
 Then, simply follow the installation steps on the [nvm project page](https://github.com/creationix/nvm/)
 
