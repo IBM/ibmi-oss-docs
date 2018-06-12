@@ -1,15 +1,7 @@
 [TOC]
 
-# RPM pile (technology preview) for IBM i 7.2+
-Much of the open source technology available in the 5733-OPS product is now available in RPM form. For instructions on getting started, please see [RPMs - Getting Started]()
-
-**Technology preview status general note:** While the software has been tested and meets quality guidelines, the RPM form of this software, as well as the "yum" package manager, are in "technology preview" form. This beta targets IBM i 7.2 and newer.
-
-
-
-
-## Included in the beta
-Many things are currently available in RPM form. The RPMs - Getting Started page demonstrates how to use the "yum" package manager to see the entire list of what packages are available.
+# RPM pile for IBM i 7.2+
+Much of the open source technology available in the 5733-OPS product is now available in RPM form! This allows for a more seamless experience for those needing to install, manage, or use open source technologies. You can use the "yum" package manager to see the entire list of what packages are available.
 
 **Some notable deliveries include:**
 
@@ -44,13 +36,13 @@ No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. 
 
 **What if I am on IBM i 7.1?**
 
-With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the target for this beta. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
+With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the targeted release. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
 
 
 
 
 # Getting Started
-**There are two parts of this beta:**
+**There are two parts of this offering:**
 
 - Install bootstrap tarball (bootstrap.tar.Z)
 - Install from RPM repository
@@ -139,7 +131,7 @@ If you want to make your `PATH` setting permanent, add the above line to your `$
 
 ```
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
-export PATH
+export PATH >> $HOME/.profile
 ```
 
 
