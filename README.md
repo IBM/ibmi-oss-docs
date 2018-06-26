@@ -1,7 +1,7 @@
 
 
 # IBM i Open Source
-This repo will act as the authoritative documentation location for all things open source on IBM i.  If you see a mistake or see a way to make some of the docs better then please issue a pull request.
+This repo will act as the authoritative documentation location for all things IBM i Open Source Software including PASE (Yum, Node.js/Python/Ruby/PHP, ssh etc) and all native ILE languages (C,RPG,CL etc).  If you see a mistake or see a way to make some of the docs better then please issue a pull request.
 
 ** What if I would like to contribute (or suggest changes) to this documentation? ** 
 
