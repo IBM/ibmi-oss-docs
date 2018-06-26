@@ -141,7 +141,7 @@ yum install python3 python3-ibm_db python3-itoolkit python3-pip python3-setuptoo
 **Install Node.js:**
 
 ```
-yum install nodejs
+yum install nodejs8 && nodever 8
 ```
 
 **Install gcc:**
