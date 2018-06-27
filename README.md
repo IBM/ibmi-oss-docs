@@ -15,6 +15,7 @@ This documentation is open source! Please feel free to help this documentation g
 - [yum](docs/yum/)
 - [open source troubleshooting (common problems)](docs/troubleshooting/)
 - [Using Node Version Manager (nvm) to manage and build Node.js versions from community source](docs/nvm/)
+- [Nginx](docs/nginx.md)
 
 # Collaboration
 - [Questions/comments about this site](https://bitbucket.org/ibmi/opensource/issues).
