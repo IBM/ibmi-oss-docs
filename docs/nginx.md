@@ -35,3 +35,37 @@ To stop, run this command.
 ```
 $ nginx -c /www/nginx/nginx.conf -s stop
 ```
+
+# Reverse Proxy
+
+The below shows how to have Nginx act as a reverse proxy to a Node.js web server listening on port 49000.  It also redirects port 80 traffic to the secure port 443 (https) which in turn necessitates SSL configuration.
+
+
+```nginx
+
+pid /www/mydomain/nginx.pid;
+events {}
+http {
+  server {
+    listen 80;
+    server_name mydomain.com;
+    return 301 https://$server_name$request_uri;
+  }
+  upstream node_servers {
+    server 127.0.0.1:49000;  
+  }
+  server {
+    listen 443 ssl;
+    ssl on;
+    ssl_certificate /www/mydomain/mydomain.com.cert;
+    ssl_certificate_key /www/mydomain/mydomain.com.key;
+    ssl_protocols TLSv1.2;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256
+    ssl_session_cache shared:SSL:50m;
+    ssl_prefer_server_ciphers on;
+    location / {
+      proxy_pass http://node_servers;
+    }
+  }
+}
+```
