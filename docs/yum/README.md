@@ -168,7 +168,8 @@ coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 ```
  
 # FAQ
-**Is 5733-OPS required in order to install the RPM-based deliverables?
+
+## Is 5733-OPS required in order to install the RPM-based deliverables?
 
 No. 5733-OPS does not need to be installed.
 
