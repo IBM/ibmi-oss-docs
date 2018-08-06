@@ -1,10 +1,15 @@
-# Step 1: Install NVM
+# Step 1: Install developer tools
+From an SSH terminal, run:
+```
+yum group install "Developer Tools"
+```
+# Step 2: Install NVM
 
 First, install necessary prerequisites using [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/) to verify that you have curl and/or wget installed. Make sure you [set your PATH](../troubleshooting/SETTING_PATH.md) to utilize the new open source technology.
 
 Then, simply follow the installation steps on the [nvm project page](https://github.com/creationix/nvm/)
 
-# Step 2: Configure your $HOME/.nvmrc file
+# Step 3: Configure your $HOME/.nvmrc file
 Create a file at `$HOME/.nvmrc`, with the following contents
 ```
 --dest-cpu=ppc64
@@ -13,7 +18,7 @@ Create a file at `$HOME/.nvmrc`, with the following contents
 --without-perfctr
 ```
 
-# Step 3: Set necessary environment variables
+# Step 4: Set necessary environment variables
 Set the following environment variables:
 ```
 OBJECT_MODE=64
@@ -31,7 +36,7 @@ CXX=g++
 export CXX
 ```
 
-# Step 4: Run nvm!
+# Step 5: Run nvm!
 NVM, like many open source commands, are best run from an SSH terminal. See the [nvm project page](https://github.com/creationix/nvm/) for example usages of the command. Some examples include:
 
 * `nvm install stable` : install the latest stable version
