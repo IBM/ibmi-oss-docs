@@ -23,6 +23,7 @@ Much of the open source technology available in the 5733-OPS product is now avai
 
 You will need to first install the bootstrap. Installing the "bootstrap" is a one-time process! This will install yum, RPM, their dependencies as well as a few other bits of software. The download repository will have further software that you can install.
 
+Also, don't forget to read the Usage notes below. They are very important!
 
 ### Installing with Access Client Solutions (ACS)
 - Download the latest release of Access Client Solutions
@@ -73,7 +74,7 @@ You will need to first install the bootstrap. Installing the "bootstrap" is a on
 
 
 
-# Usage
+# Must-know Usage Notes!!! (READ THIS AFTER YOU INSTALL)
 All software provided by the RPMs will install in to the `/QOpenSys/pkgs` prefix. You can fully qualify the path to the program or you can add `/QOpenSys/pkgs/bin` to your `PATH` to use the software. There are currently no plans to add symlinks in to `/QOpenSys/usr/bin` or `/QOpenSys/usr/lib`, though you can certainly do so if you like.
 
 **Fully Qualifying:**
