@@ -9,7 +9,7 @@ For each repository, this page lists a repo file and the contents for this repo 
 # Repository List
 
 ### The i Doctor
-*Software offered:* lynx
+*Software offered:* lynx-dev
 
 *repo file:* `/QOpenSys/etc/yum/repos.d/the-i-doctor.repo`
  
