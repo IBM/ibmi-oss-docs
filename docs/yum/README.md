@@ -185,3 +185,6 @@ The following dummy packages exist to satisfy RPM dependencies inside the chroot
 pase-libs-dummy-7.1-0.ibmi7.1.fat.rpm
 coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 ```
+
+# Third-party (non-IBM) repositories
+Information on third-party repositories can be found [here](3RD_PARTY_REPOS.md).
