@@ -1,11 +1,11 @@
 [TOC]
 
-# RPM pile for IBM i 7.2+
+# RPM pile for IBM i 7.2+ (General Information)
 Much of the open source technology available in the 5733-OPS product is now available in RPM form! This allows for a more seamless experience for those needing to install, manage, or use open source technologies. You can use the "yum" package manager to see the entire list of what packages are available.
 
 **Some notable deliveries include:**
 
-- Node.js version 8 (need to invoke the nodever utility) 
+- Node.js version 8 
 - Python 3.6
 - The 'less' utility
 - Git
@@ -14,32 +14,6 @@ Much of the open source technology available in the 5733-OPS product is now avai
 - GNU versions of many common utilities such as ls, grep, sed, awk.....
 - GNU Nano
 - many, many more things.....
- 
-## FAQ
-**Is 5733-OPS required in order to install the RPM-based deliverables?**
-
-No. 5733-OPS does not need to be installed.
-
-**When will tools and language runtimes be 64-bit enabled?**
-
-Most of the software available in RPM form is 64-bit, including the Python and Node.js runtimes
-
-
-**Will 5733-OPS be updated to ship Node.js version 8, Python 3.6, or other goodies that are currently in RPM form only?**
-
-There are currently no plans to deliver these packages in the 5733-OPS installable product. If you have a business need for such, please submit an RFE with your justification.
-
-
-**Is this the same thing as Perzl.org or other RPM's I have heard of (or used) in the past?**
-
-No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. Built on IBM i, for IBM i.
-
-**What if I am on IBM i 7.1?**
-
-With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the targeted release. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
-
-
-
 
 # Getting Started
 **There are two parts of this offering:**
@@ -49,12 +23,16 @@ With the exception of a handful of packages (including Node.js), much of the sof
 
 You will need to first install the bootstrap. Installing the "bootstrap" is a one-time process! This will install yum, RPM, their dependencies as well as a few other bits of software. The download repository will have further software that you can install.
 
- 
+Also, don't forget to read the Usage notes below. They are very important!
 
-## Installing the bootstrap
-Installing the bootstrap is really easy if your IBM i system can connect to the Internet. If not, skip to the section "Offline Install Instructions"
+### Installing with Access Client Solutions (ACS)
+- Download the latest release of Access Client Solutions
 
-## Online Install Instructions
+- Access the Open Source Package Management Interface through the "Tools" Menu of ACS
+
+- For more information, see [this Technote](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)
+
+### Online Install Instructions (without ACS)
 - Download [bootstrap.sql](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sql) to your PC
 
 - Open ACS Run SQL Scripts and connect to the IBM i you want to install to
@@ -65,37 +43,38 @@ Installing the bootstrap is really easy if your IBM i system can connect to the 
 
 - If the result is "Bootstrapping Successful" you're all good. If not, consult /tmp/bootstrap.log.
 
-## Offline Install Instructions
-Download [bootstrap.sh](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sh) and [bootstrap.tar.Z](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.tar.Z) to your PC
+### Offline Install Instructions (without ACS)
+- Download [bootstrap.sh](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sh) and [bootstrap.tar.Z](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.tar.Z) to your PC
 
-Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etc�). Make sure to transfer them in binary.
+- Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etc�). Make sure to transfer them in binary.
 
-From a 5250 terminal run the following.
+- From a 5250 terminal run the following.
 
 ```
-QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1')
+    QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1')
 ```
 
-If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
+   - If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
 
-If FTP is blocked by a firewall between the IBM i and the IBM FTP Server You will have to: 
+   - If FTP is blocked by a firewall between the IBM i and the IBM FTP Server, you will have to perform the following in the /QOpenSys/etc/yum/repos.d/ directory: 
 
-1. Download the entire directory at ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo 
-2. Upload the entire directoy to IBM i ifs (EX: Upload it to /QOpenSys/etc/yum/IBMRepoLocalMirror/repo)
-3. Change the baseurl in /QOpenSys/etc/yum/repos.d/ibm.repo to point to ifs directory 
-       FROM: baseurl=ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
-         TO: baseurl=file:///path/to/local/repo
- EXAMPLE TO: baseurl=file:///QOpenSys/etc/yum/IBMRepoLocalMirror/repo
-4. This will make yum look on the IFS for the programs to install instead of trying to go to the IBM FTP server.
+      1. Download the entire directory at ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo 
+      2. Upload the entire directory to IBM i ifs (EX: Upload it to /QOpenSys/etc/yum/IBMRepoLocalMirror/repo)
+      3. Edit `ibm.repo` to add the following line to the "ibm" repository definition. This will prevent failure if/when your system can't talk to the IBM FTP Server:
+ 
+          skip_if_unavailable=1
+ 
+
+      4. Copy `ibm.repo` to a new file, with a .repo name (for instance, myrepo.repo)
+      5. In the new .repo file, delete the skip_if_unavailable line, and change the baseurl to point to the local filesystem. This will make yum look on the IFS for the programs to install instead of trying to go to the IBM FTP serverThi: 
+      
+               FROM: baseurl=ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
+               TO: baseurl=file:///path/to/local/repo
+               EXAMPLE TO: baseurl=file:///QOpenSys/etc/yum/IBMRepoLocalMirror/repo
 
 
-# Node.js setup step (READ THIS FIRST)
-Before running Node.js, you must first run the `nodever` utility. For instance, to use version 8, first install the `nodejs8` package, then run:
-```
-/QOpenSys/pkgs/bin/nodever 8
-```
 
-# Usage
+# Must-know Usage Notes!!! (READ THIS AFTER YOU INSTALL)
 All software provided by the RPMs will install in to the `/QOpenSys/pkgs` prefix. You can fully qualify the path to the program or you can add `/QOpenSys/pkgs/bin` to your `PATH` to use the software. There are currently no plans to add symlinks in to `/QOpenSys/usr/bin` or `/QOpenSys/usr/lib`, though you can certainly do so if you like.
 
 **Fully Qualifying:**
@@ -138,6 +117,9 @@ export PATH >> $HOME/.profile
 ## Installing additional software
 You no longer need to download all the rpms from the FTP to install them, as yum will do that for you.
 
+**Using Access Client Solutions (ACS)**
+[This Technote](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) demonstrates how to use ACS to perform simple package management tasks such as adding, removing, or upgrading software.
+
 **Yum cheat sheet**
 
 If you don't know how to use yum, Red Hat has a handy "cheat sheet" available [here](https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf).
@@ -160,7 +142,7 @@ yum install python3 python3-ibm_db python3-itoolkit python3-pip python3-setuptoo
 **Install Node.js:**
 
 ```
-yum install nodejs
+yum install nodejs8 && nodever 8
 ```
 
 **Install gcc:**
@@ -185,6 +167,32 @@ The following dummy packages exist to satisfy RPM dependencies inside the chroot
 pase-libs-dummy-7.1-0.ibmi7.1.fat.rpm
 coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 ```
+ 
+# FAQ
+
+## Is 5733-OPS required in order to install the RPM-based deliverables?
+
+No. 5733-OPS does not need to be installed.
+
+## When will tools and language runtimes be 64-bit enabled?
+
+Most of the software available in RPM form is 64-bit, including the Python and Node.js runtimes
+
+
+## Will 5733-OPS be updated to ship Node.js version 8, Python 3.6, or other goodies that are currently in RPM form only?
+
+There are currently no plans to deliver these packages in the 5733-OPS installable product. If you have a business need for such, please submit an RFE with your justification.
+
+
+## Is this the same thing as Perzl.org or other RPM's I have heard of (or used) in the past?
+
+No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. Built on IBM i, for IBM i.
+
+## What if I am on IBM i 7.1?
+
+With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the targeted release. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
+
+
 
 # Third-party (non-IBM) repositories
 Information on third-party repositories can be found [here](3RD_PARTY_REPOS.md).
