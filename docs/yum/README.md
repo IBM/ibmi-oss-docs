@@ -193,3 +193,6 @@ No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. 
 With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the targeted release. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
 
 
+
+# Third-party (non-IBM) repositories
+Information on third-party repositories can be found [here](3RD_PARTY_REPOS.md).
