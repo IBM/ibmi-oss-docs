@@ -16,9 +16,15 @@ There is NO WARRANTY, to the extent permitted by law.
 ```
 
 # HIGHLY Recommended: adjust your PATH permanently
-If you want to make your `PATH` setting permanent, add the above line to your `$HOME/.profile` and/or your `$HOME/.bash_profile`. You can do this easily (from a shell) like so.
+If you want to make your `PATH` setting permanent, add the above line to your `$HOME/.profile` and/or your `$HOME/.bash_profile` (if you are using bash). You can do this easily (from a shell) like so.
 
 ```
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 export PATH >> $HOME/.profile
+```
+To make this change for all users, put these lines in `/QOpenSys/etc/profile`, like so:
+
+```
+echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile
+export PATH >> /QOpenSys/etc/profile
 ```
