@@ -24,3 +24,20 @@ baseurl=http://the-i-doctor.com/oss/repo/ppc64
 enabled=1
 gpgcheck=0
 ```
+
+### QSECOFR
+**Brought to you by:** Yvan Janssens
+
+**Software offered:** Official versions of Mono on i and various Open Source software for which fixes have been accepted upstream to enable them to run on i.
+
+**repo file:** `/QOpenSys/etc/yum/repos.d/qsecofr.repo`
+ 
+**repo file contents:**
+
+```
+[qsecofr]
+name=QSECOFR IBM i RPM Repo
+baseurl=http://repo.qseco.fr
+enabled=1
+gpgcheck=0
+```
