@@ -28,7 +28,7 @@ gpgcheck=0
 ### QSECOFR
 **Brought to you by:** Yvan Janssens
 
-**Software offered:** Official versions of Mono on i and various Open Source software for which fixes have been accepted upstream to enable them to run on i.
+**Software offered:** Mono on i and various Open Source software for which fixes have been accepted upstream to enable them to run on i.
 
 **repo file:** `/QOpenSys/etc/yum/repos.d/qsecofr.repo`
  
