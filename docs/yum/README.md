@@ -5,7 +5,7 @@ Much of the open source technology available in the 5733-OPS product is now avai
 
 **Some notable deliveries include:**
 
-- Node.js version 8 
+- Node.js version 8
 - Python 3.6
 - The 'less' utility
 - Git
@@ -32,7 +32,7 @@ Also, don't forget to read the Usage notes below. They are very important!
 
 - For more information, see [this Technote](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)
 
-### Online Install Instructions (without ACS)
+### Online Install Instructions (without ACS Open Source Management Tool)
 - Download [bootstrap.sql](ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sql) to your PC
 
 - Open ACS Run SQL Scripts and connect to the IBM i you want to install to
@@ -56,18 +56,18 @@ Also, don't forget to read the Usage notes below. They are very important!
 
    - If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
 
-   - If FTP is blocked by a firewall between the IBM i and the IBM FTP Server, you will have to perform the following in the /QOpenSys/etc/yum/repos.d/ directory: 
+   - If FTP is blocked by a firewall between the IBM i and the IBM FTP Server, you will have to perform the following in the /QOpenSys/etc/yum/repos.d/ directory:
 
-      1. Download the entire directory at ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo 
+      1. Download the entire directory at ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
       2. Upload the entire directory to IBM i ifs (EX: Upload it to /QOpenSys/etc/yum/IBMRepoLocalMirror/repo)
       3. Edit `ibm.repo` to add the following line to the "ibm" repository definition. This will prevent failure if/when your system can't talk to the IBM FTP Server:
- 
+
           skip_if_unavailable=1
- 
+
 
       4. Copy `ibm.repo` to a new file, with a .repo name (for instance, myrepo.repo)
-      5. In the new .repo file, delete the skip_if_unavailable line, and change the baseurl to point to the local filesystem. This will make yum look on the IFS for the programs to install instead of trying to go to the IBM FTP serverThi: 
-      
+      5. In the new .repo file, delete the skip_if_unavailable line, and change the baseurl to point to the local filesystem. This will make yum look on the IFS for the programs to install instead of trying to go to the IBM FTP serverThi:
+
                FROM: baseurl=ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
                TO: baseurl=file:///path/to/local/repo
                EXAMPLE TO: baseurl=file:///QOpenSys/etc/yum/IBMRepoLocalMirror/repo
@@ -167,7 +167,7 @@ The following dummy packages exist to satisfy RPM dependencies inside the chroot
 pase-libs-dummy-7.1-0.ibmi7.1.fat.rpm
 coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 ```
- 
+
 # FAQ
 
 ## Is 5733-OPS required in order to install the RPM-based deliverables?
