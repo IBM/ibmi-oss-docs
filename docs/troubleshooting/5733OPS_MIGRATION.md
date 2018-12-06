@@ -44,10 +44,14 @@ print("starting my python program")
 - Rather than invoking `python`, invoke `python2` or `python3` depending on which version of Python you are using. This also applies to other Python commands. For instance, use `pip2` or `pip3` to invoke the Preferred Installer for Python ("pip"). 
 - Any globally-installed Python modules will need to be reinstalled (this is due to the changing Python version)
 - Whenever possible, Python packages should be globally installed via RPM packages, rather than with the `pip` or `pip3` commands. See [this document](PYTHON_MODULES.md) for more information. 
+- Install the Db2 connection package with yum, by running `yum install python3-ibm_db` or `yum install python2-ibm_db` (rather than installing shipped .whl files)
+- Install the Db2 connection package with yum, by running `yum install python3-itoolkit` or `yum install python2-itoolkit` (rather than installing shipped .whl files)
 
 ## Node.js migration notes
 
 - Any globally-installed modules must be reinstalled. Note, however, that global installations of node modules are generally considered bad practice (with a few exceptions, like `node-gyp`). 
+- Be sure to use the `itoolkit` package from npm (`npm install itoolkit`) for accessing RPG, CL, etc. 
+- For database access, install one of the following packages from npm:  `idb-connector`, `idb-pconnector`, `odbc` 
 - To switch the default version of Node.js for all users, use the `/QOpenSys/pkgs/bin/nodever` utility. For instance, for Node.js version 10 to be the default, run `/QOpenSys/pkgs/bin/nodever 10`
 - If you need to explicitly invoke a specific major version of Node.js, the executable is found at `/QOpenSys/pkgs/lib/nodejs<version>/bin/node`, where <version> is the major version. For instance, to run Node.js version 10, one could run `/QOpenSys/pkgs/lib/nodejs10/bin/node`
 - To switch the default version of Node.js for a specific user, place /QOpenSys/pkgs/lib/nodejs<version>/bin/node` at the beginning of the user's PATH environment variable, similar to what's documented [here](https://bitbucket.org/ibmi/opensource/src/master/docs/troubleshooting/SETTING_PATH.md). For instance, that user could run the following from the shell to set their default to version 10:
