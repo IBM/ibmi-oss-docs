@@ -41,3 +41,31 @@ While `-bbigtoc` should always do the job, it's not the most efficient. GCC also
 - `-mminimal-toc`
 - `-mcmodel=medium`
 - `-mcmodel=large`
+
+## `readdir_r` return values
+
+On AIX and PASE, `readdir_r` returns 9 and sets the result to NULL for both end of directory and error; on error, it sets `errno`.
+This is unlike other Unix systens and very easy to use incorrectly even when adapting to its quirks, so you can try:
+
+- Set `errno` to 0 before calling. This means you can disambiguate between the cases.
+- Build with `-D_LINUX_SOURCE_COMPAT`. This will point `readdir_r` to an alternative version with glibc-like semantics.
+
+## `uname` return values
+
+Mostly a cosmetic issue, but applications expecting a full version in the release field of utsname will be disappointed.
+AIX and PASE put the major version (you know, the "V" in "V7R3") in version, and the minor version (the "R") in release.
+
+## Thread safety
+
+AIX and PASE are **not** thread safe by default. You should pass `-D_THREAD_SAFE`, which enables important things like a thread-safe `errno`.
+
+## VFS woes
+
+`mntctl`, `statvfs`, and ILE `statvfs` can never agree on a consistent value for magic names and numbers, unlike AIX.
+Try to avoid converting between their values.
+
+## SIOCGIFCONF
+
+On PASE, `SIOCGIFCONF` doesn't show the true line description name, nor does it return an `AF_LINK` entry; the device will have a fake name based on its IPv4 address.
+This makes getting the interface index and MAC address nearly impossible; you can't even use `if_nameindex` because that returns the true line description name.
+As an alternative, you can use `Qp2getifaddrs`, which works like most Unix-like systems' `getifaddrs`.
