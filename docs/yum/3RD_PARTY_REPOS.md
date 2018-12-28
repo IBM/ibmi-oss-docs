@@ -41,3 +41,20 @@ baseurl=http://repo.qseco.fr
 enabled=1
 gpgcheck=0
 ```
+
+### SoBored
+**Brought to you by:** Josh Hall
+
+**Software offered:** [ibmi-dotfiles](https://github.com/jbh/ibmi-dotfiles)
+
+**repo file:** `/QOpenSys/etc/yum/repos.d/sobored.repo`
+ 
+**repo file contents:**
+
+```
+[sobored]
+name=sobored
+baseurl=http://rpms.sobo.red/ibmi/ppc64/
+enabled=1
+gpgcheck=0
+```
