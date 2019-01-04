@@ -11,7 +11,7 @@ For each repository, this page lists a repo file and the contents for this repo 
 ### The i Doctor
 **Brought to you by:** Jack Woehr
 
-**Software offered:** lynx-dev (limited capabilities, for instance no https support)
+**Software offered:** lynx-dev (limited capabilities, for instance no https support). schily-tools (cdrecord, mkisofs, etc.)
 
 **repo file:** `/QOpenSys/etc/yum/repos.d/the-i-doctor.repo`
  
