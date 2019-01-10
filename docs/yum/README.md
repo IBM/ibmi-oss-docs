@@ -71,6 +71,13 @@ Also, don't forget to read the Usage notes below. They are very important!
                FROM: baseurl=ftp://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
                TO: baseurl=file:///path/to/local/repo
                EXAMPLE TO: baseurl=file:///QOpenSys/etc/yum/IBMRepoLocalMirror/repo
+               
+      6. In the new .repo file, change the name of the repo in both the header (within square brackets) and for the name property. Good practice is to use the same base name as the .repo file:
+
+               FROM: [ibm]
+                     name=ibm
+               TO:   [myrepo]
+                     name=myrepo
 
 
 
