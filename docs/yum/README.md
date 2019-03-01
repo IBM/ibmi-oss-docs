@@ -168,19 +168,25 @@ If you don't know how to use yum, Red Hat has a handy "cheat sheet" available [h
 - List available packages: `yum list available`
 - List all packages: `yum list all`
 
-### Install python 3 and some useful Python packages
+### Installing Python 3 and some useful Python packages
 
-```sh
-yum install python3 python3-ibm_db python3-itoolkit python3-pip python3-setuptools python3-six python3-wheel
+```shell
+yum install python3-pip python3-ibm_db python3-itoolkit
 ```
 
-### Install Node.js
+### Installing Python 3 Machine Learning packages
 
-```sh
-yum install nodejs8 && nodever 8
+```shell
+yum install python3-numpy python3-pandas python3-scikit-learn python3-scipy
 ```
 
-### Install GCC and development tools
+### Installing Node.js
+
+```sh
+yum install nodejs10
+```
+
+### Installing GCC and development tools
 
 ```sh
 yum group install "Development tools"
