@@ -146,7 +146,7 @@ If you want to make your `PATH` setting permanent, add the above line to your `$
 
 ```sh
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
-export PATH >> $HOME/.profile
+echo 'export PATH' >> $HOME/.profile
 ```
 
 ## Installing additional software
