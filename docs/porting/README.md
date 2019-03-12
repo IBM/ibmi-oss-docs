@@ -1,3 +1,4 @@
 # Porting Software to PASE
 
-See [Gotchas](GOTCHAS.md)
+* A good place to start is [Gotchas](GOTCHAS.md)
+* To see what AIX level is used in a given PASE release, checkout [this table](PASE-TO-AIX-LEVEL.md)
