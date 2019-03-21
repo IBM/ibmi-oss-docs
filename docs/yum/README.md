@@ -209,7 +209,15 @@ pase-libs-dummy-7.1-0.ibmi7.1.fat.rpm
 coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 ```
 
+## Troubleshooting
+
+Having issues? Please open a ticket [here](https://bitbucket.org/ibmi/opensource/issues).
+
 ## FAQ
+
+### What if I run in to issues?
+
+See **Troubleshooting** section above.
 
 ### Is 5733-OPS required in order to install the RPM-based deliverables?
 
