@@ -43,7 +43,7 @@ print("starting my python program")
 
 - Rather than invoking `python`, invoke `python2` or `python3` depending on which version of Python you are using. This also applies to other Python commands. For instance, use `pip2` or `pip3` to invoke the Preferred Installer for Python ("pip"). 
 - Any globally-installed Python modules will need to be reinstalled (this is due to the changing Python version)
-- Whenever possible, Python packages should be globally installed via RPM packages, rather than with the `pip` or `pip3` commands. See [this document](PYTHON_MODULES.md) for more information. 
+- Whenever possible, Python packages should be globally installed via RPM packages, rather than with the `pip` or `pip3` commands. See [this document](PYTHON_PKGS_GUIDE.md) for more information. 
 - Install the Db2 connection package with yum, by running `yum install python3-ibm_db` or `yum install python2-ibm_db` (rather than installing shipped .whl files)
 - Install the Db2 connection package with yum, by running `yum install python3-itoolkit` or `yum install python2-itoolkit` (rather than installing shipped .whl files)
 
