@@ -60,4 +60,4 @@ echo 'PATH=/QOpenSys/pkgs/lib/nodejs10/bin/node:$PATH' >> $HOME/.profile
 export PATH >> $HOME/.profile
 ```
 (if using `bash` as the shell, the user may need to run `hash -r`)
-- To use `node-gyp` from the command line, follow the same instructions in the previous step, to add the version-specific directory to your `PATH`
+- To use `node-gyp` (or other globally-installed modules) from the command line, follow the same instructions in the previous step, to add the version-specific directory to your `PATH`
