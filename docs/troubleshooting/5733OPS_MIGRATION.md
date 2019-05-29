@@ -15,7 +15,7 @@ When writing a shell script (or a Python/Node.js program), it is common practice
 
 To properly use RPM-form executables, there are two options for making sure the scripts use the RPM form, and not 5733-OPS. 
 
-The first (and most industry-standard technique is to use the special `/usr/bin/env` command in the shebang line, followed by the program that is interpreting the script. This will look in your PATH for the named executable. Thus, it is very important that your PATH be set correctly!!! For instance, for a bash script:
+The first (and most industry-standard) technique is to use the special `/usr/bin/env` command in the shebang line, followed by the program that is interpreting the script. This will look in your PATH for the named executable. Thus, it is very important that your PATH be set correctly!!! For instance, for a bash script:
 
 ``` bash
 #!/usr/bin/env bash
@@ -45,7 +45,7 @@ print("starting my python program")
 - Any globally-installed Python modules will need to be reinstalled (this is due to the changing Python version)
 - Whenever possible, Python packages should be globally installed via RPM packages, rather than with the `pip` or `pip3` commands. See [this document](https://bitbucket.org/ibmi/opensource/src/master/docs/PYTHON_PKGS_GUIDE.md?fileviewer=file-view-default) for more information. 
 - Install the Db2 connection package with yum, by running `yum install python3-ibm_db` or `yum install python2-ibm_db` (rather than installing shipped .whl files)
-- Install the Db2 connection package with yum, by running `yum install python3-itoolkit` or `yum install python2-itoolkit` (rather than installing shipped .whl files)
+- Install the itoolkit (XMLSERVICE interface) package with yum, by running `yum install python3-itoolkit` or `yum install python2-itoolkit` (rather than installing shipped .whl files)
 
 ## Node.js migration notes
 
