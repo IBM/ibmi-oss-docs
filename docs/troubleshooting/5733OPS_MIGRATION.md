@@ -54,9 +54,9 @@ print("starting my python program")
 - For database access, install one of the following packages from npm:  `idb-connector`, `idb-pconnector`, `odbc` 
 - To switch the default version of Node.js for all users, use the `/QOpenSys/pkgs/bin/nodever` utility. For instance, for Node.js version 10 to be the default, run `/QOpenSys/pkgs/bin/nodever 10`
 - If you need to explicitly invoke a specific major version of Node.js, the executable is found at `/QOpenSys/pkgs/lib/nodejs<version>/bin/node`, where <version> is the major version. For instance, to run Node.js version 10, one could run `/QOpenSys/pkgs/lib/nodejs10/bin/node`
-- To switch the default version of Node.js for a specific user, place /QOpenSys/pkgs/lib/nodejs<version>/bin/node` at the beginning of the user's PATH environment variable, similar to what's documented [here](https://bitbucket.org/ibmi/opensource/src/master/docs/troubleshooting/SETTING_PATH.md). For instance, that user could run the following from the shell to set their default to version 10:
+- To switch the default version of Node.js for a specific user, place /QOpenSys/pkgs/lib/nodejs<version>/bin` at the beginning of the user's PATH environment variable, similar to what's documented [here](https://bitbucket.org/ibmi/opensource/src/master/docs/troubleshooting/SETTING_PATH.md). For instance, that user could run the following from the shell to set their default to version 10:
 ```
-echo 'PATH=/QOpenSys/pkgs/lib/nodejs10/bin/node:$PATH' >> $HOME/.profile
+echo 'PATH=/QOpenSys/pkgs/lib/nodejs10/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 export PATH >> $HOME/.profile
 ```
 (if using `bash` as the shell, the user may need to run `hash -r`)
