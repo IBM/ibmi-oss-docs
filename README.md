@@ -24,5 +24,8 @@ This documentation is open source! Please feel free to help this documentation g
 - [IBMiOSS Wiki](https://bitbucket.org/ibmi/opensource/wiki/Home)
 - [Ryver forum](http://ibm.biz/ibmioss-chat) (join [here](http://ibm.biz/ibmioss-chat-join))
 
+# Where to find examples
+- [IBM i OSS Examples (GitHub)](http://github.com/IBM/ibmi-oss-examples)
+
 # Links
 - [Previous authoritative IBMiOSS site](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies)
