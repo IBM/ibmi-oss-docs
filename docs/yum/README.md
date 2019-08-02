@@ -1,6 +1,6 @@
 [TOC]
 
-# RPM pile for IBM i 7.2+
+# RPM pile for IBM i releases in standard support
 
 ## General Information
 
@@ -219,6 +219,10 @@ Having issues? Please open a ticket [here](https://bitbucket.org/ibmi/opensource
 
 See **Troubleshooting** section above.
 
+### How do I get support for open source on IBM i?
+
+Open source support is available through community channels or an IBM premium support offering. See http://ibm.biz/ibmi-oss-support
+
 ### Is 5733-OPS required in order to install the RPM-based deliverables?
 
 No. 5733-OPS does not need to be installed.
@@ -235,9 +239,9 @@ There are currently no plans to deliver these packages in the 5733-OPS installab
 
 No. These RPM's are not AIX RPM's. They are IBM i RPMs shipping IBM i software. Built on IBM i, for IBM i.
 
-### What if I am on IBM i 7.1?
+### What if I am on an IBM i release no longer in standard support?
 
-With the exception of a handful of packages (including Node.js), much of the software will still work, but IBM i 7.2+ is the targeted release. Packages that are delivered for IBM i 7.1 may be rebuilt to only support IBM i 7.2+ without notice.
+IBM strives to provide community open source software packages for IBM i releases in standard support. Packages (including the initial installer) that are delivered for any IBM i release no longer in standard support may be rebuilt without notice, in an effort to leverage the latest technology for IBM i customers.
 
 ### Third-party (non-IBM) repositories
 
