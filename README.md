@@ -12,7 +12,7 @@ This documentation is open source! Please feel free to help this documentation g
 2. If you feel comfortable doing so, send a pull request. Start by forking the project (look for a '+' on the left), making your changes, and following the instructions [here](https://confluence.atlassian.com/bitbucket/create-a-pull-request-to-merge-your-change-774243413.html).
 
 # Table Of Contents
-- [yum](docs/yum/)
+- ["Getting Started" and general information](docs/yum/)
 - [open source troubleshooting (common problems)](docs/troubleshooting/)
 - [Migrating from 5733-OPS to RPMs](docs/troubleshooting/5733OPS_MIGRATION.md)
 - [Using Node Version Manager (nvm) to manage and build Node.js versions from community source](docs/nvm/)
@@ -22,6 +22,7 @@ This documentation is open source! Please feel free to help this documentation g
 # Collaboration
 - [Questions/comments about this site](https://bitbucket.org/ibmi/opensource/issues).
 - [IBMiOSS Wiki](https://bitbucket.org/ibmi/opensource/wiki/Home)
+- [Ryver forum](http://ibm.biz/ibmioss-chat) (join [here](http://ibm.biz/ibmioss-chat-join))
 
 # Links
 - [Previous authoritative IBMiOSS site](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies)
