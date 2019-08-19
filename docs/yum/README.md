@@ -211,7 +211,7 @@ coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 
 ## Troubleshooting
 
-Having issues? Please open a ticket [here](https://bitbucket.org/ibmi/opensource/issues).
+Having issues? Please check out the [troubleshooting guide](https://bitbucket.org/ibmi/opensource/src/master/docs/troubleshooting/).
 
 ## FAQ
 
