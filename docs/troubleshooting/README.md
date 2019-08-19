@@ -83,3 +83,7 @@ You probably have journalling on for an IFS directory that rpm is using. rpm use
 ### Soution
 
 Ensure that journalling is disabled/omitted for `/QOpenSys/var/lib/rpm` or any subdirectory. You can use option 8 from `WRKLNK` to view the journalling attributes of a given file or directory.
+
+## I'm still having issues!
+
+If you are having an issue that's not listed above or the solution provided did not help, please open a ticket [here](https://bitbucket.org/ibmi/opensource/issues).
