@@ -1,5 +1,15 @@
 # Gotchas When Building Software in PASE
 
+## malloc behaves differently from many other platforms
+
+[Zero byte allocations](https://whatilearned2day.wordpress.com/2006/07/13/zero-sized-allocation-using-malloc-on-aix/) on AIX can be strange. If software depends on this behaviour, you can build with `-D_LINUX_SOURCE_COMPAT` to enable a built-into-libc wrapper that has the glibc behaviour.
+
+## C++ issues
+
+Make sure that you have `libstdcplusplus-devel` in addition to g++ installed.
+
+If you run into issues with the threading parts of the C++ standard library, such as `std::mutex`, ensure that `-pthread` is passed to g++. This will flip some defines and such so that threading is exposed. Linking pthread (`-pthread` if you use GCC as the linker, otherwise `-lpthread`) in also helps with crashes in C++ standard library locale code.
+
 ## AF_LOCAL not declared
 
 ```text
