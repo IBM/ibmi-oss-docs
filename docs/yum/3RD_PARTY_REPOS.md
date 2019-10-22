@@ -18,7 +18,7 @@ well as enable or disable existing repositories.
 
 **Software offered:** lynx-dev (limited capabilities, for instance no https support). schily-tools (cdrecord, mkisofs, etc.)
 
-**Install**: `yum-config-manager --add-repo http://the-i-doctor.com/oss/repo/ppc64`
+**Install**: `yum-config-manager --add-repo http://www.the-i-doctor.com/oss/repo/the-i-doctor.repo`
  
 
 ## QSECOFR
