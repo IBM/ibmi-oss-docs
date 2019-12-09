@@ -13,6 +13,15 @@ well as enable or disable existing repositories.
 
 # Repository List
 
+### PHP
+
+**Brought to you by:** Perforce and IBM
+
+**Software offered:** PHP and several PHP plugins
+
+**Install**: `yum-config-manager --add-repo  http://repos.zend.com/ibmiphp/`
+
+
 ### OpenMax
 
 **Brought to you by:** Massimo Fantin -  https://twitter.com/massimofantin
