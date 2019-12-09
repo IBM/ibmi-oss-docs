@@ -13,6 +13,15 @@ well as enable or disable existing repositories.
 
 # Repository List
 
+### OpenMax
+
+**Brought to you by:** Massimo Fantin -  https://twitter.com/massimofantin
+
+**Software offered:** A large collection of open source packages, including Postgresql, Ghostscript, Postfix , rddtool etc etc
+
+**Install**: `yum-config-manager --add-repo ftp://openmax.duckdns.org/IBMi_Repo/openmax.repo`
+
+
 ## The i Doctor
 **Brought to you by:** Jack Woehr
 
