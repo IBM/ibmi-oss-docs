@@ -28,6 +28,10 @@ Once you have `yum` installed, you can install, remove, and upgrade rpms easily.
 
 *NOTE: This currently requires that your PC have direct HTTPS access to the public IBM file server. If for some reason, you cannot access external sites via HTTPS, refer to steps in "Offline Install Instructions (without ACS)".*
 
+*You will also need SSH connectivity from your PC to the IBM i system. Be sure to have the SSH daemon running on IBM i (`STRTCPSVR *SSHD`).*
+
+*This technique does not require external Internet access from your IBM i system..*
+
 - Download the latest release of Access Client Solutions
 
 - Access the Open Source Package Management Interface through the "Tools" Menu of ACS
@@ -36,7 +40,7 @@ Once you have `yum` installed, you can install, remove, and upgrade rpms easily.
 
 ### Online Install Instructions (without ACS Open Source Management Tool)
 
-*NOTE: This requires that your IBM i have direct FTP access to the public IBM file server. Many companies now block FTP access. If that is the case, refer to steps in "Offline Install Instructions (without ACS)".*
+*NOTE: This requires that your IBM i have direct FTP access to the public IBM file server from your IBM i system. Many companies now block FTP access. If that is the case, refer to steps in "Offline Install Instructions (without ACS)".*
 
 - Download [bootstrap.sql](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap.sql) to your PC
 
