@@ -26,7 +26,7 @@ Once you have `yum` installed, you can install, remove, and upgrade rpms easily.
 
 ### Installing with Access Client Solutions (ACS)
 
-*NOTE: This currently requires that your PC have direct FTP access to the public IBM file server. Many companies now block FTP access. If that is the case, refer to steps in "Offline Install Instructions (without ACS)".*
+*NOTE: This currently requires that your PC have direct HTTPS access to the public IBM file server. If for some reason, you cannot access external sites via HTTPS, refer to steps in "Offline Install Instructions (without ACS)".*
 
 - Download the latest release of Access Client Solutions
 
