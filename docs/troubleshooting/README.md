@@ -17,6 +17,26 @@ Add `/QOpenSys/pkgs/bin` to the beginning of your PATH environment variable. See
 
 Also, please don't use QSH for open source tools. Use an SSH terminal instead.
 
+## yum can't connect to the repository
+
+### Problem
+
+When running yum from QSH, any commands that connect to the repository (install upgrade, etc) fail with a message like so:
+
+```
+yum install python3
+https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/repodata/repomd.xml: [Errno 14] curl#6 - "getaddrinfo() thread failed to start
+"
+Trying other mirror.
+Errore: Cannot retrieve repository metadata (repomd.xml) for repository: ibm. Please verify its path and try again
+```
+
+### Solution
+
+Run yum via SSH or the ACS Open Source Package Manager GUI. These are the ideal interfaces for working with yum and the rest of the open source ecosystem.
+
+If you need to work from 5250, QP2TERM is preferred over QSH, but QSH _will_ work as long as the `QIBM_MULTI_THREADED` environment variable is set to `Y` at the job level.
+
 ## Up arrow doesn't recall previous commands
 
 ### Problem
