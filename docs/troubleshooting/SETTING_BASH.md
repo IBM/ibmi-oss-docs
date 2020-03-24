@@ -1,8 +1,17 @@
-** The bash shell can (and should!) be your default shell for when you connect with an SSH session. SSH connections are recommended for open source tools. This will not affect the shell in use by non-SSH shell environments, such as CALL QP2TERM or STRQSH**
+*** The bash shell can (and should!) be your default shell for when you connect with an SSH session. SSH connections are recommended for open source tools. This will not affect the shell in use by non-SSH shell environments, such as CALL QP2TERM or STRQSH***
 
-First, install necessary prerequisites using [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/)
+First, install open source environment and [yum](https://bitbucket.org/ibmi/opensource/src/master/docs/yum/). Make sure the `bash` package is installed (it should be, by default)
+After doing so, you can set `bash` to be your default shell via one of the following techniques:
 
-After doing so, you can set bash to be your default shell by running the following command from anywhere you have an SQL context, such as the Run SQL Scripts tool:
+
+** Technique #1: chsh**
+
+1. Use yum to install the `chsh` package (for instamce, `yum install chsh`)
+2. From a shell, use the `chsh` command to set your shell (for instance, `chsh -s /QOpenSys/pkgs/bin/bash`). You can set the shell for another user via the `-u` option (for instance, `chsh -s /QOpenSys/pkgs/bin/bash -u otherusr`)
+
+** Technique #2: sql**
+
+You can set bash to be your default shell by running the following command from anywhere you have an SQL context, such as the Run SQL Scripts tool:
 
 ```SQL
 CALL QSYS2.SET_PASE_SHELL_INFO('*CURRENT', '/QOpenSys/pkgs/bin/bash')
