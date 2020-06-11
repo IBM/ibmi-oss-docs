@@ -198,7 +198,7 @@ yum group install "Development tools"
 
 ### Using a chroot
 
-If you'd like to install in to a chroot, you can use the scripts from [ibmichroot](https://bitbucket.org/litmis/ibmichroot) to set up a chroot using the `chroot_minimal.lst` and extract the bootstrap to there.
+If you'd like to install in to a chroot, you can use the scripts from [ibmichroot](https://github.com/IBM/ibmichroot) to set up a chroot using the `chroot_minimal.lst` and extract the bootstrap to there.
 
 If you install to the root of the OS, you can use rpm to help install chroots. Use the `chroot_minimal.lst` to set up the chroot and then use the `--installroot` option on rpm to install the rpm in to that chroot.
 
