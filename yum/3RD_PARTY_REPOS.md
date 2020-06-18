@@ -52,4 +52,4 @@ well as enable or disable existing repositories.
 
 **Software offered:** [ibmi-dotfiles](https://github.com/jbh/ibmi-dotfiles)
 
-**Install**: `yum-config-manager --add-repo http://rpms.sobo.red/ibmi/ppc64/`
+**Install**: `yum-config-manager --add-repo http://rpms.sobo.red/ibmi/`
