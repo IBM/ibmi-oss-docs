@@ -18,6 +18,7 @@ This documentation is open source! Please feel free to help this documentation g
 - [Migrating from 5733-OPS to RPMs](troubleshooting/5733OPS_MIGRATION.md)
 - [Using Node Version Manager](nvm/README.md)
 - [Nginx](nginx.md)
+- [Java 11](java11/JAVA11_EARLY_ACCESS.md)
 - [Porting Software to PASE](porting/README.md)
 - [Python Packages](PYTHON_PKGS_GUIDE.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
