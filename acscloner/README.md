@@ -1,5 +1,13 @@
-
-[TOC]
+# Table of Contents
+- [What is the "Clone Repo" tool in IBM i Access Client Solutions (ACS)?](#what-is-the--clone-repo--tool-in-ibm-i-access-client-solutions--acs--)
+- [How do I launch the "Clone Repo" tool?](#how-do-i-launch-the--clone-repo--tool-)
+- [Interface options, explained...](#interface-options--explained)
+  * [Source Repository](#source-repository)
+  * [Destination (IFS)](#destination--ifs-)
+  * [Additional Operations -> Create or Update Repository Definition](#additional-operations----create-or-update-repository-definition)
+  * [Additional Operations -> Disable Repositories that Require Internet Access from the IBM i System](#additional-operations----disable-repositories-that-require-internet-access-from-the-ibm-i-system)
+  * [Additional Operations -> Create nginx configuration file](#additional-operations----create-nginx-configuration-file)
+- [Serving up your internal repo via nginx using ACS](#serving-up-your-internal-repo-via-nginx-using-acs)
 
 # What is the "Clone Repo" tool in IBM i Access Client Solutions (ACS)?
 
