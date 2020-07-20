@@ -106,4 +106,4 @@ Ensure that journalling is disabled/omitted for `/QOpenSys/var/lib/rpm` or any s
 
 ## I'm still having issues!
 
-If you are having an issue that's not listed above or the solution provided did not help, please open a ticket [here](https://bitbucket.org/ibmi/opensource/issues).
+If you are having an issue that's not listed above or the solution provided did not help, please search existing issues or open a ticket [here](https://github.com/IBM/ibmi-oss-docs/issues).
