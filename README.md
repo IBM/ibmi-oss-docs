@@ -20,7 +20,7 @@ This documentation is open source! Please feel free to help this documentation g
 - [Porting Software to PASE](porting)
 
 # Collaboration
-- [Questions/comments about this site](https://bitbucket.org/ibmi/opensource/issues).
+- [Questions/comments about this site](issues).
 - [IBMiOSS Wiki](https://bitbucket.org/ibmi/opensource/wiki/Home)
 - [Ryver forum](http://ibm.biz/ibmioss-chat) (join [here](http://ibm.biz/ibmioss-chat-join))
 
