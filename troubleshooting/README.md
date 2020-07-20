@@ -1,4 +1,13 @@
 # Common Open Source Problems (and how to fix them)
+  * [Shell cannot find yum command](#shell-cannot-find-yum-command)
+  * [yum can't connect to the repository](#yum-can-t-connect-to-the-repository)
+  * [Up arrow doesn't recall previous commands]
+  * [Python can't find packages installed from ACS](#python-can-t-find-packages-installed-from-acs)
+  * [Yum or RPM fails with "Error: Error: rpmdb open failed"](#yum-or-rpm-fails-with--error--error--rpmdb-open-failed-)
+  * [Yum or RPM fails with "db4 error(19) from dbenv->open: The specified device does not exist."](#yum-or-rpm-fails-with--db4-error-19--from-dbenv--open--the-specified-device-does-not-exist-)
+  * [I'm still having issues!](#i-m-still-having-issues-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Shell cannot find yum command
 
