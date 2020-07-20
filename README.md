@@ -7,9 +7,9 @@ This repo will act as the authoritative documentation location for all things IB
 
 This documentation is open source! Please feel free to help this documentation grow in terms of volume and usability! If you would like to see changes in this documentation, please do one of the following:
 
-1. [Submit an issue](https://bitbucket.org/ibmi/opensource/issues/new) with the proposed changes. Please be as detailed as possible and include as much in "publishable" form as you can. 
+1. [Submit an issue](https://github.com/IBM/ibmi-oss-docs/issues/new) with the proposed changes. Please be as detailed as possible and include as much in "publishable" form as you can. 
 
-2. If you feel comfortable doing so, send a pull request. Start by forking the project (look for a '+' on the left), making your changes, and following the instructions [here](https://confluence.atlassian.com/bitbucket/create-a-pull-request-to-merge-your-change-774243413.html).
+2. If you feel comfortable doing so, send a pull request. Start by forking the project (look for a '+' on the left), making your changes, and following the instructions [here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
 
 # Table Of Contents
 - ["Getting Started" and general information](yum/)
@@ -20,8 +20,8 @@ This documentation is open source! Please feel free to help this documentation g
 - [Porting Software to PASE](porting)
 
 # Collaboration
-- [Questions/comments about this site](issues).
-- [IBMiOSS Wiki](https://bitbucket.org/ibmi/opensource/wiki/Home)
+- [Questions/comments about this site](https://github.com/IBM/ibmi-oss-docs/issues).
+- [IBMiOSS Wiki](https://github.com/IBM/ibmi-oss-docs/wiki/Home)
 - [Ryver forum](http://ibm.biz/ibmioss-chat) (join [here](http://ibm.biz/ibmioss-chat-join))
 
 # Where to find examples
