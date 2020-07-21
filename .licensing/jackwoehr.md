@@ -7,7 +7,7 @@ that grants permission to relicense its copyrights on documents in the
 Creative Commons "No Rights Reserved" license (CC0).
 
 A portion of the commits made by the Github handle "jwoehr", with
-commit author "jwoehr", are copyright of Jack J. Woehr.
+commit author "Jack Woehr", are copyright of Jack Woehr.
 This document hereby grants IBM to relicense all past and present contributions
 of the author listed above.
 
