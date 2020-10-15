@@ -1,5 +1,3 @@
-[TOC]
-
 # RPM pile for IBM i releases in standard support
 
 ## General Information
