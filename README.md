@@ -19,6 +19,7 @@ This documentation is open source! Please feel free to help this documentation g
 - [Using Node Version Manager](nvm/README.md)
 - [Nginx](nginx.md)
 - [Porting Software to PASE](porting/README.md)
+- [Postgresql](postgresql/installingpostgresqlonibmi.md)
 
 ## Collaboration
 
