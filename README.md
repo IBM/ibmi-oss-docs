@@ -22,6 +22,7 @@ This documentation is open source! Please feel free to help this documentation g
 - [Porting Software to PASE](porting/README.md)
 - [Python Packages](PYTHON_PKGS_GUIDE.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
+- [PostgreSQL](postgresql/installingpostgresqlonibmi.md)
 
 ## Collaboration
 
