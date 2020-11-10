@@ -66,6 +66,20 @@ Once you have `yum` installed, you can install, remove, and upgrade rpms easily.
 
 - If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
 
+### IBM i 7.1 Install Instructions (experimental; not supported!) 
+
+- Download IBM i 7.1 version of [bootstrap.sh](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap-7.1/bootstrap.sh) and [bootstrap.tar.Z](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap-7.1/bootstrap.tar.Z) to your PC
+
+- Transfer these two files to the `/tmp` directory on your IBM i system (via FTP, mapped network drive, scp, etc). *Make sure to transfer them in binary.*
+
+- From a 5250 terminal run the following.
+
+```text
+    QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1')
+```
+
+- If you see message QSH005: "Command ended normally with exit status 0" in the job log you're all good. If not, consult `/tmp/bootstrap.log`.
+
 ## Switching from FTP to HTTP(S)
 
 The original bootstrap used FTP to connect to the public IBM file server. This server has now had HTTP and HTTPS enabled, so you can switch to using HTTP if you prefer. This is especially useful if your corporate firewall rules disallow unsecured FTP (which many do).
