@@ -3,7 +3,7 @@
 ## Step 1: Install developer tools
 From an SSH terminal, run:
 ```
-yum group install "Developer Tools"
+yum group install "Development Tools"
 ```
 ## Step 2: Install NVM
 
