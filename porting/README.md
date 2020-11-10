@@ -1,4 +1,6 @@
 # Porting Software to PASE
 
-* [Gotchas](../GOTCHAS)
-* [this table](../PASE-TO-AIX-LEVEL)
+## Contents
+
+* [Porting Gotchas](../GOTCHAS)
+* [PASE to AIX Level Mapping](../PASE-TO-AIX-LEVEL)
