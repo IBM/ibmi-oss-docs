@@ -52,6 +52,7 @@ exclude_patterns = [
     'Thumbs.db',
     '.DS_Store',
     '.licensing',
+    'requirements.txt',
 ]
 
 master_doc = 'README'
