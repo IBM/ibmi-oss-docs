@@ -16,7 +16,7 @@ This documentation is open source! Please feel free to help this documentation g
 - [Getting Started](yum/README.md)
 - [Troubleshooting](troubleshooting/README.md)
 - [Migrating from 5733-OPS to RPMs](troubleshooting/5733OPS_MIGRATION.md)
-- [Setting Up ODBC](odbc/README.md)
+- [ODBC](odbc/README.md)
 - [Using Node Version Manager](nvm/README.md)
 - [Nginx](nginx.md)
 - [Java 11](java11/JAVA11_EARLY_ACCESS.md)
