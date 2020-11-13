@@ -1,6 +1,47 @@
 # At top on conf.py (with other import statements)
 import recommonmark
-from recommonmark.transform import AutoStructify
+
+# See
+# https://github.com/readthedocs/recommonmark/issues/156#issuecomment-607641732
+#from recommonmark.transform import AutoStructify
+
+import os
+from docutils import nodes
+from recommonmark.transform import AutoStructify as AutoStructifyOrig
+
+class AutoStructify(AutoStructifyOrig):
+    def parse_ref(self, ref):
+        """
+        Patch AutoStructify for relative path
+        """
+        title = None
+        if len(ref.children) == 0:
+            title = ref['name'] if 'name' in ref else None
+        elif isinstance(ref.children[0], nodes.Text):
+            title = ref.children[0].astext()
+        uri = ref['refuri']
+        if uri.find('://') != -1:
+            return (title, uri, None)
+        anchor = None
+        arr = uri.split('#')
+        if len(arr) == 2:
+            anchor = arr[1]
+        if len(arr) > 2 or len(arr[0]) == 0:
+            return (title, uri, None)
+        uri = arr[0]
+
+        abspath = os.path.abspath(os.path.join(self.file_dir, uri))
+        # ** Patch
+        if uri[0] != '/': # input uri is relative path
+            abspath = '/' + os.path.relpath(abspath, self.root_dir)
+        relpath = os.path.relpath(abspath, self.root_dir)
+
+        # use url resolver
+        if self.url_resolver:
+            uri = self.url_resolver(relpath)
+        if anchor:
+            uri += '#' + anchor
+        return (title, uri, None)
 
 # Configuration file for the Sphinx documentation builder.
 #
