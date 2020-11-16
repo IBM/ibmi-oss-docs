@@ -22,7 +22,7 @@ use another name if you like."
 
 From a 5250 session create a ***POSTGRES*** user profile with:
 
-```lang-none
+```text
 CRTUSRPRF  USRPRF(POSTGRES)  PASSWORD(...)
 ```
 
@@ -61,7 +61,7 @@ user profile.
 
 After running `initdb` you should see the following message:
 
-```lang-none
+```text
 Success. You can now start the database server using:
     pg_ctl -D /home/postgres -l logfile start
 ```
@@ -76,7 +76,7 @@ pg_ctl -D /home/postgres -l logfile start
 
 You should see the following messages:
 
-```lang-none
+```text
 waiting for server to start.... done
 server started
 ```
@@ -90,7 +90,7 @@ pg_ctl -D /home/postgres -l logfile stop
 From a 5250 session, run WRKACTJOB and you should see the active server
 jobs and threads in the QUSRWRK subsystem
 
-```lang-none
+```text
 --------------------------------------------------------------------------------
 QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
 QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
@@ -106,7 +106,7 @@ From a 5250 session, run `NETSTAT *CNN` to verify the server is listening on
 port 5432. You should see an entry for Local Port 5432 which tells you the
 server is listening for connections.
 
-```lang-none
+```text
 --------------------------------------------------------------------------------
                         Work with IPv4 Connection Status
                                                              System:   SYS1
@@ -128,7 +128,7 @@ The `psql` command line client is a frontend to interact with PostgreSQL server
 backend. Lets use `psql` to connect to the server, create a database, create a
 table, insert data, and view the data.
 
-```lang-none
+```text
 $ psql
 Password for user postgres:
 postgres=# CREATE DATABASE us_states;
@@ -155,7 +155,7 @@ us_states=# \q
 If you enabled remote connections, the same can be done using `psql` from a
 remote machine with:
 
-```lang-none
+```text
 $ psql -h myhost.example.com -U postgres -d us_states
 Password for user postgres:
 
@@ -174,7 +174,7 @@ us_states=# \q
 Alternatively you can use a GUI client like pgAdmin, Heidi, DBeaver, etc to
 connect to Postgres server instead of `psql`.
 
-```lang-none
+```text
 Host: IBMi host name or IP
 Port: 5432
 User: postgres
@@ -202,7 +202,7 @@ Use nano, vim or some other editor to edit ***/home/postgres/postgresql.conf***
 file so the server will listen on TCP/IP addresses. We will enable access on all
 IP addresses
 
-```lang-none
+```text
 # listen_addresses = 'localhost'
 listen_addresses = '*'
 ```
@@ -214,7 +214,7 @@ for more details on Connection configuration.
 
 Edit the `IPv4 local connections` line in ***/home/postgres/pg_hba.conf***
 
-```lang-none
+```text
 # IPv4 local connections:
 # TYPE    DATABASE        USER            ADDRESS                 METHOD
 # host    all             all             127.0.0.1/32            scram-sha-256
