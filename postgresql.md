@@ -108,15 +108,15 @@ server is listening for connections.
 
 ```text
 --------------------------------------------------------------------------------
-                        Work with IPv4 Connection Status
+                        Work with IPv4 Connection Status                   
                                                              System:   SYS1
- Type options, press Enter.
-   3=Enable debug   4=End   5=Display details   6=Disable debug
-   8=Display jobs
-
-      Remote           Remote     Local
- Opt  Address          Port       Port       Idle Time  State
-      *                *          5432       000:05:22  Listen
+ Type options, press Enter.                                                
+   3=Enable debug   4=End   5=Display details   6=Disable debug            
+   8=Display jobs                                                          
+                                                                           
+      Remote           Remote     Local                                    
+ Opt  Address          Port       Port       Idle Time  State              
+      *                *          5432       000:05:22  Listen             
 --------------------------------------------------------------------------------
 ```
 
