@@ -97,6 +97,4 @@ Once you have DSNs defined with the connection options you want, you can simply 
 DSN=MYDSN
 ```
 
-This will look through your DSNs for a match, and pull in all connection options defined therein. This helps keep your connection string much more manageable, and also keeps your connections string more secure since you don't have to explicitly pass your password in plain text.
-
-Additional options can
+This will look through your DSNs for a match, and pull in all connection options defined therein. This helps keep your connection string much more manageable, and also keeps your connections string more secure, as you don't have to explicitly pass your password in plain text.
