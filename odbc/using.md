@@ -98,3 +98,12 @@ DSN=MYDSN
 ```
 
 This will look through your DSNs for a match, and pull in all connection options defined therein. This helps keep your connection string much more manageable, and also keeps your connections string more secure, as you don't have to explicitly pass your password in plain text.
+
+Additional options can be added to your connection string even if you use a DSN. In this way, you can extend your DSNs with options that make sense for a given use. To add more options, simply list them as you would any normal connection string:
+
+```
+DSN=MYDSN;DBQ=MYLIB,OTHERLIB;CCSID=1208;
+```
+
+Note that connection keywords specified on the connection string will override a DSN keyword that has the same functionality (e.g. a `CMT` value on the connection string will override any `CommitMode` defined for a DSN used in that connection string).
+ 
