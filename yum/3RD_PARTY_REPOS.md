@@ -21,6 +21,14 @@ well as enable or disable existing repositories.
 
 **Install**: `yum-config-manager --add-repo  http://repos.zend.com/ibmiphp/`
 
+### PHP
+
+**Brought to you by:** Seiden Group and IBM
+
+**Software offered:** CommunityPlus+ PHP with a large list of PHP modules, PHP Toolkit, Apache integration
+
+**Install**: RPM access here: https://www.seidengroup.com/communityplus-php-for-ibm-i/
+
 
 ### OpenMax
 
