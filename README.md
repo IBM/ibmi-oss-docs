@@ -35,6 +35,9 @@ This documentation is open source! Please feel free to help this documentation g
 
 - [IBM i OSS Examples (GitHub)](http://github.com/IBM/ibmi-oss-examples)
 
+## Access to Source Code
+- Some open source licenses, such as GPL, require that source code necessary for building the software (including patches, build recipes, etc) be made available to the public. For these packages, the source is provided in the form of source RPMs distributed at http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/
+
 ## Links
 
 - [Previous authoritative IBMiOSS site](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies)
