@@ -123,6 +123,19 @@ curl http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/ibm.repo > /QOpe
 *NOTE: If you download it another way, make sure to transfer it to the IBM i
 system in binary or ASCII modes.*
 
+If you are switching to HTTPS (recommended), first install the CA certificates
+package to avoid CURL SSL errors, and then change the protocol in the repo file
+from HTTP to HTTPS (the original file will be saved with suffix "_backup"):
+
+```bash
+# Install SSL CA certificates
+yum install ca-certificates-mozilla
+# Install sed tool from repository
+yum install sed-gnu
+# Switch the protocol to https
+/QOpenSys/pkgs/bin/sed --in-place='_backup' 's/http:/https:/' /QOpenSys/etc/yum/repos.d/ibm.repo
+```
+
 ## Using yum on an IBM i system without internet access
 
 If your IBM i system does not have access to the internet, yum will not be able

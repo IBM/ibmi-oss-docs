@@ -13,12 +13,12 @@ grow in terms of volume and usability! If you would like to see changes in this
 documentation, please do one of the following:
 
 1. [Submit an issue](https://bitbucket.org/ibmi/opensource/issues/new) with the
-proposed changes. Please be as detailed as possible and include as much in
-"publishable" form as you can.
+  proposed changes. Please be as detailed as possible and include as much in
+  "publishable" form as you can.
 
 2. If you feel comfortable doing so, send a pull request. Start by forking the
-project (look for a '+' on the left), making your changes, and following the
-instructions [here](https://confluence.atlassian.com/bitbucket/create-a-pull-request-to-merge-your-change-774243413.html).
+  project (look for a '+' on the left), making your changes, and following the instructions
+  [here](https://confluence.atlassian.com/bitbucket/create-a-pull-request-to-merge-your-change-774243413.html).
 
 ## Contents
 
@@ -43,6 +43,9 @@ instructions [here](https://confluence.atlassian.com/bitbucket/create-a-pull-req
 ## Where to find examples
 
 - [IBM i OSS Examples (GitHub)](http://github.com/IBM/ibmi-oss-examples)
+
+## Access to Source Code
+- Some open source licenses, such as GPL, require that source code necessary for building the software (including patches, build recipes, etc) be made available to the public. For these packages, the source is provided in the form of source RPMs distributed at http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/
 
 ## Links
 
