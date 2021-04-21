@@ -23,7 +23,7 @@ well as enable or disable existing repositories.
 
 ### OpenMax
 
-**Brought to you by:** Massimo Fantin -  `https://twitter.com/massimofantin`
+**Brought to you by:** [Massimo Fantin](https://twitter.com/massimofantin)
 
 **Software offered:** A large collection of open source packages, including Postgresql,
 Ghostscript, Postfix , rddtool etc etc
