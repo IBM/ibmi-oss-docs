@@ -12,9 +12,11 @@ package is installed (it should be, by default). After doing so, you can set
 ## Technique #1: chsh
 
 1. Use yum to install the `chsh` package (for instamce, `yum install chsh`)
-2. From a shell, use the `chsh` command to set your shell (for instance,
-`chsh -s /QOpenSys/pkgs/bin/bash`). You can set the shell for another user via
-the `-u` option (for instance, `chsh -s /QOpenSys/pkgs/bin/bash -u otherusr`)
+
+2. From a shell, use the `chsh` command to set your shell
+  (for instance, `chsh -s /QOpenSys/pkgs/bin/bash`).
+  You can set the shell for another user via the `-u` option
+  (for instance, `chsh -s /QOpenSys/pkgs/bin/bash -u otherusr`).
 
 ## Technique #2: sql
 
