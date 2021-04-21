@@ -23,17 +23,17 @@ well as enable or disable existing repositories.
 
 ### OpenMax
 
-**Brought to you by:** Massimo Fantin -  https://twitter.com/massimofantin
+**Brought to you by:** [Massimo Fantin](https://twitter.com/massimofantin)
 
-**Software offered:** A large collection of open source packages, including Postgresql, Ghostscript, Postfix , rddtool etc etc
-
-**Install**: `yum-config-manager --add-repo ftp://openmax.duckdns.org/IBMi_Repo/openmax.repo`
+**Software offered:** A large collection of open source packages, including Postgresql,
+Ghostscript, Postfix , rddtool etc etc
 
 ### The i Doctor
 
 **Brought to you by:** Jack Woehr
 
-**Software offered:** lynx-dev (limited capabilities, for instance no https support). schily-tools (cdrecord, mkisofs, etc.)
+**Software offered:** lynx-dev (limited capabilities, for instance no https support).
+schily-tools (cdrecord, mkisofs, etc.)
 
 **Install**: `yum-config-manager --add-repo http://www.the-i-doctor.com/oss/repo/the-i-doctor.repo`
 
@@ -41,9 +41,8 @@ well as enable or disable existing repositories.
 
 **Brought to you by:** Yvan Janssens
 
-**Software offered:** Mono on i and various Open Source software for which fixes have been accepted upstream to enable them to run on i.
-
-**Install**: `yum-config-manager --add-repo http://repo.qseco.fr/qsecofr.repo`
+**Software offered:** Mono on i and various Open Source software for which fixes
+have been accepted upstream to enable them to run on i.
 
 ### SoBored
 
@@ -51,4 +50,4 @@ well as enable or disable existing repositories.
 
 **Software offered:** [ibmi-dotfiles](https://github.com/jbh/ibmi-dotfiles)
 
-**Install**: `yum-config-manager --add-repo http://rpms.sobo.red/ibmi/`
+**Install**: `yum-config-manager --add-repo` <http://rpms.sobo.red/ibmi/>
