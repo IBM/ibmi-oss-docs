@@ -2,9 +2,9 @@
 # IBM i Open Source
 
 This repo will act as the authoritative documentation location for all things
-IBM i Open Source Software including PASE (Yum, Node.js/Python/Ruby/PHP, ssh etc)
-and all native ILE languages (C,RPG,CL etc).  If you see a mistake or see a way
-to make some of the docs better then please issue a pull request.
+IBM i Open Source Software including PASE (Yum, Node.js/Python/Ruby/PHP, ssh
+etc) and all native ILE languages (C,RPG,CL etc).  If you see a mistake or see a
+way to make some of the docs better then please issue a pull request.
 
 **What if I would like to contribute (or suggest changes) to this documentation?**
 
@@ -16,7 +16,7 @@ documentation, please do one of the following:
   proposed changes. Please be as detailed as possible and include as much in
   "publishable" form as you can.
 
-1. If you feel comfortable doing so, send a pull request. Start by forking the
+2. If you feel comfortable doing so, send a pull request. Start by forking the
   project (look for a '+' on the left), making your changes, and following the instructions
   [here](https://confluence.atlassian.com/bitbucket/create-a-pull-request-to-merge-your-change-774243413.html).
 
