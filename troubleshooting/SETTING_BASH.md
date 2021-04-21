@@ -1,18 +1,19 @@
-# Setting bash shell as the default shell
+# Setting BASH as your shell
 
-The bash shell can (and should!) be your default shell for when you connect
+***The bash shell can (and should!) be your default shell for when you connect
 with an SSH session. SSH connections are recommended for open source tools.
-This will not affect the shell in use by non-SSH shell environments,
+This will not affect the shell in use by non-SSH shell environments, such as
+CALL QP2TERM or STRQSH***
 
 First, install open source environment and [yum](../yum/). Make sure the `bash`
-package is installed (it should be, by default) After doing so, you can set `bash`
-to be your default shell via one of the following techniques:
+package is installed (it should be, by default). After doing so, you can set
+`bash` to be your default shell via one of the following techniques:
 
 ## Technique #1: chsh
 
 1. Use yum to install the `chsh` package (for instamce, `yum install chsh`)
 
-1. From a shell, use the `chsh` command to set your shell
+2. From a shell, use the `chsh` command to set your shell
   (for instance, `chsh -s /QOpenSys/pkgs/bin/bash`).
   You can set the shell for another user via the `-u` option
   (for instance, `chsh -s /QOpenSys/pkgs/bin/bash -u otherusr`).
