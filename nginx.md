@@ -1,17 +1,21 @@
 # NGINX
 
 ## Summary
-Here you will find general information as it relates to Nginx on IBM i.  This is meant to be a supplement to the [official Nginx documentation](https://docs.nginx.com).
+
+Here you will find general information as it relates to Nginx on IBM i.  This is
+meant to be a supplement to the [official Nginx documentation](https://docs.nginx.com).
 
 ## Install
 
-```
-$ yum install nginx
+```bash
+yum install nginx
 ```
 
 ## Config
+
 The following can be placed in file `/www/nginx/nginx.conf`.
-```
+
+```nginx configuration file
 pid /www/nginx/nginx.pid;
 events {}
 http {
@@ -27,24 +31,28 @@ http {
 ```
 
 ## Starting and Stopping
-To start Nginx you need use use the `/QOpenSys/pkgs/bin/nginx` binary and the `-c` option to declare where the config location.  This is like submitting a job to batch in that it won't lock up your console.
 
-```
-$ nginx -c /www/nginx/nginx.conf
+To start Nginx you need use use the `/QOpenSys/pkgs/bin/nginx` binary and the
+`-c` option to declare where the config location.  This is like submitting a job
+to batch in that it won't lock up your console.
+
+```bash
+nginx -c /www/nginx/nginx.conf
 ```
 
 To stop, run this command.
 
-```
-$ nginx -c /www/nginx/nginx.conf -s stop
+```bash
+nginx -c /www/nginx/nginx.conf -s stop
 ```
 
 ## Reverse Proxy
 
-The below shows how to have Nginx act as a reverse proxy to a Node.js web server listening on port 49000.  It also redirects port 80 traffic to the secure port 443 (https) which in turn necessitates SSL configuration.
+The below shows how to have Nginx act as a reverse proxy to a Node.js web server
+listening on port 49000.  It also redirects port 80 traffic to the secure port
+443 (https) which in turn necessitates SSL configuration.
 
-
-```nginx
+```nginx configuration file
 
 pid /www/mydomain/nginx.pid;
 events {}

@@ -1,6 +1,6 @@
 # Why ODBC
 
-For the open-source software team, ODBC is the preferred method of connecting to Db2 on i. There are many resons for this, including:
+For the open-source software team, ODBC is the preferred method of connecting to Db2 on i. There are many reasons for this, including:
 
 * Because ODBC is a technology that is used for more than just IBM i, there are many applications and technologies that are already enabled to use ODBC. Nearly all open-source programming languages (and many non-open-source languages) have some way to connect to databases through an ODBC interface, facilitating interaction with any database that has an ODBC driver (including IBM i).
 
