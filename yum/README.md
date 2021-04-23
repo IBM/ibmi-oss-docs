@@ -9,7 +9,7 @@ needing to install, manage, or use open source technologies. You can use the
 
 ### Notable deliverables
 
-- Node.js version 8 and version 10
+- Node.js
 - Python 3.6
 - The 'less' utility
 - git
