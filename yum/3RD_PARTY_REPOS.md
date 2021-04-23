@@ -15,11 +15,7 @@ well as enable or disable existing repositories.
 
 ### PHP
 
-**Brought to you by:** Perforce and IBM
-
-**Software offered:** PHP and several PHP plugins
-
-**Install**: `yum-config-manager --add-repo  http://repos.zend.com/ibmiphp/`
+Several PHP distributions are available. See http://ibm.biz/ibmi-php
 
 ### OpenMax
 
