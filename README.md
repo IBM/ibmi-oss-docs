@@ -32,6 +32,7 @@ documentation, please do one of the following:
 - [Porting Software to PASE](porting/README.md)
 - [Python Packages](PYTHON_PKGS_GUIDE.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
+- [Third Party Repos](yum/3RD_PARTY_REPOS.md)
 - [PostgreSQL](postgresql.md)
 
 ## Collaboration
