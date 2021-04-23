@@ -28,7 +28,7 @@ You can do this easily (from a shell) like so.
 
 ```bash
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
-export PATH >> $HOME/.profile
+echo 'export PATH' >> $HOME/.profile
 ```
 
 To make this change for all users, put these lines in `/QOpenSys/etc/profile`,
