@@ -46,7 +46,12 @@ documentation, please do one of the following:
 - [IBM i OSS Examples (GitHub)](http://github.com/IBM/ibmi-oss-examples)
 
 ## Access to Source Code
-- Some open source licenses, such as GPL, require that source code necessary for building the software (including patches, build recipes, etc) be made available to the public. For these packages, the source is provided in the form of source RPMs distributed at http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/
+
+- Some open source licenses, such as GPL, require that source code necessary
+for building the software (including patches, build recipes, etc) be made
+available to the public. For these packages, the source is provided in the form
+of source RPMs distributed at
+[http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/](http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/)
 
 ## Links
 
