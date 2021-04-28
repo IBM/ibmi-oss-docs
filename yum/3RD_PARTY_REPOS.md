@@ -15,7 +15,7 @@ well as enable or disable existing repositories.
 
 ### PHP
 
-Several PHP distributions are available. See http://ibm.biz/ibmi-php
+Several PHP distributions are available. See [http://ibm.biz/ibmi-php](http://ibm.biz/ibmi-php)
 
 ### OpenMax
 
@@ -47,4 +47,4 @@ have been accepted upstream to enable them to run on i.
 
 **Software offered:** [ibmi-dotfiles](https://github.com/jbh/ibmi-dotfiles)
 
-**Install**: `yum-config-manager --add-repo` <http://rpms.sobo.red/ibmi/>
+**Install**: `yum-config-manager --add-repo http://rpms.sobo.red/ibmi/`
