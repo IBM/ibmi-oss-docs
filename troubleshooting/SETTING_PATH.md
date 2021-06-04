@@ -36,7 +36,7 @@ like so:
 
 ```bash
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile
-export PATH >> /QOpenSys/etc/profile
+echo 'export PATH' >> /QOpenSys/etc/profile
 ```
 
 **Need to run globally-installed Node.js modules,
