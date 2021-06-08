@@ -48,6 +48,20 @@ The default shell used by SSH is `bsh`, which is very primitive. You will
 probably want to set `bash` as your default shell. See
 [Setting bash as your shell](SETTING_BASH.md) for details.
 
+
+## User input is not working properly when running in 5250
+
+Generally speaking, **open source programs do not work well in 5250 interfaces**
+such as QSH or Qp2Term. This may result in improper processing of control keys,
+phantom user input from previous commands, "garbage" characters printed to the
+screen, or a host of other issues. 
+
+**Solution:**
+
+Please use an SSH terminal emulator and an SSH connection. Also, for usability,
+you probably want to set `bash` as your default shell. See
+[Setting bash as your shell](SETTING_BASH.md) for details.
+
 ## Python can't find packages installed from ACS
 
 After installing a Python package from ACS (eg. `python3-Pillow`), it can't be found.
