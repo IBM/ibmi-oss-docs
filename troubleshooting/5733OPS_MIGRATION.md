@@ -86,7 +86,7 @@ accessing RPG, CL, etc.
 `idb-connector`, `idb-pconnector`, `odbc`
 - To switch the default version of Node.js for all users, use the
 `/QOpenSys/pkgs/bin/nodever` utility. For instance, for Node.js version 10 to be
-the default, run `/QOpenSys/pkgs/bin/nodever 10`
+the default, run `/QOpenSys/pkgs/bin/nodever 14`
 - If you need to explicitly invoke a specific major version of Node.js, the
 executable is found at `/QOpenSys/pkgs/lib/nodejs<version>/bin/node`, where
 `<version>` is the major version. For instance, to run Node.js version 10, one
