@@ -95,11 +95,11 @@ could run `/QOpenSys/pkgs/lib/nodejs10/bin/node`
 `/QOpenSys/pkgs/lib/nodejs<version>/bin` at the beginning of the user's PATH
 environment variable, similar to what's documented [here](SETTING_PATH.md).
 For instance, that user could run the following from the shell to set their
-default to version 10:
+default to version 14:
 
 ```bash
-echo 'PATH=/QOpenSys/pkgs/lib/nodejs10/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
-export PATH >> $HOME/.profile
+echo 'PATH=/QOpenSys/pkgs/lib/nodejs14/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
+echo 'export PATH' >> $HOME/.profile
 ```
 
 (if using `bash` as the shell, the user may need to run `hash -r`)
