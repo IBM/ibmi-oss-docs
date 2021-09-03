@@ -91,7 +91,7 @@ ADDJOBSCDE JOB(CERTRENEW) CMD(QSH CMD('/path/to/script.sh')) FRQ(*MONTHLY) SCDDA
 ```
 Replace the job name and path to script as needed.
 
-## Upgrading Certbot
+## 11. Upgrading Certbot
 
 It's good practice to occasionally update Certbot to keep it up-to-date. To do this, run the following command on the command line on the machine.
 ```
@@ -100,24 +100,29 @@ It's good practice to occasionally update Certbot to keep it up-to-date. To do t
 
 If this step leads to errors, run `rm -rf /opt/certbot` and repeat all installation instructions.
 
----------------------------------------------
-# What about wildcard certificates?
+
+
+
+
+
+
+## What about wildcard certificates?
 
 If you need wildcard certificates, follow steps 1-5, above, then proceed as documented here
 
-## 6. Check if your DNS provider is supported
+### 6. Check if your DNS provider is supported
 
 See if your DNS provider is supported by Certbot by checking [this list in the documentation](https://certbot.eff.org/docs/using.html#dns-plugins).
 
-### Not supported?
+#### Not supported?
 
 If your DNS provider is not supported, pause here: run Certbot with the manual plugin by using [these steps from the documentation](https://certbot.eff.org/docs/using.html#manual).
 
-#### Supported?
+##### Supported?
 
 If your DNS provider is supported, continue with the remaining instructions below in your SSH terminal.
 
-## 7. Install correct DNS plugin
+### 7. Install correct DNS plugin
 
 Run the following command, replacing <PLUGIN> with the name of your DNS provider.
 ```
@@ -128,15 +133,15 @@ For example, if your DNS provider is Cloudflare, you'd run the following command
 /opt/certbot/bin/pip install certbot-dns-cloudflare
 ```
 
-## 8. Set up credentials
+### 8. Set up credentials
 
 You'll need to set up DNS credentials.
 Follow the steps in the "Credentials" section for your DNS provider to access or create the appropriate credential configuration file. Find credentials instructions for your DNS provider by clicking [the DNS plugin's name on the Documentation list](https://certbot.eff.org/docs/using.html#dns-plugins).
 
-## 9. Get a certificate
+### 9. Get a certificate
 
 Run one of the commands in the "Examples" section of the [instructions for your DNS provider](https://certbot.eff.org/docs/using.html#dns-plugins).
 
-## 10. Install and renew certificate
+### 10. Install and renew certificate
 
 Follow steps 7 and beyond, above. 
