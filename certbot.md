@@ -85,7 +85,24 @@ To set up automatic renewal of your certificate, first create a shell script tha
 - Starts your web server
 - (optional) Records the activity, for instance by running `system "SNDMSG MSG('Certificate renewal process complete') TOUSR(*SYSOPR)"`
 
-Once that is completed, you can create a job scheduler entry. This example Shows how to create a job scheduler entry that runs at 1:11 AM on the first and third sundays.
+For instance, the following script uses [Service Commander](https://theprez.github.io/ServiceCommander-IBMi/#service-commander-for-ibm-i) to restart the app. It
+also writes output to `renewcert.log` and sends a message when completed.
+```
+#!/QOpenSys/pkgs/bin/bash
+export PATH=/QOpenSys/pkgs/bin:$PATH
+set -e
+cd $(dirname $0)
+exec >> renewcert.log
+exec 2>&1
+echo "=================================================="
+date
+sc stop mywebapp
+/opt/certbot/bin/certbot renew
+sc start mywebapp
+system "SNDMSG MSG('Certificate renewal process has completed') TOUSR($(/usr/bin/id -u -n))"
+```
+
+Once that is completed, you can create a job scheduler entry that calls your script. This example Shows how to create a job scheduler entry that runs at 1:11 AM on the first and third sundays.
 ```
 ADDJOBSCDE JOB(CERTRENEW) CMD(QSH CMD('/path/to/script.sh')) FRQ(*MONTHLY) SCDDATE(*NONE) SCDDAY(*SUN) SCDTIME(011111) RELDAYMON(1 3) SAVE(*YES)
 ```
