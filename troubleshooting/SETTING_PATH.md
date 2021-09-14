@@ -53,3 +53,37 @@ echo 'export PATH' >> $HOME/.profile
 ```
 
 (if using `bash` as the shell, the user may need to run `hash -r`)
+
+## Verifying that your PATH is set correctly
+Simply run the following from your operating environment:
+```bash
+echo $PATH
+```
+The output should be a `:`-delimited list of directories.
+These will be searched, in order, for any commands entered
+into your shell. The `PATH` should contain, at minimum,
+`/QOpenSys/pkgs/bin`, very preferrably before the "standard"
+paths like `/QOpenSys/usr/bin` or `/usr/bin`. You may also
+see other PATHS you added to the beginning, for instance, 
+to choose a Node.js version per the
+[Node.js usage notes](../nodejs/README.md)
+
+For example:
+**Horrible**
+```bash
+/usr/bin:.:/QOpenSys/usr/bin
+```
+
+**Bad**
+```bash
+/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin
+```
+
+**Marginal**
+```bash
+/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin:/QOpenSys/pkgs/bin
+```
+**Best**
+```bash
+/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin
+```
