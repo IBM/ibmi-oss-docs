@@ -31,7 +31,7 @@ documentation, please do one of the following:
 - [Using Certbot to get LetsEncrypt certificates](certbot.md)
 - [Java 11](java11/JAVA11_EARLY_ACCESS.md)
 - [Porting Software to PASE](porting/README.md)
-- [Python Packages](PYTHON_PKGS_GUIDE.md)
+- [Using Python](python/README.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
 - [Release-specific Repos](yum/RELEASE_REPOS.md)
 - [Third Party Repos](yum/3RD_PARTY_REPOS.md)
