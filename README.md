@@ -26,7 +26,7 @@ documentation, please do one of the following:
 - [Troubleshooting](troubleshooting/README.md)
 - [Migrating from 5733-OPS to RPMs](troubleshooting/5733OPS_MIGRATION.md)
 - [ODBC](odbc/README.md)
-- [Using Node Version Manager](nvm/README.md)
+- [Using Node.js](nodejs/README.md)
 - [Nginx](nginx.md)
 - [Using Certbot to get LetsEncrypt certificates](certbot.md)
 - [Java 11](java11/JAVA11_EARLY_ACCESS.md)

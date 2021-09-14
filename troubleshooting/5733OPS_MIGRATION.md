@@ -77,33 +77,4 @@ installing shipped .whl files)
 
 ## Node.js migration notes
 
-- Any globally-installed modules must be reinstalled. Note, however, that global
-installations of node modules are generally considered bad practice (with a few
-exceptions, like `node-gyp`).
-- Be sure to use the `itoolkit` package from npm (`npm install itoolkit`) for
-accessing RPG, CL, etc.
-- For database access, install one of the following packages from npm:
-`idb-connector`, `idb-pconnector`, `odbc`
-- To switch the default version of Node.js for all users, use the
-`/QOpenSys/pkgs/bin/nodever` utility. For instance, for Node.js version 10 to be
-the default, run `/QOpenSys/pkgs/bin/nodever 14`
-- If you need to explicitly invoke a specific major version of Node.js, the
-executable is found at `/QOpenSys/pkgs/lib/nodejs<version>/bin/node`, where
-`<version>` is the major version. For instance, to run Node.js version 10, one
-could run `/QOpenSys/pkgs/lib/nodejs10/bin/node`
-- To switch the default version of Node.js for a specific user, place
-`/QOpenSys/pkgs/lib/nodejs<version>/bin` at the beginning of the user's PATH
-environment variable, similar to what's documented [here](SETTING_PATH.md).
-For instance, that user could run the following from the shell to set their
-default to version 14:
-
-```bash
-echo 'PATH=/QOpenSys/pkgs/lib/nodejs14/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
-echo 'export PATH' >> $HOME/.profile
-```
-
-(if using `bash` as the shell, the user may need to run `hash -r`)
-
-- To use `node-gyp` (or other globally-installed modules) from the command line,
-follow the same instructions in the previous step, to add the version-specific
-directory to your `PATH`
+See [Node.js usage notes](../node.js/README.md)
