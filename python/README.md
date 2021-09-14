@@ -1,4 +1,5 @@
 # Python usage notes
+All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md)
 
 ## Which versions are available?
 Currently, Python versions 3.6 and 3.9 are available, 
@@ -10,7 +11,11 @@ currently-installed versions of Python to a new major
 version. This would break existing apps. 
 
 ## Python virtual environments (highly recommended!)
-### Creating a virtual environment
+### 1. Installing system-wide packages
+Use `yum` to install any RPM-provided packages that you
+may use inside your virtual environment. 
+
+### 2. Creating a virtual environment
 **If using Python 3.9**
 ```
 python3.9 -m venv --system-site-packages /path/to/venv
@@ -19,6 +24,13 @@ python3.9 -m venv --system-site-packages /path/to/venv
 ```
 python3.6 -m venv --system-site-packages /path/to/venv
 ```
+### 3. Entering and using the virtual environment
+To "enter" a virtual environment, run:
+```
+cd /path/to/venv
+./bin/activate
+```
+Once completed, you should be able to run the `python` and `pip` commands. They will use the version of Python that was used to create the virtual environment. 
 
 
 ## Which Python command to use outside of a virtual environment?
