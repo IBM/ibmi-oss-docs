@@ -1,4 +1,5 @@
 # Node.js usage notes
+All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md)
 
 ## Choosing which major version of Node.js to use
 There are two ways to install Node.js:
