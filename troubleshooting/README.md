@@ -1,5 +1,29 @@
 # Common Open Source Problems (and how to fix them)
 
+The first step in troubleshooting is to ensure that
+all of the following are true:
+- You are accessing the system with an SSH terminal
+    - If you insist on using 5250, favor QP2TERM over
+      QSH. If using QSH, ensure that the `QIBM_MULTI_THREADED`
+      environment variable is set to `Y` **before**
+      launching QSH
+    - If you insist on using 5250, be aware that you
+      are more likely to have problems, even if the
+      above precautions are taken.
+- You have your `PATH` environment variable set properly.
+  See [Setting your PATH](SETTING_PATH.md) for guidance.
+- You are only editing files with only ASCII or UTF8-based
+  editors, such as:
+    - (Recommended) A cross-platform editor such as VSCode,
+      Notepad++, jEdit, etc.
+    - an SSH terminal UI-based editor, such as vim, nano,
+      or jmacs.
+- You don't have CRLF line terminators in your files. This
+  can happen if you have edited your file from Windows and
+  do not have your editor properly configured. If you
+  are unsure, install the `dos2unix` package and run
+  the resulting `dos2unix` utility on your file.
+
 ## Shell cannot find yum command
 
 When running the `yum` command from the command line, you encounter an error like:
