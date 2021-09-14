@@ -23,15 +23,15 @@ documentation, please do one of the following:
 ## Contents
 
 - [Getting Started](yum/README.md)
+- [Using Node.js](nodejs/README.md)
+- [Using Python](python/README.md)
 - [Troubleshooting](troubleshooting/README.md)
 - [Migrating from 5733-OPS to RPMs](troubleshooting/5733OPS_MIGRATION.md)
 - [ODBC](odbc/README.md)
-- [Using Node.js](nodejs/README.md)
 - [Nginx](nginx.md)
 - [Using Certbot to get LetsEncrypt certificates](certbot.md)
 - [Java 11](java11/JAVA11_EARLY_ACCESS.md)
 - [Porting Software to PASE](porting/README.md)
-- [Using Python](python/README.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
 - [Release-specific Repos](yum/RELEASE_REPOS.md)
 - [Third Party Repos](yum/3RD_PARTY_REPOS.md)
