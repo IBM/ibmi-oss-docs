@@ -1,5 +1,7 @@
 # Common Open Source Problems (and how to fix them)
 
+## Things to always check first when troubleshooting
+
 The first step in troubleshooting is to ensure that
 all of the following are true:
 - You are accessing the system with an SSH terminal
