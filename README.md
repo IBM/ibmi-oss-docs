@@ -29,6 +29,7 @@ documentation, please do one of the following:
 - [Migrating from 5733-OPS to RPMs](troubleshooting/5733OPS_MIGRATION.md)
 - [ODBC](odbc/README.md)
 - [Nginx](nginx.md)
+- [Open source Java application servers](java/APP_SERVERS.md)
 - [Using Certbot to get LetsEncrypt certificates](certbot.md)
 - [Java 11](java11/JAVA11_EARLY_ACCESS.md)
 - [Porting Software to PASE](porting/README.md)
