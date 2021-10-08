@@ -15,7 +15,7 @@ yum install nginx
 
 The following can be placed in file `/www/nginx/nginx.conf`.
 
-```nginx configuration file
+```nginx
 pid /www/nginx/nginx.pid;
 events {}
 http {
@@ -52,7 +52,7 @@ The below shows how to have Nginx act as a reverse proxy to a Node.js web server
 listening on port 49000.  It also redirects port 80 traffic to the secure port
 443 (https) which in turn necessitates SSL configuration.
 
-```nginx configuration file
+```nginx
 
 pid /www/mydomain/nginx.pid;
 events {}
