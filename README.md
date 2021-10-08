@@ -23,19 +23,19 @@ documentation, please do one of the following:
 ## Contents
 
 - [Getting Started](yum/README.md)
-- [Using Node.js](nodejs/README.md)
-- [Using Python](python/README.md)
 - [Troubleshooting](troubleshooting/README.md)
-- [Migrating from 5733-OPS to RPMs](troubleshooting/5733OPS_MIGRATION.md)
+- [Node.js](nodejs/README.md)
+- [Python](python/README.md)
 - [ODBC](odbc/README.md)
 - [Java](java/README.md)
 - [Nginx](nginx.md)
-- [Using Certbot to get LetsEncrypt certificates](certbot.md)
-- [Porting Software to PASE](porting/README.md)
+- [PostgreSQL](postgresql.md)
+- [Certbot (LetsEncrypt)](certbot.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
 - [Release-specific Repos](yum/RELEASE_REPOS.md)
 - [Third Party Repos](yum/3RD_PARTY_REPOS.md)
-- [PostgreSQL](postgresql.md)
+- [Porting Software to PASE](porting/README.md)
+- [Migrating from 5733-OPS](troubleshooting/5733OPS_MIGRATION.md)
 
 ## Collaboration
 
