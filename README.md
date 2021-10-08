@@ -31,7 +31,7 @@ documentation, please do one of the following:
 - [Nginx](nginx.md)
 - [Open source Java application servers](java/APP_SERVERS.md)
 - [Using Certbot to get LetsEncrypt certificates](certbot.md)
-- [Java 11](java11/JAVA11_EARLY_ACCESS.md)
+- [Java 11](java/JAVA11_EARLY_ACCESS.md)
 - [Porting Software to PASE](porting/README.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
 - [Release-specific Repos](yum/RELEASE_REPOS.md)
