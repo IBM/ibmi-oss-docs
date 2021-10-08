@@ -151,4 +151,4 @@ attributes of a given file or directory.
 ## I'm still having issues
 
 If you are having an issue that's not listed above or the solution provided did
-not help, please open a ticket [here](https://bitbucket.org/ibmi/opensource/issues).
+not help, please open a ticket [here](https://github.com/IBM/ibmi-oss-issues).
