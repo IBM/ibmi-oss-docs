@@ -300,7 +300,7 @@ coreutils-pase-dummy-7.1-0.ibmi7.1.ppc.rpm
 
 ## Troubleshooting
 
-Having issues? Please check out the [troubleshooting guide](../troubleshooting/).
+Having issues? Please check out the [troubleshooting guide](../troubleshooting/README.md).
 
 ## FAQ
 

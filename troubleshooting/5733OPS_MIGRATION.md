@@ -57,4 +57,4 @@ See [Python usage notes](../python/README.md)
 
 ## Node.js migration notes
 
-See [Node.js usage notes](../node.js/README.md)
+See [Node.js usage notes](../nodejs/README.md)

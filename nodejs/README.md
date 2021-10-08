@@ -23,7 +23,7 @@ executable is found at `/QOpenSys/pkgs/lib/nodejs<version>/bin/node`, where
 could run `/QOpenSys/pkgs/lib/nodejs10/bin/node`
 - To switch the default version of Node.js for a specific user, place
 `/QOpenSys/pkgs/lib/nodejs<version>/bin` at the beginning of the user's PATH
-environment variable, similar to what's documented [here](SETTING_PATH.md).
+environment variable, similar to what's documented [here](../troubleshooting/SETTING_PATH.md).
 For instance, that user could run the following from the shell to set their
 default to version 16:
 
@@ -64,7 +64,7 @@ yum install gcc10\*
 
 ### Step 2: Install NVM
 
-First, install necessary prerequisites using [yum](../yum/) to verify that you
+First, install necessary prerequisites using [yum](../yum/README.md) to verify that you
 have curl and/or wget installed. Make sure you
 [set your PATH](../troubleshooting/SETTING_PATH.md) to utilize the new open
 source technology.

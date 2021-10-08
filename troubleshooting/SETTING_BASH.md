@@ -5,9 +5,9 @@ with an SSH session. SSH connections are recommended for open source tools.
 This will not affect the shell in use by non-SSH shell environments, such as
 CALL QP2TERM or STRQSH***
 
-First, install open source environment and [yum](../yum/). Make sure the `bash`
-package is installed (it should be, by default). After doing so, you can set
-`bash` to be your default shell via one of the following techniques:
+First, install open source environment and [yum](../yum/README.md). Make sure
+the `bash` package is installed (it should be, by default). After doing so, you
+can set `bash` to be your default shell via one of the following techniques:
 
 ## Technique #1: chsh
 
