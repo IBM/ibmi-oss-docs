@@ -27,8 +27,7 @@ python3.6 -m venv --system-site-packages /path/to/venv
 ### 3. Entering and using the virtual environment
 To "enter" a virtual environment, run:
 ```
-cd /path/to/venv
-./bin/activate
+source /path/to/venv/bin/activate
 ```
 Once completed, you should be able to run the `python` and `pip` commands. They will use the version of Python that was used to create the virtual environment. 
 
