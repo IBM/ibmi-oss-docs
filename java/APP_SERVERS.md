@@ -2,9 +2,26 @@
 
 This page documents open source Java application servers. All items on this page are known to work on IBM i. 
 
-| Application Server | Governed by | IBM [support](http://ibm.biz/ibmi-oss-support) available? |
-| -------------------| ----------- | ------------------ |
-| [Apache Tomcat](http://tomcat.apache.org/) | [The Apache Software Foundation (ASF)](http://apache.org) | yes |
-| [WildFly](http://wildfly.org/) | [Red Hat](http://redhat.com) | yes |
-| [OpenLiberty](https://openliberty.io/) | [IBM](http://ibm.com) | yes |
-| [Eclipse Jetty](https://www.eclipse.org/jetty/) | [The Eclipse Foundation](http://eclipse.org) | yes |
+```eval_rst
++--------------------------------+----------------------------------------------+---------------------------+
+|       Application Server       |                Governed By                   | IBM `Support`_ Available? |
++================================+==============================================+===========================+
+|        `Apache Tomcat`_        |   `The Apache Software Foundation (ASF)`_    |            yes            |
++--------------------------------+----------------------------------------------+---------------------------+
+|           `Wildfly`_           |                `Red Hat`_                    |            yes            |
++--------------------------------+----------------------------------------------+---------------------------+
+|         `OpenLiberty`_         |                  `IBM`_                      |            yes            |
++--------------------------------+----------------------------------------------+---------------------------+
+|         `Eclipse Jetty`_       |         `The Eclipse Foundation`_            |            yes            |
++--------------------------------+----------------------------------------------+---------------------------+
+
+.. _Apache Tomcat: https://tomcat.apache.org/
+.. _Wildfly: https://wildfly.org/
+.. _OpenLiberty: https://openliberty.io/
+.. _Eclipse Jetty: https://www.eclipse.org/jetty/
+.. _The Apache Software Foundation (ASF): https://apache.org
+.. _Red Hat: https://redhat.com
+.. _IBM: https://ibm.com
+.. _The Eclipse Foundation: https://eclipse.org
+.. _Support: https://ibm.biz/ibmi-oss-support
+```
