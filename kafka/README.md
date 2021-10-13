@@ -1,5 +1,5 @@
 
-# Kafka and IBM i
+# Kafka
 
 ## Streaming data to Kafka from IBM i
 There are several approaches to streaming data from Db2 transactions to Kafka, including but not limited to:
