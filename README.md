@@ -28,6 +28,7 @@ documentation, please do one of the following:
 - [Python](python/README.md)
 - [ODBC](odbc/README.md)
 - [Java](java/README.md)
+- [Kafka](kafka/README.md)
 - [Nginx](nginx.md)
 - [PostgreSQL](postgresql.md)
 - [Certbot (LetsEncrypt)](certbot.md)
