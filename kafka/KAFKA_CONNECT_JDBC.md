@@ -1,6 +1,6 @@
 # Using the JDBC Source/Sink Connectors and Kafka Connect
 
-Download the JDBC Connector (Source and Sink) from Confluent Hub [confluentinc-kafka-connect-jdbc-10.2.0.zip]. Source connectors are used to read data from a database. Sink connectors are used to insert data into a database. I tested source connectors. I did not test sink connectors.
+Download the JDBC Connector (Source and Sink) from Confluent Hub [confluentinc-kafka-connect-jdbc-10.2.0.zip]. Source connectors are used to read data from a database. Sink connectors are used to insert data into a database.
 
 Steps for installing the plugin came from https://docs.confluent.io/home/connect/userguide.html#connect-installing-plugins
 
@@ -22,8 +22,8 @@ contents:
 ```
 name=jdbc_source_jtopen_01
 connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
-connection.url=jdbc:as400://oss72dev.rch.stglabs.ibm.com
-connection.user=JHANSEN
+connection.url=jdbc:as400://mysystem.mycompany.com
+connection.user=MYUSR
 connection.password=<password>
 topic.prefix=jtopen-01-
 mode=bulk
@@ -38,8 +38,8 @@ contents:
 ```
 name=jdbc_source_db2_01
 connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
-connection.url=jdbc:ibmdb://oss72dev.rch.stglabs.ibm.com:446/*LOCAL
-connection.user=JHANSEN
+connection.url=jdbc:ibmdb://mysystem.mycompany.com:446/*LOCAL
+connection.user=myusr
 connection.password=<password>
 topic.prefix=db2-01-
 mode=bulk
