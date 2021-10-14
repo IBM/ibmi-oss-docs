@@ -39,12 +39,13 @@ cd /home/myusr/mydir
 
 #### 3. Download kafka
 ```
-wget https://apache.osuosl.org/kafka/2.6.0/kafka_2.13-2.6.0.tgz
+wget https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz
 ```
+(you may need to update the version number on this and subsequent steps based on [the latest version](https://kafka.apache.org/downloads).
 
 #### 4. extract Kafka
 ```
-tar xzvf kafka_2.13-2.6.0.tgz
+tar xzvf kafka_2.13-3.0.0.tgz
 ```
 
 #### 5. Set up environment to use OpenJDK
@@ -57,7 +58,7 @@ export PATH
 
 #### 6. Start a Zookeeper server
 ```
-cd kafka_2.13-2.6.0/config
+cd kafka_2.13-3.0.0/config
 ../bin/zookeeper-server-start.sh zookeeper.properties
 ```
 
@@ -96,6 +97,6 @@ JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
-cd kafka_2.13-2.6.0/config
+cd kafka_2.13-3.0.0/config
 ../bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic mytopic
 ```
