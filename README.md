@@ -29,6 +29,7 @@ documentation, please do one of the following:
 - [ODBC](odbc/README.md)
 - [Java](java/README.md)
 - [Kafka](kafka/README.md)
+- [Camel](camel/README.md)
 - [Nginx](nginx.md)
 - [PostgreSQL](postgresql.md)
 - [Certbot (LetsEncrypt)](certbot.md)
