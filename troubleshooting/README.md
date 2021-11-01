@@ -148,6 +148,43 @@ Ensure that journaling is disabled/omitted for `/QOpenSys/var/lib/rpm` or any
 subdirectory. You can use option 8 from `WRKLNK` to view the journaling
 attributes of a given file or directory.
 
+## Commands are failing in QSH
+
+Many commands will fail in QSH for many reasons! However, a common reason is related
+to the QSH behavior that disallows multithreaded applications by default. The resulting
+error message may or may not be descriptive, but here are some examples.
+
+git:
+```text
+error: cannot create async thread: Resource temporarily unavailable
+fatal: fetch-pack: unable to fork off sideband demultiplexer 
+```
+
+node/npm:
+```text
+[335708]: ../src/node_platform.cc:61:std::unique_ptr<unsigned int> node::Work   erThreadsTaskRunner::DelayedTaskScheduler::Start(): Assertion `(0) == (uv_thr   ead_create(t.get(), start_thread, this))' failed.
+qsh: 001-0078 Process ended by signal 5.                                     
+```
+
+curl:
+```text
+curl: (6) getaddrinfo() thread failed to start 
+```
+
+java (openjdk):
+```text
+Error: Port Library failed to initialize: -1             
+Error: Could not create the Java Virtual Machine.        
+Error: A fatal exception has occurred. Program will exit.
+```
+
+**Solution:**
+
+As mentioned earlier, the optimal solution is to connect with an SSH client.
+If you insist on using 5250, favor QP2TERM over QSH. If using QSH,you must
+ensure that the `QIBM_MULTI_THREADED` environment variable is set to `Y`
+**before** launching QSH.
+      
 ## I'm still having issues
 
 If you are having an issue that's not listed above or the solution provided did
