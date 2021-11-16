@@ -17,7 +17,7 @@ system and connected to IBM i.
 On IBM i, we will be using unixODBC as our driver manager. Fortunately, unixODBC
 is automatically pulled in when you install the IBM i Access ODBC Driver for
 Linux, so there isn't any set up that you have to do for this stage. If you want
-to develop applications using ODBC packages like pyODBC for Python or odbc for
+to develop applications using ODBC packages like `odbc` for
 Node.js, you will have to use yum to manually install `unixODBC-devel` as well.
 
 ### Driver for IBM i
