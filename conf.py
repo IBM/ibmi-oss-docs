@@ -113,7 +113,8 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 redirects = {
-    'java11/JAVA11_EARLY_ACCESS': "../java/JAVA11_EARLY_ACCESS.html"
+    'java11/JAVA11_EARLY_ACCESS': "../java/JAVA11_EARLY_ACCESS.html",
+    'yum/RELEASE_REPOS': "../yum/IBM_REPOS.html",
 }
 
 def setup(app):
