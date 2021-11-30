@@ -341,10 +341,9 @@ are delivered for any IBM i release no longer in standard support may be rebuilt
 without notice, in an effort to leverage the latest technology for IBM i
 customers.
 
-### Release-specific IBM repositories
+### IBM repositories
 
-Some packages require you to add a release-specific repository. 
-Information on these repositories can be found [here](RELEASE_REPOS.md).
+Information on IBM-provided repositories can be found [here](IBM_REPOS.md).
 
 ### Third-party (non-IBM) repositories
 

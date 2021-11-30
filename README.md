@@ -34,7 +34,7 @@ documentation, please do one of the following:
 - [PostgreSQL](postgresql.md)
 - [Certbot (LetsEncrypt)](certbot.md)
 - [ACS Clone Repo Tool](acscloner/README.md)
-- [Release-specific Repos](yum/RELEASE_REPOS.md)
+- [IBM Repos](yum/IBM_REPOS.md)
 - [Third Party Repos](yum/3RD_PARTY_REPOS.md)
 - [Porting Software to PASE](porting/README.md)
 - [Migrating from 5733-OPS](troubleshooting/5733OPS_MIGRATION.md)
