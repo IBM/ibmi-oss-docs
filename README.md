@@ -18,7 +18,7 @@ documentation, please do one of the following:
 
 2. If you feel comfortable doing so, send a pull request. Start by forking the
   project, making your changes, and following the instructions
-  [here](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+  [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
 ## Contents
 
