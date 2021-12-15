@@ -35,7 +35,16 @@ Once completed, you should be able to run the `python` and `pip` commands. They 
 ## Which Python command to use outside of a virtual environment?
 ### Python interpreter
 
-**If `python39` is not installed**
+**Use the versioned python command when feasible.**
+It is always best to run the fully-versioned python command, which is
+either `python3.9` or `python3.6`, since the `python` or
+`python3` commands may render different results depending
+on what packages are installed or what the current environment
+contains.
+
+
+
+**Alternatives if `python39` is not installed**
 Use `python3.6`. One can alternatively use the shorthand
 `python3`, but including the major and minor version
 in the python command is more explicit and is best practice.
@@ -44,7 +53,7 @@ For instance, launch your python program via:
 python3.6 myprogram.py
 ```
 
-**If `python39` is installed** 
+**Alternatives if `python39` is installed** 
 Use `python3.9` or simply `python`, since the `python39` package
 creates a `python` via `update-alternatives`. 
 ```
