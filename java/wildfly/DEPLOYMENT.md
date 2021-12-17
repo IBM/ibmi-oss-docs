@@ -42,7 +42,7 @@ Just change these values accordingly.
 
 
 ## Create installation directory and download directory
-```
+```bash
 mkdir -p $DOWNLOAD
 mkdir -p $WILDFLY
 ```
@@ -51,12 +51,13 @@ mkdir -p $WILDFLY
 ```bash
 yum install wget tar-gnu gzip nano openjdk-11
 ```
+
 Alternatively, use Access Client Solutions to install these packages.
 
 # Step 2: Download WildFly
 
 ## Technique 1: Using `wget`
-
+(change the version number, if needed, to the version you would like to install)
 ```shell
 cd $DOWNLOAD
 wget https://github.com/wildfly/wildfly/releases/download/26.0.0.Final/wildfly-26.0.0.Final.tar.gz
@@ -69,6 +70,8 @@ Download the latest version in .tar.gz format. Once downloaded, place in the dow
 
 
 # Step 3: Install WildFly
+
+(change the version number in the filename, if needed, to the proper version)
 ```bash
 cd $DOWNLOAD
 tar --strip-components=1 -C $WILDFLY -xzvf wildfly-26.0.0.Final.tar.gz
@@ -83,7 +86,7 @@ cd $WILDFLY/bin
 nano standalone.conf
 ```
 The default `standalone.conf` file has a commented-out line with a `JAVA_HOME` value. Uncomment the line and
-insert the appropriate JAVA_HOME value.
+insert the appropriate JAVA_HOME value. You can choose between OpenJDK or JV1 versions of Java.
 
 For OpenJDK:
 ```bash
@@ -175,8 +178,17 @@ You're done!! At this point:
 - If you deployed GitBucket in Step 7, it will be running at `http://<your_server>:8080/gitbucket`
 
 If you didn't deploy GitBucket, you can do so through the management interface by doing the following steps:
-- Download the latest release of GitBucket (in the form of `gitbucket.war` to your PC
-- Open your browser to `http://<your_server>:9990/` (log in with `admin` and the password you created earlier
-- Click the "Deployments" tab
+- Download the latest release of GitBucket from [their releases page on GitHub](https://github.com/gitbucket/gitbucket/releases) (in the form of `gitbucket.war`) to your PC
+- Open your browser to `http://<your_server>:9990/` (log in with `admin` and the password you created earlier)
+- Click the "Deployments" tab or the "Deployments" link on the homepage
+![image](https://user-images.githubusercontent.com/17914061/146619131-3d0d811b-c9fe-4a81-8d80-174c9d7f2a08.png)
+
 - Click the action button in the left sidebar and choose "Upload Deployment"
-- Follow the prompts to upload `gitbucket.war` from your PC
+![image](https://user-images.githubusercontent.com/17914061/146619197-a7b70846-def2-4330-a6a2-fc370a99276f.png)
+
+- Follow the prompts to upload `gitbucket.war` from your PC and specify application names
+![image](https://user-images.githubusercontent.com/17914061/146619462-6b254efd-d997-4c10-a731-d6ba78969201.png)
+
+- On success, it should show upload complete
+![image](https://user-images.githubusercontent.com/17914061/146619338-69424a55-6695-4536-858d-6a1f39a8d84f.png)
+
