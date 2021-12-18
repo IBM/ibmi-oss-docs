@@ -200,7 +200,9 @@ If you didn't deploy GitBucket, you can do so through the management interface b
 
 
 # Managing with Service Commander (optional)
-You can elect to manage your WildFly instance with Service Commander. To do so, follow these steps:
+You can elect to manage your WildFly instance with Service Commander. If you are unfamiliar with Service Commander,
+you can read more [here](https://theprez.github.io/ServiceCommander-IBMi/#service-commander-for-ibm-i). 
+The steps to leverage this tool include:
 - Install the `service-commander` package:
 ```yum
 yum install service-commander
