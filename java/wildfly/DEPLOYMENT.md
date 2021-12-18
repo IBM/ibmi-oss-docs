@@ -174,7 +174,7 @@ standalone.sh -b 171.20.0.10 -bmanagement 0.0.0.0
 ```
 
 You're done!! At this point:
-- The management interface will be running at `http://<your_server>:9990/` (log in with `admin` and the password you created earlier
+- The management interface will be running at `http://<your_server>:9990/` (log in with `admin` and the password you created earlier)
 - If you deployed GitBucket in Step 7, it will be running at `http://<your_server>:8080/gitbucket`
 
 If you didn't deploy GitBucket, you can do so through the management interface by doing the following steps:
@@ -191,4 +191,36 @@ If you didn't deploy GitBucket, you can do so through the management interface b
 
 - On success, it should show upload complete
 ![image](https://user-images.githubusercontent.com/17914061/146619338-69424a55-6695-4536-858d-6a1f39a8d84f.png)
+
+- Once deployed, it will show up in deployments and you can manage through the management console
+![image](https://user-images.githubusercontent.com/17914061/146620666-63c8004a-ddd4-4460-8f36-bdd605b19d42.png)
+
+# You should now be running GitBucket with WildFly!
+![image](https://user-images.githubusercontent.com/17914061/146620767-e7d2487f-704f-48c4-8125-5836c98bb698.png)
+
+
+# Managing with Service Commander (optional)
+You can elect to manage your WildFly instance with Service Commander. To do so, follow these steps:
+- Install the `service-commander` package:
+```yum
+yum install service-commander
+```
+
+- `cd` into your installation's `bin/` directory:
+```bash
+cd $WILDFLY/bin
+```
+
+- Run the `scinit` command. For instance:
+```bash
+scinit standalone.sh
+```
+![image](https://user-images.githubusercontent.com/17914061/146621112-a152d72d-f6eb-4733-8c55-2b38a9907d36.png)
+It should also print information about where it stored the service definition
+![image](https://user-images.githubusercontent.com/17914061/146621169-9c0eef0a-9fcf-47a2-89fd-be48cf349195.png)
+
+Now, you can use the `sc` command to start, stop, or check on your WildFly instance. Examples:
+![image](https://user-images.githubusercontent.com/17914061/146621332-d2578c15-ef90-4887-8188-6bfe59d3a2d7.png)
+
+
 
