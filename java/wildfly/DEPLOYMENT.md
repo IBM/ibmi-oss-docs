@@ -122,15 +122,16 @@ the management and public interfaces
         </interface>
 ```
 Change these values to something appropriate for your deployment. For instance, the following
-configures the management and public interfaces to use `0.0.0.0` (listens on any address). In
-the default configuration, these interfaces are only accessible from the local system.
+configures the management interfaces to use `0.0.0.0` (listens on any address), and it
+configures the public interface (used for web applications) to the IP address of the IBM i
+system. In the default configuration, these interfaces are only accessible from the local system.
 ```xml
     <interfaces>
         <interface name="management">
             <inet-address value="${jboss.bind.address.management:0.0.0.0}"/>
         </interface>
         <interface name="public">
-            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
+            <inet-address value="${jboss.bind.address:171.20.0.10}"/>
         </interface>
 ```
 
@@ -174,7 +175,7 @@ If you did not configure the server addresses, you may specify them on the comma
 invocation of `standalone.sh` using the `-b` and `-bmanagement` arguments: 
 ```bash
 cd $WILDFLY/bin
-standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
+standalone.sh -b 171.20.0.10 -bmanagement 0.0.0.0
 ```
 
 You're done!! At this point:
