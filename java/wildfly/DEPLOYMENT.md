@@ -98,6 +98,9 @@ JAVA_HOME="/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit"
 ```
 
 # Step 5 : Configure server address (optional)
+This step is recommended so that WildFly's default behavior is to bind to the correct addresses. If you do
+not do this step, you will need to specify the addresses on the command line later when you start WildFly.
+
 Open the `standalone.xml` file in the `standalone/configuration` directory
 Open the `standalone.conf` file located in the `/bin` directory of the WildFly installation directory.
 For this, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
@@ -119,16 +122,15 @@ the management and public interfaces
         </interface>
 ```
 Change these values to something appropriate for your deployment. For instance, the following
-configures the management interface to use `0.0.0.0` (listens on any address), and it configures
-the public interface to use the system's public IP address. In the default configuration,
-these interfaces are only accessible from the local system.
+configures the management and public interfaces to use `0.0.0.0` (listens on any address). In
+the default configuration, these interfaces are only accessible from the local system.
 ```xml
     <interfaces>
         <interface name="management">
             <inet-address value="${jboss.bind.address.management:0.0.0.0}"/>
         </interface>
         <interface name="public">
-            <inet-address value="${jboss.bind.address:171.20.0.10}"/>
+            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
         </interface>
 ```
 
@@ -148,7 +150,9 @@ Follow these steps:
 - Enter `a` to choose "a) Update the existing user password and roles"
 - Follow the remaining prompts to choose a password
 
-# Step 7: (optional) Download WildFly and place in deployments directory 
+# Step 7: (optional) Deploy GitBucket by downloading and placing in deployments directory
+If you skip this step, you can deploy GitBucket through WildFly's management interface later
+
 ```bash
 cd $DOWNLOAD
 wget https://github.com/gitbucket/gitbucket/releases/download/4.37.1/gitbucket.war
@@ -170,7 +174,7 @@ If you did not configure the server addresses, you may specify them on the comma
 invocation of `standalone.sh` using the `-b` and `-bmanagement` arguments: 
 ```bash
 cd $WILDFLY/bin
-standalone.sh -b 171.20.0.10 -bmanagement 0.0.0.0
+standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
 ```
 
 You're done!! At this point:
