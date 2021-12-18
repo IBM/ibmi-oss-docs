@@ -25,3 +25,6 @@ This page documents open source Java application servers. All items on this page
 .. _The Eclipse Foundation: https://eclipse.org
 .. _Support: https://ibm.biz/ibmi-oss-support
 ```
+
+# Deployment Guides
+- [WildFly](wildfly/DEPLOYMENT.md)
