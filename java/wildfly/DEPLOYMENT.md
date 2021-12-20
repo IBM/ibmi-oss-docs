@@ -58,7 +58,7 @@ Alternatively, use Access Client Solutions to install these packages.
 
 ## Technique 1: Using `wget`
 (change the version number, if needed, to the version you would like to install)
-```shell
+```bash
 cd $DOWNLOAD
 wget https://github.com/wildfly/wildfly/releases/download/26.0.0.Final/wildfly-26.0.0.Final.tar.gz
 ```
@@ -218,7 +218,8 @@ yum install service-commander
 cd $WILDFLY/bin
 ```
 
-- Run the `scinit` command. For instance:
+- Run the `scinit` command to create a service definition for the `standalone.sh` command. Proceed to answer
+the questions as in the following screenshot:
 ```bash
 scinit standalone.sh
 ```
