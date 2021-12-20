@@ -1,6 +1,6 @@
 # Deploying WildFly on IBM i (using GitBucket as a sample application)
 
-This simple guide is intended to help you deploy your first application in WildFly. For
+This simple guide is intended to help you deploy your first application in WildFly standalone mode. For
 this exercise, we use [GitBucket](https://github.com/gitbucket/gitbucket) as a sample application.
 You can similarly deploy any .war file using these steps
 
@@ -26,7 +26,7 @@ export PATH=/QOpenSys/pkgs/bin:$PATH
 ```
 ## Choose installation and download directories
 Save your installation and download directory in environment variables
-(these are only used during the steps in this guide):
+(these are only used for convenience during the steps in this guide):
 ```bash
 export DOWNLOAD=/opt/download
 export WILDFLY=/opt/wildfly
