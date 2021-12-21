@@ -102,7 +102,7 @@ This step is recommended so that WildFly's default behavior is to bind to the co
 not do this step, you will need to specify the addresses on the command line later when you start WildFly.
 
 Open the `standalone.xml` file in the `standalone/configuration` directory
-Open the `standalone.conf` file located in the `/bin` directory of the WildFly installation directory.
+of the WildFly installation directory.
 For this, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
 or you can use a terminal-based editor like nano:
 ```bash
