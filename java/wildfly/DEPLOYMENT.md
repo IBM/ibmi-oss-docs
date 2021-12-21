@@ -111,7 +111,8 @@ nano standalone.xml
 ```
 
 Search for the `<interfaces>` tag (in nano, this can be done with ctrl+W). You will find a section that defines
-the management and public interfaces
+the management and public interfaces. Note that there are other tags that mention "interfaces" but here you only
+need to find the specific `<interfaces>` section.
 ```xml
     <interfaces>
         <interface name="management">
@@ -136,20 +137,24 @@ system. In the default configuration, these interfaces are only accessible from 
 ```
 
 # Step 6: Create a management user
-First, set `JAVA_HOME` and `cd` to the proper directory:
+First, set `JAVA_HOME` to the value you configured in `standalone.conf`:
 ```bash
 export JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
-cd $WILDFLY/bin
+```
+or....
+```bash
+export JAVA_HOME=/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit
 ```
 Then run the `add-user.sh` script
 ```bash
-add-user.sh
+cd $WILDFLY/bin
+./add-user.sh
 ```
 Follow these steps:
 - When it asks, "What type of user do you wish to add?", enter "a" for management user
 - For "Username", enter `admin`
 - Enter `a` to choose "a) Update the existing user password and roles"
-- Follow the remaining prompts to choose a password
+- Follow the remaining prompts to choose a password. Just press [enter] to accept the defaults for all other questions.
 
 # Step 7: (optional) Deploy GitBucket by downloading and placing in deployments directory
 If you skip this step, you can deploy GitBucket through WildFly's management interface later
@@ -169,13 +174,13 @@ If you configured the server addresses in step 5, you can now start WildFly
 in standalone mode by doing the following:
 ```bash
 cd $WILDFLY/bin
-standalone.sh
+./standalone.sh
 ```
 If you did not configure the server addresses, you may specify them on the command-line
-invocation of `standalone.sh` using the `-b` and `-bmanagement` arguments: 
+invocation of `standalone.sh` using the `-b` and `-bmanagement` arguments, for instance: 
 ```bash
 cd $WILDFLY/bin
-standalone.sh -b 171.20.0.10 -bmanagement 0.0.0.0
+./standalone.sh -b 171.20.0.10 -bmanagement 0.0.0.0
 ```
 
 You're done!! At this point:
@@ -219,10 +224,17 @@ cd $WILDFLY/bin
 ```
 
 - Run the `scinit` command to create a service definition for the `standalone.sh` command. Proceed to answer
-the questions as in the following screenshot:
+the questions as in the following screenshot. 
+If you configured the server addresses in step 5:
 ```bash
-scinit standalone.sh
+scinit ./standalone.sh
 ```
+If you did not configure the server addresses, you may specify them on the command-line
+invocation using the `-b` and `-bmanagement` arguments, for instance:
+```bash
+scinit ./standalone.sh -b 171.20.0.10 -bmanagement 0.0.0.0
+```
+
 ![image](https://user-images.githubusercontent.com/17914061/146621112-a152d72d-f6eb-4733-8c55-2b38a9907d36.png)
 It should also print information about where it stored the service definition
 ![image](https://user-images.githubusercontent.com/17914061/146621169-9c0eef0a-9fcf-47a2-89fd-be48cf349195.png)
