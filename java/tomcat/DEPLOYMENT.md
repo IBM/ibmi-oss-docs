@@ -236,7 +236,7 @@ cd $TOMCAT/bin
 ```
 You're done!! At this point:
 - Tomcat should now be running at `http://<server_name>:8080` (or whatever port you've chosen earlier).
-- If you deployed GitBucket in step 7, it should now be running at `http://<server_name>:8080/gitbucket`
+- If you deployed GitBucket in step 7, it should now be running at `http://<server_name>:8080/gitbucket` (or whatever port you've chosen earlier)
 
 
 If you didn't deploy GitBucket, you can do so through the management interface by doing the following steps:
@@ -248,3 +248,12 @@ If you didn't deploy GitBucket, you can do so through the management interface b
 - Scroll down to the "Deploy" section and go to "WAR file to deploy". Browse for your `gitbucket.war` file and
 click "Deploy"
 ![image](https://user-images.githubusercontent.com/17914061/147600763-4f7f8faf-46ec-4c14-8f7b-0754a13c89e7.png)
+
+- You should now see "gitbucket" as a deployed application.
+![image](https://user-images.githubusercontent.com/17914061/147602709-68153d9b-bc9d-46b2-bb0b-d81a1541e826.png)
+
+- Click the "Start" button to start the application.
+![image](https://user-images.githubusercontent.com/17914061/147602874-f55384e0-aa9a-40de-b076-c7e2b1d6cc5f.png)
+
+
+- GitBucket should now be running at `http://<server_name>:8080/gitbucket` (or whatever port you've chosen earlier)
