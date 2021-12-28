@@ -103,7 +103,7 @@ JAVA_HOME="/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit"
 export JAVA_HOME
 ```
 
-# Step 5 : Configure server port
+# Step 5 : Configure server port (optional)
 By default, TomCat will listen on port 8080. To change that, open
 the `server.xml` file in the `conf/` directory
 of the TomCat installation.
@@ -130,8 +130,7 @@ configures the server to use port 9080 for HTTP and port 9443 for TLS:
     <Connector executor="tomcatThreadPool"
                port="9080" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="9443"
-               maxPostSize="152428800"/>
+               redirectPort="9443"/>
 ```
 If you changed the redirectPort in the previous step, you will also need to change the connector configuration
 for TLS. To do so, search for `protocol="org.apache.coyote` to find the `<Connector>` tag for the TLS protocol
@@ -145,11 +144,10 @@ for TLS. To do so, search for `protocol="org.apache.coyote` to find the `<Connec
         </SSLHostConfig>
     </Connector>
 ```
-Change as appropriate. In this example, we've changed the `redirectPort` to 9443, and also add the maxPostSize
-value like earlier. For instance:
+Change as appropriate. In this example, we've changed the `redirectPort` to 9443. For instance:
 ```xml
     <Connector port="9443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               maxThreads="150" SSLEnabled="true" maxPostSize="152428800">
+               maxThreads="150" SSLEnabled="true">
         <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
         <SSLHostConfig>
             <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
@@ -192,7 +190,37 @@ password value from `admin4ever` to your passwords of choosing.
   <user username="admin" password="admin4ever" roles="admin-gui,manager-gui,manager-script,manager-status"/>
 ```
 
-# Step 7: Deploy GitBucket by downloading and placing in `webapps/` directory
+# Step 7: Increase TomCat file upload size limit
+TomCat, by default, only lets you upload files that are 50M or smaller. Some large .war files (including
+GitBucket) are larger than this, so it is good to increase this maximum. 
+```bash
+cd $TOMCAT/webapps/manager/WEB-INF
+nano web.xml
+```
+
+Look for the following section:
+```xml
+    <multipart-config>
+      <!-- 50MB max -->
+      <max-file-size>52428800</max-file-size>
+      <max-request-size>52428800</max-request-size>
+      <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+```
+Change the values of `max-file-size` and `max-request-size` to something larger, like `152428800`.
+For instance:
+```xml
+    <multipart-config>
+      <!-- Approx 150MB max -->
+      <max-file-size>152428800</max-file-size>
+      <max-request-size>152428800</max-request-size>
+      <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+```
+
+
+
+# Step 8: Deploy GitBucket by downloading and placing in `webapps/` directory
 If you skip this step, you can deploy GitBucket through TomCat's management interface later
 
 ```bash
@@ -201,7 +229,7 @@ wget https://github.com/gitbucket/gitbucket/releases/download/4.37.1/gitbucket.w
 cp gitbucket.war $TOMCAT/webapps
 ```
 
-# Step 8: Start TomCat
+# Step 9: Start TomCat
 ```bash
 cd $TOMCAT/bin
 ./startup.sh
