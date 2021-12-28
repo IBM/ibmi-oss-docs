@@ -35,7 +35,7 @@ The aboves assumes the following directories:
 - TomCat installation directory: `/opt/tomcat`
 - Download directory (when downloading TomCat and GitBucket): `/opt/download`
 
-You may choose to download files or deploy WildFly anywhere on the filesystem.
+You may choose to download files or deploy TomCat anywhere on the filesystem.
 Just change these values accordingly.
 
 (subsequent steps assume you are using this same SSH session)
@@ -80,13 +80,13 @@ tar --strip-components=1 -C $TOMCAT -xzvf apache-tomcat-10.0.14.tar.gz
 ```
 
 # Step 4: Configure TomCat to use Java of choice
-Create a `setenv.sh` file located in the `/bin` directory of the WildFly installation directory.
+Create a `setenv.sh` file located in the `/bin` directory of the TomCat installation directory.
 This script will be called to set any needed environment variables, and can be used to set `JAVA_HOME`
 to the location of our choosing. 
 For this, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
 or you can use a terminal-based editor like nano:
 ```bash
-cd $WILDFLY/bin
+cd $TOMCAT/bin
 touch setenv.sh
 nano setenv.sh
 ```
