@@ -103,3 +103,102 @@ JAVA_HOME="/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit"
 export JAVA_HOME
 ```
 
+# Step 5 : Configure server port (optional)
+By default, TomCat will listen on port 8080. To change that, open
+the `server.xml` file in the `conf/` directory
+of the TomCat installation.
+For this, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
+or you can use a terminal-based editor like nano:
+```bash
+cd $TOMCAT/conf/
+nano server.xml
+```
+
+Search for `protocol="HTTP` to find the `<Connector>` tag for the HTTP protocol (in nano, this can be
+done with ctrl+W). You will find a section that defines which port is used. The `port` value represents
+the standard port, and the `redirectPort` is the target port that traffic is redirected to if TLS is required.
+```xml
+    <Connector executor="tomcatThreadPool"
+               port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```
+Change these values to something appropriate for your deployment. For instance, the following
+configures the server to use port 9080 for HTTP and port 9443 for TLS:
+```xml
+    <Connector executor="tomcatThreadPool"
+               port="9080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="9443" />
+```
+If you changed the redirectPort in the previous step, you will also need to change the connector configuration
+for TLS. To do so, search for `protocol="org.apache.coyote` to find the `<Connector>` tag for the TLS protocol
+```xml
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true">
+        <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+        <SSLHostConfig>
+            <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+```
+Change as appropriate. In this example, we've changed the `redirectPort` to 9443, so:
+```xml
+    <Connector port="9443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true">
+        <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+        <SSLHostConfig>
+            <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+```
+As you can see, this is also where you would perform the necessary TLS configuration for the server.
+
+# Step 6: Create a management user (Optional, recommended)
+By default, no user is included in the "manager-gui" role required
+to operate the "/manager/html" web application. If you wish to use this app,
+you must define such a user in the `tomcat-users.xml` file in the `conf/` directory
+of the TomCat installation.
+Similarly, there is no user included for "manager-script" role
+required to access a plaintext-based management interface.
+
+To add these users, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
+or you can use a terminal-based editor like nano:
+```bash
+cd $TOMCAT/conf/
+nano tomcat-users.xml
+```
+
+You will find a commented-out declaration of `admin` and `root` users, for instance
+```xml
+<!--
+  <user username="admin" password="<must-be-changed>" roles="manager-gui"/>
+  <user username="robot" password="<must-be-changed>" roles="manager-script"/>
+-->
+```
+Un-comment these users and provide proper password values. Also, define the roles
+in their own preceding `role` tag. For instance to use
+the password `tomcat4ever` for both accounts
+```xml
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <user username="admin" password="tomcat4ever" roles="manager-gui"/>
+  <user username="robot" password="tomcat4ever" roles="manager-script"/>
+```
+
+# Step 7: Deploy GitBucket by downloading and placing in `webapps/` directory
+If you skip this step, you can deploy GitBucket through TomCat's management interface later
+
+```bash
+cd $DOWNLOAD
+wget https://github.com/gitbucket/gitbucket/releases/download/4.37.1/gitbucket.war
+cp gitbucket.war $TOMCAT/webapps
+```
+
+# Step 8: Start TomCat
+```bash
+cd $TOMCAT/bin
+startup.sh
+```
