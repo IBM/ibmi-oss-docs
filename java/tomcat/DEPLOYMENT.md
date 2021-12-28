@@ -49,7 +49,7 @@ mkdir -p $TOMCAT
 
 # Step 1: Install Required Software
 ```bash
-yum install wget tar-gnu gzip nano openjdk-11
+yum install wget tar-gnu gzip nano openjdk-11 ca-certificates-mozilla
 ```
 
 Alternatively, use Access Client Solutions to install these packages.
@@ -60,7 +60,7 @@ Alternatively, use Access Client Solutions to install these packages.
 (change the version number, if needed, to the version you would like to install)
 ```bash
 cd $DOWNLOAD
-https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.14/bin/apache-tomcat-10.0.14.tar.gz
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.14/bin/apache-tomcat-10.0.14.tar.gz
 ```
 
 ## Technique 2: Manual download
