@@ -172,17 +172,15 @@ cd $TOMCAT/conf/
 nano tomcat-users.xml
 ```
 
-You will find a commented-out declaration of `admin` and `root` users, for instance
+As an example configuration, you will find a commented-out declaration of `admin` and `root` users, for instance
 ```xml
 <!--
   <user username="admin" password="<must-be-changed>" roles="manager-gui"/>
   <user username="robot" password="<must-be-changed>" roles="manager-script"/>
 -->
 ```
-Un-comment these users and provide proper password values. Also, define the roles
-in their own preceding `role` tag. Add another role and user for `management-status` as well.
-For instance to use
-the password `tomcat4ever` for all accounts
+Add the following somewhere inside the `tomcat-users` tag (and outside of a comment), but change the
+password value from `tomcat4ever` to your passwords of choosing.
 ```xml
   <role rolename="manager-gui"/>
   <role rolename="manager-script"/>
