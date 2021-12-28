@@ -29,7 +29,7 @@ Save your installation and download directory in environment variables
 (these are only used for convenience during the steps in this guide):
 ```bash
 export DOWNLOAD=/opt/download
-export WILDFLY=/opt/tomcat
+export TOMCAT=/opt/tomcat
 ```
 The aboves assumes the following directories:
 - TomCat installation directory: `/opt/tomcat`
@@ -66,6 +66,7 @@ https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.14/bin/apache-tomcat-10.0.14.tar
 ## Technique 2: Manual download
 Just navigate to [the TomCat website](https://tomcat.apache.org/) and access the downloads from the navication pane
 Download the latest version in .tar.gz format. Once downloaded, place in the download directory chosen earlier.
+
 ![image](https://user-images.githubusercontent.com/17914061/147589739-6954c981-784b-4965-a005-9c151b69d80c.png)
 
 
