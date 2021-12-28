@@ -180,14 +180,13 @@ As an example configuration, you will find a commented-out declaration of `admin
 -->
 ```
 Add the following somewhere inside the `tomcat-users` tag (and outside of a comment), but change the
-password value from `tomcat4ever` to your passwords of choosing.
+password value from `admin4ever` to your passwords of choosing.
 ```xml
   <role rolename="manager-gui"/>
+  <role rolename="admin-gui"/>
   <role rolename="manager-script"/>
   <role rolename="manager-status"/>
-  <user username="admin" password="tomcat4ever" roles="manager-gui"/>
-  <user username="robot" password="tomcat4ever" roles="manager-script"/>
-  <user username="status" password="tomcat4ever" roles="manager-status"/>
+  <user username="admin" password="admin4ever" roles="admin-gui,manager-gui,manager-script,manager-status"/>
 ```
 
 # Step 7: Deploy GitBucket by downloading and placing in `webapps/` directory
