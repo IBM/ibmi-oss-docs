@@ -156,13 +156,14 @@ Change as appropriate. In this example, we've changed the `redirectPort` to 9443
 ```
 As you can see, this is also where you would perform the necessary TLS configuration for the server.
 
-# Step 6: Create a management user (Optional, recommended)
+# Step 6: Create management users (Optional, recommended)
 By default, no user is included in the "manager-gui" role required
 to operate the "/manager/html" web application. If you wish to use this app,
 you must define such a user in the `tomcat-users.xml` file in the `conf/` directory
 of the TomCat installation.
 Similarly, there is no user included for "manager-script" role
-required to access a plaintext-based management interface.
+required to access a plaintext-based management interface, and no "manager-status"
+role to see server status
 
 To add these users, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
 or you can use a terminal-based editor like nano:
@@ -179,13 +180,16 @@ You will find a commented-out declaration of `admin` and `root` users, for insta
 -->
 ```
 Un-comment these users and provide proper password values. Also, define the roles
-in their own preceding `role` tag. For instance to use
-the password `tomcat4ever` for both accounts
+in their own preceding `role` tag. Add another role and user for `management-status` as well.
+For instance to use
+the password `tomcat4ever` for all accounts
 ```xml
   <role rolename="manager-gui"/>
   <role rolename="manager-script"/>
+  <role rolename="manager-status"/>
   <user username="admin" password="tomcat4ever" roles="manager-gui"/>
   <user username="robot" password="tomcat4ever" roles="manager-script"/>
+  <user username="status" password="tomcat4ever" roles="manager-status"/>
 ```
 
 # Step 7: Deploy GitBucket by downloading and placing in `webapps/` directory
