@@ -103,7 +103,7 @@ JAVA_HOME="/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit"
 export JAVA_HOME
 ```
 
-# Step 5 : Configure server port (optional)
+# Step 5 : Configure server port
 By default, TomCat will listen on port 8080. To change that, open
 the `server.xml` file in the `conf/` directory
 of the TomCat installation.
@@ -123,13 +123,15 @@ the standard port, and the `redirectPort` is the target port that traffic is red
                connectionTimeout="20000"
                redirectPort="8443" />
 ```
-Change these values to something appropriate for your deployment. For instance, the following
+Change these values to something appropriate for your deployment. Also, add `maxPostSize="152428800" to increase
+the TomCat maximum file upload size (since GitBucket exceeds the default 50M limit).`For instance, the following
 configures the server to use port 9080 for HTTP and port 9443 for TLS:
 ```xml
     <Connector executor="tomcatThreadPool"
                port="9080" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="9443" />
+               redirectPort="9443"
+               maxPostSize="152428800"/>
 ```
 If you changed the redirectPort in the previous step, you will also need to change the connector configuration
 for TLS. To do so, search for `protocol="org.apache.coyote` to find the `<Connector>` tag for the TLS protocol
@@ -143,10 +145,11 @@ for TLS. To do so, search for `protocol="org.apache.coyote` to find the `<Connec
         </SSLHostConfig>
     </Connector>
 ```
-Change as appropriate. In this example, we've changed the `redirectPort` to 9443, so:
+Change as appropriate. In this example, we've changed the `redirectPort` to 9443, and also add the maxPostSize
+value like earlier. For instance:
 ```xml
     <Connector port="9443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               maxThreads="150" SSLEnabled="true">
+               maxThreads="150" SSLEnabled="true" maxPostSize="152428800">
         <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
         <SSLHostConfig>
             <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
@@ -201,5 +204,19 @@ cp gitbucket.war $TOMCAT/webapps
 # Step 8: Start TomCat
 ```bash
 cd $TOMCAT/bin
-startup.sh
+./startup.sh
 ```
+You're done!! At this point:
+- Tomcat should now be running at `http://<server_name>:8080` (or whatever port you've chosen earlier).
+- If you deployed GitBucket in step 7, it should now be running at `http://<server_name>:8080/gitbucket`
+
+
+If you didn't deploy GitBucket, you can do so through the management interface by doing the following steps:
+- Download the latest release of GitBucket from [their releases page on GitHub](https://github.com/gitbucket/gitbucket/releases) (in the form of `gitbucket.war`) to your PC
+- Open your browser to `http://<your_server>:8080/`
+- Click the "Manager App" button (log in with `admin` and the password you created earlier)
+![image](https://user-images.githubusercontent.com/17914061/147600657-28dacbc2-be14-459d-ac7f-0f84170497ba.png)
+
+- Scroll down to the "Deploy" section and go to "WAR file to deploy". Browse for your `gitbucket.war` file and
+click "Deploy"
+![image](https://user-images.githubusercontent.com/17914061/147600763-4f7f8faf-46ec-4c14-8f7b-0754a13c89e7.png)
