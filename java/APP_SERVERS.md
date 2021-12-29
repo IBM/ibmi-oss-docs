@@ -28,3 +28,4 @@ This page documents open source Java application servers. All items on this page
 
 # Deployment Guides
 - [WildFly](wildfly/DEPLOYMENT.md)
+- [TomCat](tomcat/DEPLOYMENT.md)
