@@ -190,9 +190,9 @@ password value from `admin4ever` to your passwords of choosing.
   <user username="admin" password="admin4ever" roles="admin-gui,manager-gui,manager-script,manager-status"/>
 ```
 
-# Step 7: Increase TomCat file upload size limit
-TomCat, by default, only lets you upload files that are 50M or smaller. Some large .war files (including
-GitBucket) are larger than this, so it is good to increase this maximum. 
+# Step 7: Increase TomCat file upload size limit (optional)
+TomCat, by default, only lets you upload files that are 50M or smaller. Some large .war files
+are larger than this, so it is sometimes good to increase this maximum. 
 ```bash
 cd $TOMCAT/webapps/manager/WEB-INF
 nano web.xml
