@@ -220,13 +220,18 @@ For instance:
 
 
 
-# Step 8: Deploy GitBucket by downloading and placing in `webapps/` directory
-If you skip this step, you can deploy GitBucket through TomCat's management interface later
+# Step 8: Convert GitBucket to Jakarta EE and Deploy
+
+GitBucket is built against Java EE. However, TomCat 10 (used in this guide) now uses Jakarta EE
+classes. See [the relevant TomCat docs](https://tomcat.apache.org/migration-10.html)) for more
+information. There is a TomCat migration tool available, but TomCat can also automatically
+convert applications on startup. To do so, place the `.war` in the `webapps-javaee` directory:
 
 ```bash
 cd $DOWNLOAD
 wget https://github.com/gitbucket/gitbucket/releases/download/4.37.1/gitbucket.war
-cp gitbucket.war $TOMCAT/webapps
+mkdir -p $TOMCAT/webapps-javaee
+cp gitbucket.war $TOMCAT/webapps-javaee
 ```
 
 # Step 9: Start TomCat
@@ -236,11 +241,10 @@ cd $TOMCAT/bin
 ```
 You're done!! At this point:
 - Tomcat should now be running at `http://<server_name>:8080` (or whatever port you've chosen earlier).
-- If you deployed GitBucket in step 7, it should now be running at `http://<server_name>:8080/gitbucket` (or whatever port you've chosen earlier)
+- GitBucket should now be running at `http://<server_name>:8080/gitbucket` (or whatever port you've chosen earlier)
 
 
-If you didn't deploy GitBucket, you can do so through the management interface by doing the following steps:
-- Download the latest release of GitBucket from [their releases page on GitHub](https://github.com/gitbucket/gitbucket/releases) (in the form of `gitbucket.war`) to your PC
+You can deploy other applications through the management interface by doing the following steps:
 - Open your browser to `http://<your_server>:8080/`
 - Click the "Manager App" button (log in with `admin` and the password you created earlier)
 ![image](https://user-images.githubusercontent.com/17914061/147600657-28dacbc2-be14-459d-ac7f-0f84170497ba.png)
@@ -249,11 +253,35 @@ If you didn't deploy GitBucket, you can do so through the management interface b
 click "Deploy"
 ![image](https://user-images.githubusercontent.com/17914061/147600763-4f7f8faf-46ec-4c14-8f7b-0754a13c89e7.png)
 
-- You should now see "gitbucket" as a deployed application.
-![image](https://user-images.githubusercontent.com/17914061/147602709-68153d9b-bc9d-46b2-bb0b-d81a1541e826.png)
+- You should now see your application in the deployed application list and can start/stop/etc through this interface.
 
-- Click the "Start" button to start the application.
-![image](https://user-images.githubusercontent.com/17914061/147602874-f55384e0-aa9a-40de-b076-c7e2b1d6cc5f.png)
+# Step 10: Managing with Service Commander (optional)
+You can elect to manage your WildFly instance with Service Commander. If you are unfamiliar with Service Commander,
+you can read more [here](https://theprez.github.io/ServiceCommander-IBMi/#service-commander-for-ibm-i). 
+The steps to leverage this tool include:
+- Install the `service-commander` package:
+```yum
+yum install service-commander
+```
+
+- `cd` into your installation's `bin/` directory:
+```bash
+cd $TOMCAT/bin
+```
+
+- Run the `scinit` command to create a service definition for the `startup.sh` command. Proceed to answer
+the questions as in the following screenshot, except use the port number you chose earlier (and feel free to 
+use name as you wish). 
+If you configured the server addresses in step 5:
+```bash
+scinit ./startup.sh
+```
+![image](https://user-images.githubusercontent.com/17914061/147699367-ab8eef45-4103-450a-9162-de8030c2edfc.png)
+
+It should also print information about where it stored the service definition
+![image](https://user-images.githubusercontent.com/17914061/147699504-84de2cd8-85bc-4452-bb45-e13483a80a24.png)
+
+Now, you can use the `sc` command to start, stop, or check on your WildFly instance. Examples:
+![image](https://user-images.githubusercontent.com/17914061/147699566-29274c08-49b2-4416-81e0-246c7a92144d.png)
 
 
-- GitBucket should now be running at `http://<server_name>:8080/gitbucket` (or whatever port you've chosen earlier)
