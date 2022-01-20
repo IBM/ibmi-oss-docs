@@ -90,6 +90,18 @@ and run like this (substitute host names and port numbers as appropriate).
 docker run -p 8080:8080 --rm kbhargava/kafka-visuals idevphp.idevcloud.com:2181 idevphp.idevcloud.com:9092 DEV
 ```
 
+If you want to run this visualizer on IBM i, install via yum:
+```
+yum install ca-certificates-mozilla
+yum install https://github.com/ThePrez/kafka-visualizer/releases/download/v1.0.0/kafka-visualizer-1.0.0-0.ibmi7.3.ppc64.rpm
+```
+... and run using the following command and  navigate to `localhost:8080` on your browser:
+
+```
+/opt/kafka-visualizer/bin/kafka-visualizer
+```
+
+
 You can opt to use any kafka visualizer you'd like. Kafka even comes with a single-topic visualizer that can run in your SSH terminal, for instance
 
 ```
