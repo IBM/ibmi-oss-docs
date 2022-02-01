@@ -40,7 +40,7 @@ schily-tools (cdrecord, mkisofs, etc.)
 **Software offered:** Mono on i and various Open Source software for which fixes
 have been accepted upstream to enable them to run on i.
 
-**Install**: `yum-config-manager --add-repo https://repo.qseco.fr/qsecofr.repo`
+**Install**: `yum-config-manager --add-repo http://repo.qseco.fr/qsecofr.repo`
 
 ### SoBored
 
