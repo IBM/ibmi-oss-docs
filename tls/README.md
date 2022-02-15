@@ -20,7 +20,7 @@ Manager (DCM). See [this IBM support document](https://www.ibm.com/support/pages
 particularly the "How do I configure an HTTP server for SSL?" section for more information on
 the steps needed to configure DCM.
 
-### Want to handle TLS in the application anyway?
+## Want to handle TLS in the application anyway?
 
 If you still wish to handle TLS in the application (perhaps for development purposes), be aware that:
 - Configuration for the IBM i will generally be the same as on other platforms.
