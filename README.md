@@ -40,6 +40,10 @@ documentation, please do one of the following:
 - [Porting Software to PASE](porting/README.md)
 - [Migrating from 5733-OPS](troubleshooting/5733OPS_MIGRATION.md)
 
+## Support
+
+- [IBM i open source support](http://ibm.biz/ibmi-oss-support)
+
 ## Collaboration
 
 - [Questions/comments about this site](https://github.com/IBM/ibmi-oss-docs/issues/new/choose).
@@ -57,6 +61,7 @@ available to the public. For these packages, the source is provided in the form
 of source RPMs distributed at
 [http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/](http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/src/)
 
-## Links
+## Links and other IBM i Open Source resources
 
-- [Previous authoritative IBMiOSS site](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies)
+- [IBM i open source resources page](http://ibm.biz/ibmioss) (current)
+- [Previous authoritative IBMiOSS site](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/Open%20Source%20Technologies) (outdated)
