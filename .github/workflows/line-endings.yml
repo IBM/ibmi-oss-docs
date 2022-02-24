@@ -1,0 +1,17 @@
+name: Check Line Endings
+
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+  workflow_dispatch:
+
+jobs:
+  line_endings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build the site
+        run: |
+          (find . -name \*.md | xargs file | grep CRLF) || echo "Files contain CRLF line endings!"
