@@ -77,7 +77,7 @@ cd kafka_2.13-2.6.0/config
 ../bin/kafka-server-start.sh server.properties
 ```
 
-# Starting a Kafka visualizer
+## Starting a Kafka visualizer
 
 The Kafka visualizer used for the interactive workshop is an open source, Java-based visualizer that is accessed through
 a web browser. The [project page](https://github.com/manasb-uoe/kafka-visualizer) has more information. It can be installed
