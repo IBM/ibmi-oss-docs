@@ -96,6 +96,7 @@ exclude_patterns = [
     '.DS_Store',
     '.licensing',
     'requirements.txt',
+    '.venv',
 ]
 
 master_doc = 'README'
