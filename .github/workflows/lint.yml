@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: Check line endings
         run: |
-          (find . -name \*.md | xargs file | grep CRLF) && (echo "Files contain CRLF line endings!"; exit 1)
+          ! (find . -name \*.md | xargs file | grep CRLF)
