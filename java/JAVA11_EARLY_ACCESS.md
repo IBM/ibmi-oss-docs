@@ -1,5 +1,9 @@
 # Java 11 Early Access RPM
 
+```{toctree}
+:maxdepth: 1
+```
+
 A Java RPM is now available, via the `openjdk-11-ea` packages! Note, however,
 this is not considered generally available (GA). It is an early access package ONLY.
 

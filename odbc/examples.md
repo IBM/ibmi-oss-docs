@@ -1,5 +1,9 @@
 # Node.js Example
 
+```{toctree}
+:maxdepth: 1
+```
+
 This quick example will demonstrate development on a non-IBM i machine against
 Db2 on i, and then how you would transfer that same code to run on IBM i when
 you are ready to run in production.

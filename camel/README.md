@@ -1,5 +1,9 @@
 # Apache Camel
 
+```{toctree}
+:maxdepth: 1
+```
+
 [Apache Camel](https://camel.apache.org) is a powerful Java-based integration framework that can be used to
 integrate countless technologies, including IBM i. For a brief introduction, see this article: 
 [Integrate IBM i With Anything Using Apache Camel](https://techchannel.com/SMB/8/2021/ibm-i-apache-camel).

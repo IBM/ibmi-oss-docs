@@ -1,5 +1,9 @@
 # Adjusting your PATH temporarily
 
+```{toctree}
+:maxdepth: 1
+```
+
 Temporarily adjust your path by running the following two commands:
 
 ```bash

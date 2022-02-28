@@ -1,5 +1,8 @@
-
 # Using Db2 Triggers and Apache Camel to stream Db2 events to Kafka
+
+```{toctree}
+:maxdepth: 1
+```
 
 ## How it works
 

@@ -1,4 +1,9 @@
 # LetsEncrypt w/Certbot
+
+```{toctree}
+:maxdepth: 1
+```
+
 Certbot can be used to get/renew LetsEncrypt certificates. Follow these instructions to install and use Certbot. 
 Certbot's web site can be found at [https://certbot.eff.org](https://certbot.eff.org).
 

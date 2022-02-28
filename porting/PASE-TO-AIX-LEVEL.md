@@ -1,6 +1,10 @@
 # Map PASE/IBM i Version to AIX Version
 
-```eval_rst
+```{toctree}
+:maxdepth: 1
+```
+
+```{eval-rst}
 +---------------+-------------+
 | IBM i Version | AIX Version |
 +===============+=============+

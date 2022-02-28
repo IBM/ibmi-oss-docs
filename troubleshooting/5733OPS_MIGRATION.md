@@ -1,5 +1,9 @@
 # Guide to migrating from 5733-OPS to RPMs
 
+```{toctree}
+:maxdepth: 1
+```
+
 ## Environment setup (PATH)
 
 By default, the RPM-form packages do not create symbolic links in standard,

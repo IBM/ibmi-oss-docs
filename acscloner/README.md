@@ -1,5 +1,9 @@
 # ACS Clone Repo Tool
 
+```{toctree}
+:maxdepth: 1
+```
+
 The "Clone Repo" tool is a tool that allows you to clone any http or
 https-hosted RPM repository to the local Integrated File System (IFS) of the
 target IBM i system.

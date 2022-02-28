@@ -1,5 +1,9 @@
 # Using the JDBC Source/Sink Connectors and Kafka Connect
 
+```{toctree}
+:maxdepth: 1
+```
+
 Download the JDBC Connector (Source and Sink) from Confluent Hub [confluentinc-kafka-connect-jdbc-10.2.0.zip]. Source connectors are used to read data from a database. Sink connectors are used to insert data into a database.
 
 Steps for installing the plugin came from https://docs.confluent.io/home/connect/userguide.html#connect-installing-plugins
