@@ -1,5 +1,9 @@
 # PostgreSQL Installation and Basic Configuration on IBM i
 
+```{toctree}
+:maxdepth: 1
+```
+
 The purpose of this document is to summarize PostgreSQL installation and basic
 configuration on IBM i. The following topics are outlined below: initial setup,
 enabling remote connections, server startup, and connecting with a client.

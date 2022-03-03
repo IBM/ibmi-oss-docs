@@ -1,4 +1,9 @@
 # Node.js usage notes
+
+```{toctree}
+:maxdepth: 1
+```
+
 All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md)
 
 ## Choosing which major version of Node.js to use

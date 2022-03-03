@@ -1,5 +1,9 @@
 # IBM i Access ODBC Installation
 
+```{toctree}
+:maxdepth: 1
+```
+
 The instructions for installing and ODBC driver and manager and the IBM i ODBC
 driver for Db2 on i will depend on what operating system you are running. Select
 your operating system below to see setup instructions for getting ODBC on your

@@ -1,5 +1,9 @@
 # Gotchas When Building Software in PASE
 
+```{toctree}
+:maxdepth: 1
+```
+
 ## malloc behaves differently from many other platforms
 
 [Zero byte allocations](https://whatilearned2day.wordpress.com/2006/07/13/zero-sized-allocation-using-malloc-on-aix/)

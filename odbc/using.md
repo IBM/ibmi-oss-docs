@@ -1,5 +1,9 @@
 # Using ODBC
 
+```{toctree}
+:maxdepth: 1
+```
+
 Now that you have the IBM i Access ODBC Driver installed on your system, you are
 ready to connect to Db2 on i.
 

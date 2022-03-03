@@ -1,4 +1,9 @@
 # Python usage notes
+
+```{toctree}
+:maxdepth: 1
+```
+
 All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md)
 
 ## Which versions are available?

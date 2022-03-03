@@ -1,5 +1,9 @@
 # RPM pile for IBM i releases in standard support
 
+```{toctree}
+:maxdepth: 1
+```
+
 ## General Information
 
 Much of the open source technology available in the 5733-OPS product is now

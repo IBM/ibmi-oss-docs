@@ -1,5 +1,9 @@
 # Third-party (non-IBM) repositories
 
+```{toctree}
+:maxdepth: 1
+```
+
 The repositories listed on this page are not owned, managed, or supported by
 IBM. However, the repositories have been inspected and the software
 generally seems to be built with IBM-approved conventions for existing well in

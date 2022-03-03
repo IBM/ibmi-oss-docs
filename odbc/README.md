@@ -10,7 +10,11 @@ the correct drivers installed.
 
 ## Contents
 
-- [Why ODBC?](why-odbc.md)
-- [Installing and configuring ODBC](installation.md)
-- [Using ODBC](using.md)
-- [Examples](examples.md)
+```{toctree}
+:maxdepth: 1
+
+Why ODBC? <why-odbc.md>
+Installing and configuring ODBC <installation.md>
+Using ODBC <using.md>
+Examples <examples.md>
+```

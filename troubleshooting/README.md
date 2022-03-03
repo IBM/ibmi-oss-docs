@@ -1,5 +1,9 @@
 # Common Open Source Problems (and how to fix them)
 
+```{toctree}
+:maxdepth: 1
+```
+
 ## Things to always check first when troubleshooting
 
 The first step in troubleshooting is to ensure that

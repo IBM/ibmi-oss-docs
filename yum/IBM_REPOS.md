@@ -1,5 +1,9 @@
 # IBM Repositories
 
+```{toctree}
+:maxdepth: 1
+```
+
 IBM provides a set of repositories to use with yum. Currently, this is one repo called "ibm" pointing [here](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo). This repo file is setup and enabled during the bootstrap
 installation, however admins are free to disable or change this file at their discretion.
 

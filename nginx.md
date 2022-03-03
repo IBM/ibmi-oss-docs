@@ -1,5 +1,9 @@
 # NGINX
 
+```{toctree}
+:maxdepth: 1
+```
+
 ## Summary
 
 Here you will find general information as it relates to Nginx on IBM i.  This is

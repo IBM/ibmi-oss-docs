@@ -1,5 +1,9 @@
 # Setting BASH as your shell
 
+```{toctree}
+:maxdepth: 1
+```
+
 ***The bash shell can (and should!) be your default shell for when you connect
 with an SSH session. SSH connections are recommended for open source tools.
 This will not affect the shell in use by non-SSH shell environments, such as

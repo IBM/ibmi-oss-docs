@@ -1,5 +1,9 @@
 # TLS Setup
 
+```{toctree}
+:maxdepth: 1
+```
+
 ## Best practices
 
 It is often considered best practice to not handle TLS encryption within the application (for

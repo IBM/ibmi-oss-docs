@@ -1,4 +1,3 @@
-
 # IBM i Open Source
 
 This repo will act as the authoritative documentation location for all things
@@ -22,23 +21,27 @@ documentation, please do one of the following:
 
 ## Contents
 
-- [Getting Started](yum/README.md)
-- [Troubleshooting](troubleshooting/README.md)
-- [Node.js](nodejs/README.md)
-- [Python](python/README.md)
-- [Setting up TLS](tls/README.md)
-- [ODBC](odbc/README.md)
-- [Java](java/README.md)
-- [Kafka](kafka/README.md)
-- [Camel](camel/README.md)
-- [Nginx](nginx.md)
-- [PostgreSQL](postgresql.md)
-- [Certbot (LetsEncrypt)](certbot.md)
-- [ACS Clone Repo Tool](acscloner/README.md)
-- [IBM Repos](yum/IBM_REPOS.md)
-- [Third Party Repos](yum/3RD_PARTY_REPOS.md)
-- [Porting Software to PASE](porting/README.md)
-- [Migrating from 5733-OPS](troubleshooting/5733OPS_MIGRATION.md)
+```{toctree}
+:maxdepth: 1
+
+Getting Started <yum/README.md>
+Troubleshooting <troubleshooting/README.md>
+Node.js <nodejs/README.md>
+Python <python/README.md>
+Setting up TLS <tls/README.md>
+ODBC <odbc/README.md>
+Java <java/README.md>
+Kafka <kafka/README.md>
+Camel <camel/README.md>
+Nginx <nginx.md>
+PostgreSQL <postgresql.md>
+Certbot (LetsEncrypt) <certbot.md>
+ACS Clone Repo Tool <acscloner/README.md>
+IBM Repos <yum/IBM_REPOS.md>
+Third Party Repos <yum/3RD_PARTY_REPOS.md>
+Porting Software to PASE <porting/README.md>
+Migrating from 5733-OPS <troubleshooting/5733OPS_MIGRATION.md>
+```
 
 ## Support
 

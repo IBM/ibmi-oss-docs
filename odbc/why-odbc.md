@@ -1,5 +1,9 @@
 # Why ODBC
 
+```{toctree}
+:maxdepth: 1
+```
+
 For the open-source software team, ODBC is the preferred method of connecting to
 Db2 on i. There are many resons for this, including:
 

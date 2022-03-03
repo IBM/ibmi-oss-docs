@@ -1,8 +1,12 @@
 # Open Source Java Application Servers
 
+```{toctree}
+:maxdepth: 1
+```
+
 This page documents open source Java application servers. All items on this page are known to work on IBM i. 
 
-```eval_rst
+```{eval-rst}
 +--------------------------------+----------------------------------------------+---------------------------+
 |       Application Server       |                Governed By                   | IBM `Support`_ Available? |
 +================================+==============================================+===========================+
