@@ -31,6 +31,8 @@ If you want to make your `PATH` setting permanent, add the above line to your
 You can do this easily (from a shell) like so.
 
 ```bash
+touch $HOME/.profile
+setccsid 1208 $HOME/.profile
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 echo 'export PATH' >> $HOME/.profile
 ```
@@ -39,6 +41,8 @@ To make this change for all users, put these lines in `/QOpenSys/etc/profile`,
 like so:
 
 ```bash
+touch /QOpenSys/etc/profile
+setccsid 1208 /QOpenSys/etc/profile
 echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile
 echo 'export PATH' >> /QOpenSys/etc/profile
 ```
@@ -52,6 +56,8 @@ at the beginning of the user's PATH environment variable. For instance, that use
 could run the following from the shell to set their default to version 10:
 
 ```bash
+touch $HOME/.profile
+setccsid 1208 $HOME/.profile
 echo 'PATH=/QOpenSys/pkgs/lib/nodejs10/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 echo 'export PATH' >> $HOME/.profile
 ```
