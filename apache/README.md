@@ -1,5 +1,11 @@
 # Integrating with Apache (IBM HTTP Server for i)
 
+```{toctree}
+:maxdepth: 1
+```
+
+## Why?
+
 It is often recommended that you host web applications and APIs behind an HTTP server such
 as Nginx or Apache. On IBM i, Nginx is available as a PASE RPM. Apache is provided as
 part of the IBM HTTP Server for i (5770-DG1) product. 
