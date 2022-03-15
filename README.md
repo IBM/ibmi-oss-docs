@@ -33,7 +33,7 @@ ODBC <odbc/README.md>
 Java <java/README.md>
 Kafka <kafka/README.md>
 Camel <camel/README.md>
-Nginx <nginx.md>
+Nginx <nginx/README.md>
 PostgreSQL <postgresql.md>
 Certbot (LetsEncrypt) <certbot.md>
 ACS Clone Repo Tool <acscloner/README.md>
