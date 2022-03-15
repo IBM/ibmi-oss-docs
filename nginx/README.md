@@ -192,8 +192,8 @@ stream {
     server 127.0.0.1:9002;
   }
   server {
-    ssl_certificate ibmidash-cert.pem;
-    ssl_certificate_key ibmidash-key.pem;
+    ssl_certificate my-cert.pem;
+    ssl_certificate_key my-key.pem;
     ssl_protocols TLSv1.2;
     ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256;
     ssl_session_cache shared:SSL:50m;
