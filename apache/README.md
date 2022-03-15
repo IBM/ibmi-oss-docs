@@ -19,6 +19,8 @@ whereas Nginx does not.
 This document offers basic insight into how to tie open source workloads to Apache. It is
 assumed that you have a basic knowledge of some concepts.
 
+You may also want to consider using [Nginx](../nginx/README.md)!
+
 ## Technique # 1: ProxyPass directives
 
 The Apache HTTP server can serve as a simple reverse proxy to any other HTTP server,
@@ -54,6 +56,15 @@ When using this approach, you need to manage the backend job separately from the
 That is, a `STRTCPSVR` will not automatically start the backend jobs. Optionally, you can use
 [Service Commander](https://theprez.github.io/ServiceCommander-IBMi/#service-commander-for-ibm-i)
 for a more unified experience.
+
+Using a reverse proxy approach is generally best practice for non-PHP languages, because:
+- You can still leverage other open source tools to handle multiple processes if needed. Examples include:
+  - `pm2`
+  - `uvicorn` or `hypercorn` (Python)
+  - `gunicorn` (Python)
+- You can generally choose any application server or web framework you like. There are many to choose from!
+Application servers that are optimized for a specific language tend to scale well. 
+- It is relatively easy to configure and troubleshoot, even if you have little to no Apache experience.
 
 ## Technique # 2: FastCGI
 
@@ -105,6 +116,15 @@ For instance, the first line of your `index.js` could be `#!/QOpenSys/pkgs/bin/n
 With FastCGI, the backend worker jobs are managed by Apache, so `STRTCPSVR` and `ENDTCPSVR` commands also
 start/stop the worker backend jobs as needed.
 
-# Technique # 3: CGI
+FastCGI is best practice when using PHP. PHP has a long history with the FastCGI protocol, and they have evolved to work
+together very well.
 
-Just don't. 
+## Technique # 3: CGI (not recommended)
+
+CGI is one of the oldest techniques for integrating code with an HTTP server. Since it just uses the standard in/out
+of a process to serve an HTTP request, it is truly language-agnostic. There is a decent Perl codebase using CGI as well.
+However, it is generally not recommended for use with open source languages, because:
+- It is inefficient (spawns a job for every request). Slow performance and high CPU usage is expected
+- There are very few frameworks that support CGI. Those projects, generally speaking, are "abandonware"
+and no longer maintained.
+See [this doc](http://www.youngiprofessionals.com/wiki/index.php/PASE/PASECGI), which may be out of date, for possible guidance.
