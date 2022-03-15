@@ -176,7 +176,7 @@ stream {
 
 Of note, the ssl directives can still be used with a streaming reverse proxy. Also, http concepts
 can still be handled by the application. For instance, you could run a simple HTTP server that redirects
-from port 80 to port 443 and proxy to it. For instance:
+from port 80 to port 443 and proxy to both ports. For instance:
 
 ```nginx
 pid nginx.pid;
@@ -192,12 +192,9 @@ stream {
     listen 443 backlog=8096;
     proxy_pass node_servers;
   }
-  upstream redirect_server {
-    server 127.0.0.1:8999;
-  }
   server {
     listen 80 backlog=8096;
-    proxy_pass redirect_server;
+    proxy_pass node_servers;
   }
 }
 ```
