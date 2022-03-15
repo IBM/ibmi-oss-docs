@@ -198,3 +198,30 @@ stream {
   }
 }
 ```
+
+This example, for instance, runs a Python application on the backend running on port 10000. The backend
+application redirects `http` requests to `https` and uses nginx to handle the TLS encryption.
+```nginx
+pid nginx.pid;
+events {}
+stream {
+  error_log logs/error.log warn;
+  upstream python_servers {
+    server 127.0.0.1:10000;
+  }
+  server {
+    ssl_certificate mycert.pem;
+    ssl_certificate_key mycert.pem;
+    ssl_protocols TLSv1.2;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256;
+    ssl_session_cache shared:SSL:50m;
+    ssl_prefer_server_ciphers on;
+    listen 443 ssl backlog=8096;
+    proxy_pass python_servers;
+  }
+  server {
+    listen 80 backlog=8096;
+    proxy_pass python_servers;
+  }
+}
+```
