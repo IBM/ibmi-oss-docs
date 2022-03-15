@@ -175,43 +175,24 @@ stream {
 ```
 
 Of note, the ssl directives can still be used with a streaming reverse proxy. Also, http concepts
-can still be handled by the application. For instance, you could run a simple HTTP server that redirects
-from port 80 to port 443 and proxy to both ports. For instance:
+can still be handled by the application. You can also combine the `stream` blocks and `http` blocks
+into a single configuration. In the below example, nginx will redirect http traffic on port 80 
+to https on port 443. On port 443, nginx will handle the TLS encryption and load balance between
+three backend servers running on ports 9000, 9001, and 9002.
 
-```nginx
-pid nginx.pid;
-events {}
-stream {
-  error_log logs/error.log warn;
-  upstream node_servers {
-    server 127.0.0.1:9000;
-    server 127.0.0.1:9001;
-    server 127.0.0.1:9002;
-  }
-  server {
-    listen 443 backlog=8096;
-    proxy_pass node_servers;
-  }
-  server {
-    listen 80 backlog=8096;
-    proxy_pass node_servers;
-  }
-}
-```
-
-This example, for instance, runs a Python application on the backend running on port 10000. The backend
-application redirects `http` requests to `https` and uses nginx to handle the TLS encryption.
 ```nginx
 pid nginx.pid;
 events {}
 stream {
   error_log logs/error.log warn;
   upstream python_servers {
-    server 127.0.0.1:10000;
+    server 127.0.0.1:9000;
+    server 127.0.0.1:9001;
+    server 127.0.0.1:9002;
   }
   server {
-    ssl_certificate mycert.pem;
-    ssl_certificate_key mycert.pem;
+    ssl_certificate ibmidash-cert.pem;
+    ssl_certificate_key ibmidash-key.pem;
     ssl_protocols TLSv1.2;
     ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256;
     ssl_session_cache shared:SSL:50m;
@@ -219,9 +200,12 @@ stream {
     listen 443 ssl backlog=8096;
     proxy_pass python_servers;
   }
+}
+http {
   server {
-    listen 80 backlog=8096;
-    proxy_pass python_servers;
+    listen 80;
+    server_name idevphp.idevcloud.com;
+    return 301 https://$server_name$request_uri;
   }
 }
 ```
