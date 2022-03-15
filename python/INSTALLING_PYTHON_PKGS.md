@@ -23,3 +23,6 @@ the "Developer Tools" group (`yum install "Developer Tools"`).
 
 You will also need to set the following environment variables for build:
 - `OBJECT_MODE=64`
+
+If you have issues that you cannot debug, feel free to join the community channels
+documented [here](http://ibm.biz/ibmioss)!
