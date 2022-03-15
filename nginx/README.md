@@ -204,7 +204,7 @@ stream {
 http {
   server {
     listen 80;
-    server_name idevphp.idevcloud.com;
+    server_name myserver.com;
     return 301 https://$server_name$request_uri;
   }
 }
