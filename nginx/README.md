@@ -74,7 +74,8 @@ The below shows how to have Nginx act as a reverse proxy to a Node.js web server
 listening on port 49000.  It also redirects port 80 traffic to the secure port
 443 (https) which in turn necessitates SSL configuration.
 To load-balance across multiple web server, simply add more entries to the
-`upstream` block.
+`upstream` block. Note, you may have better performance at scale using a streaming
+reverse proxy (see below).
 
 ```nginx
 pid /www/mydomain/nginx.pid;
