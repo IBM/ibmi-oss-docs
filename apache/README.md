@@ -122,7 +122,7 @@ together very well.
 ## Technique # 3: CGI (not recommended)
 
 CGI is one of the oldest techniques for integrating code with an HTTP server. Since it just uses the standard in/out
-of a process to serve an HTTP request, it is truly language-agnostic. There is a decent Perl codebase using CGI as well.
+of a process to serve an HTTP request, it is truly language-agnostic.
 However, it is generally not recommended for use with open source languages, because:
 - It is inefficient (spawns a job for every request). Slow performance and high CPU usage is expected
 - There are very few frameworks that support CGI. Those projects, generally speaking, are "abandonware"
