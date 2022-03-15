@@ -104,6 +104,50 @@ http {
 }
 ```
 
+### Microcaching
+
+Nginx is also great at caching content. Caching for small durations is sometimes called "microcaching."
+This can be particularly useful if your web page or API can tolerate slightly-stale data. For example, 
+let's imagine you have an API that runs a database query. Let's say it gets 500 requests per second. 
+If you can tolerate data that is 3 seconds "old," then you can enable caching with a 3-second lifespan.
+With such a change, you'd go from making 30000 database queries per minute, to only 20 database queries
+per minute! Obviously, this is an extreme case, but caching can significantly reduce database load and
+improve throughput and response times when used effectively. Note, however, caching has its own
+overhead, so it should not be used when a high number of cache misses and a low level of cache hits are
+expected. 
+
+The below example illustrates a 5-second microcaching setup, load-balanced across two backend Python
+servers.
+
+```nginx
+pid nginx.pid;
+events {}
+http {
+  error_log logs/error.log warn;
+  proxy_cache_path /tmp/cache keys_zone=cache:10m levels=1:2 inactive=600s max_size=100m;
+  upstream python_servers {
+    server 127.0.0.1:3341;
+    server 127.0.0.1:3342;
+  }
+  server {
+    proxy_cache cache;
+    proxy_cache_lock on;
+    proxy_cache_valid 200 5s;
+    proxy_cache_methods GET HEAD POST;
+    proxy_cache_use_stale updating error timeout http_500 http_502 http_503 http_504;
+    proxy_buffering on;
+    listen 9333 backlog=8096;
+    location / {
+      proxy_pass http://python_servers;
+    }
+    location /tablesorter {
+      autoindex on;
+      alias tablesorter/;
+    }
+  }
+}
+```
+
 ## Streaming Reverse Proxy (and load balancing)
 
 Nginx also supports stream-based proxying and load balancing. This can work for many protocols
