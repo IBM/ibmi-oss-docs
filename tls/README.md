@@ -11,6 +11,19 @@ instance, your Node.js or Python aplication).
 Instead, handle the TLS setup in a separate HTTP server that runs in front of your application.
 The two most reasonable options for this are NGINX and Apache (IBM i HTTP server).
 
+You may choose to use [LetsEncrypt and/or CertBot](../certbot.md) to generate production-ready
+certificates.
+
+### Creating a self-signed certificate
+
+Run the following steps to generate a self-signed certificate for development (not production):
+
+```openssl
+openssl genrsa -out my-key.pem 2048
+openssl req -new -sha256 -key my-key.pem -out my-csr.pem
+openssl x509 -req -in my-csr.pem -signkey my-key.pem -out my-cert.pem
+```
+
 ### Setting up TLS with NGINX (uses OpenSSL)
 
 See [the NGINX notes](../nginx.md).
