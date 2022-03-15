@@ -50,7 +50,7 @@ running on localhost port 8000, you can forward the traffic with these directive
 ProxyPass         / http://localhost:8000/
 ProxyPassReverse  / http://localhost:8000/
 ```
-These directives can also be used for specific pathis within the website. For instnace,
+These directives can also be used for specific paths within the website. For instance,
 to forward requests from within `/site`:
 
 ```apache
