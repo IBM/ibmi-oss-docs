@@ -34,6 +34,7 @@ Java <java/README.md>
 Kafka <kafka/README.md>
 Camel <camel/README.md>
 Nginx <nginx/README.md>
+Apache <apache/README.md>
 PostgreSQL <postgresql.md>
 Certbot (LetsEncrypt) <certbot.md>
 ACS Clone Repo Tool <acscloner/README.md>
