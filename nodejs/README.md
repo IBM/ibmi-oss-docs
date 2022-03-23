@@ -96,7 +96,7 @@ Set the following environment variables:
 OBJECT_MODE=64
 CC=gcc-10
 CXX=g++-10
-
+PYTHON_PLATFORM_COMPAT_IBMI=aix6
 ```
 
 Preferrably, set these in your `$HOME/.profile` and/or `$HOME/.bash_profile`
