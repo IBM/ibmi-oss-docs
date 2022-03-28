@@ -13,7 +13,7 @@ There are several approaches to streaming data from Db2 transactions to Kafka, i
 
 ## Deploying Kafka on IBM i
 
-These steps walk you through installing Kafka 2.6.0 (built with Scala 2.13) and deploying
+These steps walk you through installing Kafka 3.0.1 (built with Scala 2.13) and deploying
 on an IBM i system using OpenJDK 
 [Early Access Builds](https://ibmi-oss-docs.readthedocs.io/en/latest/java11/JAVA11_EARLY_ACCESS.html).
 
@@ -42,13 +42,13 @@ cd /home/myusr/mydir
 
 #### 3. Download kafka
 ```
-wget https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+wget https://dlcdn.apache.org/kafka/3.0.1/kafka_2.13-3.0.1.tgz
 ```
 (you may need to update the version number on this and subsequent steps based on [the latest version](https://kafka.apache.org/downloads).
 
 #### 4. extract Kafka
 ```
-tar xzvf kafka_2.13-3.0.0.tgz
+tar xzvf kafka_2.13-3.0.1.tgz
 ```
 
 #### 5. Set up environment to use OpenJDK
@@ -61,7 +61,7 @@ export PATH
 
 #### 6. Start a Zookeeper server
 ```
-cd kafka_2.13-3.0.0/config
+cd kafka_2.13-3.0.1/config
 ../bin/zookeeper-server-start.sh zookeeper.properties
 ```
 
@@ -76,7 +76,7 @@ JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
-cd kafka_2.13-2.6.0/config
+cd kafka_2.13-3.0.1/config
 ../bin/kafka-server-start.sh server.properties
 ```
 
@@ -112,6 +112,6 @@ JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
-cd kafka_2.13-3.0.0/config
+cd kafka_2.13-3.0.1/config
 ../bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic mytopic
 ```
