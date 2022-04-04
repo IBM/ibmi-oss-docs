@@ -189,6 +189,32 @@ If you insist on using 5250, favor QP2TERM over QSH. If using QSH,you must
 ensure that the `QIBM_MULTI_THREADED` environment variable is set to `Y`
 **before** launching QSH.
       
+## Ansible fails with "No python interpreters found"
+
+If running Ansible against an IBM i endpoint, it can sometimes fail with
+the following warning issued:
+
+```
+[WARNING]: No python interpreters found for host __________ (tried ['/usr/bin/python', 'python3.7', 'python3.6', 'python3.5', 'python2.7', 'python2.6', '/usr/libexec/platform-python', '/usr/bin/python3', 'python'])
+```
+
+This is because Ansible does not currently know how to find the RPM-installed
+Python interpreters on IBM i
+(GitHub [issue](https://github.com/ansible/ansible/issues/77458) pending).
+
+**Solution:** 
+
+This can often be corrected by [fixing the PATH](./SETTING_PATH.md) of the user
+that you are using to connect with Ansible. 
+
+It's likely best, however, to be more explicit, so you're not as susceptible
+to variations in server environments. To do so, you can set Ansible's
+`ansible_python_interpreter` inventory variable to a fully-qualified path,
+namely `/QOpenSys/pkgs/bin/python3.9` (use version 3.6 if absolutely needed).
+This can be done in the various ways. See
+[this doc](https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html).
+
+
 ## I'm still having issues
 
 If you are having an issue that's not listed above or the solution provided did
