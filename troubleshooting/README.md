@@ -214,6 +214,21 @@ namely `/QOpenSys/pkgs/bin/python3.9` (use version 3.6 if absolutely needed).
 This can be done in the various ways. See
 [this doc](https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html).
 
+## Ansible (or another SSH-based tool) asks for a password
+
+If you'd like to run Ansible (or similar SSH-based tools) non-interactively and
+without a password, it can sometimes still ask for a user password (and
+therefore fail in non-interactive environments). 
+
+**Solution:** 
+
+You need to configure password-less authentication per
+[this doc](../user_setup/README.md), just use the same Linux and IBM i system
+and user. Alternatively, once you install your public key on the IBM i server,
+provide your private key to ansible by way of the
+`ansible_ssh_private_key_file` inventory variable. More info
+[here](https://docs.ansible.com/ansible/latest/user_guide/connection_details.html).
+**Always make sure that your private key is kept secure!**
 
 ## I'm still having issues
 
