@@ -25,6 +25,7 @@ documentation, please do one of the following:
 :maxdepth: 1
 
 Getting Started <yum/README.md>
+Setting up a User's Environment (SSH) <user_setup/README.md>
 Troubleshooting <troubleshooting/README.md>
 Node.js <nodejs/README.md>
 Python <python/README.md>
