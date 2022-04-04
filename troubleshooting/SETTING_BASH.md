@@ -18,9 +18,9 @@ can set `bash` to be your default shell via one of the following techniques:
 1. Use yum to install the `chsh` package (for instamce, `yum install chsh`)
 
 2. From a shell, use the `chsh` command to set your shell
-  (for instance, `chsh -s /QOpenSys/pkgs/bin/bash`).
+  (for instance, `/QOpenSys/pkgs/bin/chsh -s /QOpenSys/pkgs/bin/bash`).
   You can set the shell for another user via the `-u` option
-  (for instance, `chsh -s /QOpenSys/pkgs/bin/bash -u otherusr`).
+  (for instance, `/QOpenSys/pkgs/bin/chsh -s /QOpenSys/pkgs/bin/bash -u otherusr`).
 
 ## Technique #2: sql
 
