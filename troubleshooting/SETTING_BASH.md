@@ -46,3 +46,8 @@ CALL QSYS2.SET_PASE_SHELL_INFO('OTHRUSR', '/QOpenSys/pkgs/bin/bash')
 More information on this IBM i service can be found on [developerWorks](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/QSYS2.SET_PASE_SHELL_INFO%20Procedure)
 
 Also, the default shell setting can be queried out with [QSYS2.USER_INFO](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20i%20Technology%20Updates/page/QSYS2.USER_INFO%20catalog)
+
+# See also
+
+You will also want to make sure your `PATH` is set up correctly, if you
+have not yet done so. See [these docs](./SETTING_PATH.md).
