@@ -7,7 +7,9 @@
 ## Summary
 
 Here you will find general information as it relates to Nginx on IBM i.  This is
-meant to be a supplement to the [official Nginx documentation](https://docs.nginx.com).
+meant to be a supplement to the [official Nginx documentation](https://docs.nginx.com)
+and the wealth of public information available online. Generally speaking, Nginx on IBM i
+is managed the same way as on other platforms.
 
 As outlined in [the Apache documentation](../apache/README.md), there are several advantages
 to using an HTTP server in front of your application. It is not good practice to serve up
