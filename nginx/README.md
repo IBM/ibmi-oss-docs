@@ -59,12 +59,13 @@ nginx -c /www/nginx/nginx.conf -s stop
 
 You can also use the `-p` option to set the base directory. This allows relative
 path names in the configuration (pid file, logs, etc) to be resolved relative to the
-base directory. 
+base directory. For instance, you can `cd` to the directory where you have your
+configuration file and run the following commands to start/stop.
 ```bash
-nginx -p /www/nginx -c /www/nginx/nginx.conf
+nginx -p $(pwd) -c $(pwd)/nginx.conf
 ```
 ```bash
-nginx -p /www/nginx -c /www/nginx/nginx.conf -s stop
+nginx -p $(pwd) -c $(pwd)/nginx.conf -s stop
 ```
 
 
