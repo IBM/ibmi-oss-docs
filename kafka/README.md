@@ -10,7 +10,15 @@ There are several approaches to streaming data from Db2 transactions to Kafka, i
 1. [Kafka Connect JDBC Source connector](KAFKA_CONNECT_JDBC.md): Simple, polling-based technique for importing Db2 data into Kafka
 1. [InfoSphere Data Replication and the CDC Replication Engine for Kafka](https://www.ibm.com/docs/en/idr/11.4.0?topic=replication-cdc-engine-kafka) (external link): a CDC-based approach that may be a good options for current IBM CDC customers. Currently, this approach is unverified
 1. [Native ILE Kafka client (unsupported)](https://github.com/AlexeiBaranov/librdkafka/blob/port-os400/packaging/os400/README.md) (external link): call Kafka functions directly from ILE programs.
+1. The [Confluent Platform](https://docs.confluent.io/platform/current/platform.html) provides a number of tools for working with Kafka. To install,
+follow the steps for "using only Confluent Community components"
+[here](https://docs.confluent.io/platform/current/installation/installing_cp/zip-tar.html#prod-kafka-cli-install). The most notable components for IBM i
+integration are:
+    - [ksqlDB](https://docs.confluent.io/platform/current/platform.html#ksqldb), which provides an SQL interface for doing Kafka streaming operations using one
+ of the ksqlDB clients, such as the provided Java client.
+    - [Kafka REST APIs](https://docs.confluent.io/platform/current/kafka-rest/index.html), which provides a REST interface for doing Kafka streaming operations. The REST interfaces can then be called from anywhere, including from Db2 triggers by way of [SQL HTTP functions in Db2](https://techchannel.com/Trends/09/2021/sql-http-part-2)
 
+  
 ## Deploying Kafka on IBM i
 
 These steps walk you through installing Kafka 3.0.1 (built with Scala 2.13) and deploying
