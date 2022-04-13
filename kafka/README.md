@@ -16,9 +16,22 @@ follow the steps for "using only Confluent Community components"
 integration are:
     - [ksqlDB](https://docs.confluent.io/platform/current/platform.html#ksqldb), which provides an SQL interface for doing Kafka streaming operations using one
  of the ksqlDB clients, such as the provided Java client.
-    - [Kafka REST APIs](https://docs.confluent.io/platform/current/kafka-rest/index.html), which provides a REST interface for doing Kafka streaming operations. The REST interfaces can then be called from anywhere, including from Db2 triggers by way of [SQL HTTP functions in Db2](https://techchannel.com/Trends/09/2021/sql-http-part-2)
+    - [Kafka REST APIs](https://docs.confluent.io/platform/current/kafka-rest/index.html), which provides a REST interface for doing Kafka streaming operations. The REST interfaces can then be called from anywhere, including from Db2 triggers by way of [SQL HTTP functions in Db2](https://techchannel.com/Trends/09/2021/sql-http-part-2) (example below).
 
-  
+## Kafka REST example with SQL
+
+If using the Kafka REST API gateway, you can call use SQL to post data to the Kafka streams. For example:
+
+```sql
+VALUES QSYS2.HTTP_POST('http://myrestserver:8082/topics/fromrest',
+                       '{"records":[{"key":"my_key","value":"Just some data to stream to Kafka"}]}',
+                       '{"header":"Content-Type,application/vnd.kafka.json.v2+json" ,
+                         "header":"Accept,application/vnd.kafka.v2+json" 
+                         }');
+```
+
+This can also be embedded as needed in a Db2 trigger.
+
 ## Deploying Kafka on IBM i
 
 These steps walk you through installing Kafka 3.0.1 (built with Scala 2.13) and deploying
