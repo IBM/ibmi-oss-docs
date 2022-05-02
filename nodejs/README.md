@@ -47,8 +47,13 @@ directory to your `PATH`
 ## Modules for accessing Db2, RPG, CL etc
 
 - Be sure to use the `itoolkit` package from npm (`npm install itoolkit`) for accessing RPG, CL, etc.
-- For database access, install one of the following packages from npm:
-`idb-connector`, `idb-pconnector`, `odbc` (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC)
+- For database access to the local system (running on IBM i), install one of the following packages from npm:
+    - [`odbc`](https://www.npmjs.com/package/odbc) (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC)
+    - [`idb-connector`](https://www.npmjs.com/package/idb-connector)
+    - [`idb-pconnector`](https://www.npmjs.com/package/idb-pconnector)
+- For remote database access (connecting from another system), install one of the following packages from npm:
+    - [`odbc`](https://www.npmjs.com/package/odbc) (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC)
+    - [`ibm_db`](https://www.npmjs.com/package/ibm_db) (Note that this requires a Db2 Connect license)
 
 ## Coming from 5733-OPS?
 - Any globally-installed modules must be reinstalled. Note, however, that global
