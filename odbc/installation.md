@@ -16,37 +16,19 @@ system and connected to IBM i.
 
 ## IBM i
 
-### Driver Manager for IBM i
-
-On IBM i, we will be using unixODBC as our driver manager. Fortunately, unixODBC
-is automatically pulled in when you install the IBM i Access ODBC Driver for
-Linux, so there isn't any set up that you have to do for this stage. If you want
-to develop applications using ODBC packages like `odbc` for
-Node.js, you will have to use yum to manually install `unixODBC-devel` as well.
-
-### Driver for IBM i
-
-To get both the unixODBC driver manager and the driver that allows ODBC to talk
-to Db2 for i, you will have to install the ODBC driver that allows your IBM i
-machine to use unixODBC to talk to Db2. To get the driver, visit
-[the IBM i Access Client Solutions page](https://www-01.ibm.com/support/docview.wss?uid=isg3T1026805)
-and select **Downloads for IBM i Access Client Solutions**. After logging in and
-redirected to the IBM I Access Client Solutions download page, select the
-`Download using http` tab then scroll down and download the
-**ACS PASE App Pkg**.  More complete instructions on how to download this driver
-can be found at [this TechNote on the ODBC Driver for the IBM i PASE environment](https://www-01.ibm.com/support/docview.wss?uid=ibm10885929).
-
-When the driver has been downloaded and unzipped and transferred to your IBM i
-system, you can run the rpm with yum the same way you would otherwise, but
-giving it the location of the file instead of the name of the package:
-
+The ODBC driver for IBM i is provided in the `ibm-iaccess` package, so it can be
+easily installed with `yum`. For instance:
 ```bash
-yum install <package-location>/ibm-iaccess-<version>.rpm
+yum install ibm-iaccess
 ```
 
-This will install the Db2 ODBC driver onto your IBM i system. It will also
-create a driver entry in your `odbcinst.ini` and a DSN in `odbc.ini` for your
-local system called `*LOCAL`. This is discussed below.
+Installing this RPM will do the following:
+- Install the IBM i Access ODBC driver
+- Install the `unixODBC` driver manager
+- Register the driver with the driver manager by putting the appropriate information
+in the `odbcinst.ini` file (see [using](./using.md)).
+- Create a datasource name (DSN) for your local system called `*LOCAL`. This is
+discussed further in the "[using](./using.md)" doc.
 
 ## Linux
 
