@@ -78,9 +78,11 @@ See [Installing Python Packages](INSTALLING_PYTHON_PKGS.md)
 ## Modules for accessing Db2, RPG, CL etc
 
 - Be sure to use the `itoolkit` package from PyPI (installable via pip) for accessing RPG, CL, etc.
-- For database access with `odbc`, install `python3-pyodbc` or `python3.9-pyodbc, depending on which version of Python you are using (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC). 
-- For database access with `ibm_db`, install `python3-ibm_db` or `python39-ibm_db`, depending on which version of Python you are using. 
-**Important Note**
-Do not install the `ibm_db` package via pip! This package
-will not work when running on IBM i.
+- For database access with `odbc`:
+    -  if running on IBM i: Install the `python3-pyodbc` or `python3.9-pyodbc` RPM package, depending on which version of Python you are using. This will be much easier than installing with `pip`, which will require you to compile these components. 
+    -  If connceting remotely: install `pyodbc` through any supported method, and use the IBM i Access ODBC driver.
+    -  (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC).
+- For database access with `ibm_db`:
+    -  if running on IBM i: install the `python3-ibm_db` or `python39-ibm_db` RPM package, depending on which version of Python you are using. **DO NOT INSTALL WITH `pip`!! This will not work.**
+    -  If connecting remotely: Install the `ibm_db` package in any supported fashion. Db2 Connect licensing is required.
 
