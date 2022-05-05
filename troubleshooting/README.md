@@ -230,6 +230,33 @@ provide your private key to ansible by way of the
 [here](https://docs.ansible.com/ansible/latest/user_guide/connection_details.html).
 **Always make sure that your private key is kept secure!**
 
+## "intended for a different operating system" when running IBM i 7.4
+If you installed the open source "bootstrap" from a very early version, and have since
+upgraded to IBM i 7.4, you may see errors like the following when trying to
+install a package:
+
+```fortran
+Transaction Check Error:
+  package make-gnu-4.2-2.ppc64 is intended for a different operating system
+```
+
+**Solution:** 
+
+The very early versions of the bootstrap did not know IBM i 7.4 existed. You can work
+around this issue by adding an OS compatibility setting to the RPM configuration,
+as shown in the following command:
+
+```bash
+echo 'os_compat: ibmi7.4: ibmi ibmi7.1 ibmi7.2 ibmi7.3' >> /QOpenSys/pkgs/lib/rpm/rpmrc
+```
+
+It is then recommended to get the latest versions of `rpm`, `yum`, and `ibmi-repos`
+packages:
+
+```bash
+/QOpenSys/pkgs/bin/yum install -y rpm yum ibmi-repos
+```
+
 ## I'm still having issues
 
 If you are having an issue that's not listed above or the solution provided did
