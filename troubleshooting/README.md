@@ -257,6 +257,40 @@ packages:
 /QOpenSys/pkgs/bin/yum install -y rpm yum ibmi-repos
 ```
 
+## rsync from another system fails with `rsync: not found`
+
+When using rsync from another operating system (Linux, for instance), rsync may be
+unable to locate the `rsync` executable on IBM i and will therefore fail. The error
+message may resemble something like this:
+
+```fortran
+bsh: rsync: not found
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: error in rsync protocol data stream (code 12) at io.c(228) [sender=3.2.3]
+```
+
+**Solution #1 (adjust your PATH):** 
+
+First, make sure that the `rsync` RPM package is installed on IBM i.
+Ensure that the `PATH` environment variable is set to include the `/QOpenSys/pkgs/bin` path.
+The most prescriptive technique for doing so is documented [here](SETTING_PATH.md). Note that
+bash-specific approaches (use of .bash_profile, for instance) will not work if your default
+shell is `bsh` or some other non-bash option.
+
+**Solution #2 (explicitly set remote rsync path):**
+
+First, make sure that the `rsync` RPM package is installed on IBM i.
+When invoking the rsync command, use the following option on the command line:
+
+```fortran
+--rsync-path=/QOpenSys/pkgs/bin/rsync
+```
+
+For instance:
+```fortran
+rsync -a src user@ibmiserver:/path/to/destination
+```
+
 ## I'm still having issues
 
 If you are having an issue that's not listed above or the solution provided did
