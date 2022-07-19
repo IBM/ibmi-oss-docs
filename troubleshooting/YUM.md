@@ -6,7 +6,8 @@ That is, you are having trouble getting RPM packages installed.
 ## Before you go further.....
 
 To make sure you're seeing the latest updates available for your operating system, make sure you have
-the latest version of `yum` and `ibmi-repos` installed.
+the latest version of `yum` and `ibmi-repos` installed, if you are able to. If you are unable to, read on. 
+This page may still help
 ```
 /QOpenSys/pkgs/bin/yum upgrade yum ibmi-repos
 ```
@@ -59,7 +60,7 @@ Ensure that journaling is disabled/omitted for `/QOpenSys/var/lib/rpm` or any
 subdirectory. You can use option 8 from `WRKLNK` to view the journaling
 attributes of a given file or directory.
 
-## yum can't connect to the repository from QSH
+## Does not run from QSH
 
 When running yum from QSH, any commands that connect to the repository (install
 upgrade, etc) fail with a message like so:
