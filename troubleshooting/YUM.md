@@ -3,6 +3,22 @@
 This page is designed to help you do problem determination for scenarios where yum itself is not working.
 That is, you are having trouble getting RPM packages installed. 
 
+## Before you go further.....
+
+To make sure you're seeing the latest updates available for your operating system, make sure you have
+the latest version of `yum` and `ibmi-repos` installed.
+```
+/QOpenSys/pkgs/bin/yum upgrade yum ibmi-repos
+```
+
+If you are able to successfully install the `ibmi-repos` package, you can consider removing the
+legacy repo definition by running:
+
+```
+mv /QOpenSys/etc/yum/repos.d/ibm.repo /QOpenSys/etc/yum/repos.d/ibm.repo.backup
+```
+
+
 ## RPM database corruption
 If the RPM database is corrupt, you will receive errors about being unable to open the RPM database. 
 The most common is: 
@@ -43,8 +59,34 @@ Ensure that journaling is disabled/omitted for `/QOpenSys/var/lib/rpm` or any
 subdirectory. You can use option 8 from `WRKLNK` to view the journaling
 attributes of a given file or directory.
 
+## yum can't connect to the repository from QSH
 
-## Debugging Network-related problems
+When running yum from QSH, any commands that connect to the repository (install
+upgrade, etc) fail with a message like so:
+
+```sh
+yum install python3
+https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/repodata/repomd.xml: [Errno 14] curl#6 - "getaddrinfo() thread failed to start"
+Trying other mirror.
+Error: Cannot retrieve repository metadata (repomd.xml) for repository: ibm. Please verify its path and try again
+```
+
+**Solution:**
+
+Run yum via SSH or the ACS Open Source Package Manager GUI. These are the ideal
+interfaces for working with yum and the rest of the open source ecosystem.
+
+If you need to work from 5250, QP2TERM is preferred over QSH, but QSH _will_
+work as long as the `QIBM_MULTI_THREADED` environment variable is set to `Y` at
+the job level.
+
+
+## Debugging common network-related problems
+
+The most common cause of issue with yum is related to network connectivity. Errors will state something like
+```
+unable to open repomd.xml
+```
 
 You can use Python to check connectivity to the IBM RPM server. To check connectivity for the default
 configuration, which uses HTTPS, run the following command from SSH or (if desparate) QP2TERM:
@@ -97,4 +139,15 @@ Please work with your networking team to resolve the problem.
 Follow [these steps](https://www.seidengroup.com/2021/04/26/how-to-validate-self-signed-ssl-tls-certificates-from-ibm-i/)
 to add the new certificate as needed. 
 
+## Other Networking problems
 
+### Operation too slow
+
+```
+'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds'
+```
+
+
+## What if I cannot access the Internet from my IBM i system?
+
+Doc forthcoming...
