@@ -1,7 +1,10 @@
-# Troubleshooting Yum problems
+# Troubleshooting Yum connection problems
 
-This page is designed to help you do problem determination for scenarios where yum itself is not working.
-That is, you are having trouble getting RPM packages installed. 
+This page is designed to help you do problem determination for scenarios where yum itself is not working
+due to connection problems. That is, you are having trouble getting RPM packages installed. 
+
+There are several `yum` problems that may not be connection related, and those are documented
+on [the main troubleshooting page](README.md)
 
 ## Before you go further.....
 
@@ -20,69 +23,7 @@ mv /QOpenSys/etc/yum/repos.d/ibm.repo /QOpenSys/etc/yum/repos.d/ibm.repo.backup
 ```
 
 
-## RPM database corruption
-If the RPM database is corrupt, you will receive errors about being unable to open the RPM database. 
-The most common is: 
-
-```
-Error: Error: rpmdb open failed
-```
-
-**Solution:**
-
-```
-/QOpenSys/pkgs/bin/rpm --rebuilddb
-```
-
-
-## IFS Journaling
-
-If you encounter an error like the following:
-
-```text
-error: db4 error(19) from dbenv->open: The specified device does not exist.
-error: cannot open Packages index using db4 - The specified device does not exist. (19)
-error: cannot open Packages database in /QOpenSys/var/lib/rpm
-CRITICAL:yum.main:
-Error: rpmdb open failed 
-```
-
-You probably have journalling on for an IFS directory that rpm is using. rpm
-uses `mmap` to open its database files, which is incompatible with journaling.
-
-*Note: When an ILE a application tries to `mmap` an IFS file which is being
-journaled it gets an error - `ENOTSUP` (operation not supported), however this
-gets mapped to PASE as `ENODEV` (no such device) which makes things confusing.*
-
-**Solution:**
-
-Ensure that journaling is disabled/omitted for `/QOpenSys/var/lib/rpm` or any
-subdirectory. You can use option 8 from `WRKLNK` to view the journaling
-attributes of a given file or directory.
-
-## Does not run from QSH
-
-When running yum from QSH, any commands that connect to the repository (install
-upgrade, etc) fail with a message like so:
-
-```sh
-yum install python3
-https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/repodata/repomd.xml: [Errno 14] curl#6 - "getaddrinfo() thread failed to start"
-Trying other mirror.
-Error: Cannot retrieve repository metadata (repomd.xml) for repository: ibm. Please verify its path and try again
-```
-
-**Solution:**
-
-Run yum via SSH or the ACS Open Source Package Manager GUI. These are the ideal
-interfaces for working with yum and the rest of the open source ecosystem.
-
-If you need to work from 5250, QP2TERM is preferred over QSH, but QSH _will_
-work as long as the `QIBM_MULTI_THREADED` environment variable is set to `Y` at
-the job level.
-
-
-## Checking Connectivity
+# Checking Connectivity
 
 The most common cause of issue with yum is related to network connectivity. Errors will state something like
 ```
@@ -162,9 +103,6 @@ Please work with your networking team to resolve the problem.
 Follow [these steps](https://www.seidengroup.com/2021/04/26/how-to-validate-self-signed-ssl-tls-certificates-from-ibm-i/)
 to add the new certificate as needed. 
 
-## Installing `ca-certificates-mozilla` by enabling unsecure repos
-
-
 ## Installing ca-certificates-mozilla by disabling SSL verification
 
 If you have the `ibmi-repos` package installed:
@@ -181,9 +119,7 @@ Otherwise:
 
 Then, proceed to install the `ca-certificates-mozilla` package
 
-Then, set the `sslverify` property back to `1`
-
-If you have the `ibmi-repos` package installed:
+Then, set the `sslverify` property back to `1`. To do so, If you have the `ibmi-repos` package installed:
 
 ```
 /QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-base.sslverify=1
@@ -200,10 +136,45 @@ Otherwise:
 
 ### Operation too slow
 
+Sometimes, corporate network firewalls don't explicitly block ports, but they can drastically interfere with
+traffic throughput, resulting in:
+
 ```
 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds'
 ```
 
+You can try working around this issue by enabling alternative protocols.
+
+## Enabling alternative protocols
+
+Assuming you have a modern version of `ibmi-repos` installed, you can try connecting with http or ftp if https does not work. To enable http and ftp mirrors:
+```
+/QOpenSys/pkgs/bin/yum-config-manager --enable-repo=ibmi-base-unsecure
+/QOpenSys/pkgs/bin/yum-config-manager --enable-repo=ibmi-release-unsecure
+```
+(note this is unsecure and should be a temporary workaround until the http protocol issue is resolved by your networking team)
+
+## Debug tool
+
+You can download [this debug tool](https://raw.githubusercontent.com/ThePrez/IBMiOSS-utils/master/yum_conncheck.py), save it to IFS,
+and run
+```
+/QOpenSys/pkgs/bin/python2.7 yum_conncheck.py
+```
+It will provide guidance
+
+## TL;DR Steps that will fix most people that have a working DNS setup
+
+```
+/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibm.sslverify=0
+/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-base.sslverify=0
+/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-release.sslverify=0
+/QOpenSys/pkgs/bin/yum install ca-certificates-mozilla
+/QOpenSys/pkgs/bin/yum upgrade ibmi-repos
+/QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibm
+/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-base.sslverify=1
+/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-release.sslverify=1
+```
 
 ## What if I cannot access the Internet from my IBM i system?
 
