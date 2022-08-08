@@ -53,7 +53,10 @@ The output from this command can help you figure out next steps:
 
 ## Checking Connectivity for alternative protocols
 
-**To check if you have HTTPs connectivity:**
+Occasionally, you can use alternative protocols (http, ftp, or https without TLS verification) to circumvent connectivity issues.
+
+
+**To check if you have HTTPs connectivity (without TLS verification):**
 
 ```python
 /QOpenSys/pkgs/bin/python2.7 -c "import socket; socket.create_connection(('public.dhe.ibm.com', 80), 30); print 'success'"
@@ -94,7 +97,7 @@ From 5250 CL:
 ADDTCPHTE INTNETADR('129.35.224.112') HOSTNAME((public.dhe.ibm.com))
 ```
 
-### Cannot reach IBM's server
+### Cannot reach IBM's server with any protocol
 
 Please work with your networking team to resolve the problem.
 
