@@ -165,15 +165,23 @@ It will provide guidance
 
 ## TL;DR Steps that will fix most people that have a working DNS setup
 
+If you have `ibmi-repos` installed
+```
+/QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibm
+/QOpenSys/pkgs/bin/yum-config-manager --enable-repo=ibmi-base-unsecure
+/QOpenSys/pkgs/bin/yum-config-manager --enable-repo=ibmi-release-unsecure
+/QOpenSys/pkgs/bin/yum install ca-certificates-mozilla
+/QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibmi-base-unsecure
+/QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibmi-release-unsecure
+/QOpenSys/pkgs/bin/yum upgrade ibmi-repos
+```
+
+If you do not have `ibmi-repos` installed 
 ```
 /QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibm.sslverify=0
-/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-base.sslverify=0
-/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-release.sslverify=0
 /QOpenSys/pkgs/bin/yum install ca-certificates-mozilla
-/QOpenSys/pkgs/bin/yum upgrade ibmi-repos
+/QOpenSys/pkgs/bin/yum install ibmi-repos
 /QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibm
-/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-base.sslverify=1
-/QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibmi-release.sslverify=1
 ```
 
 ## What if I cannot access the Internet from my IBM i system?
