@@ -106,7 +106,9 @@ Please work with your networking team to resolve the problem.
 Follow [these steps](https://www.seidengroup.com/2021/04/26/how-to-validate-self-signed-ssl-tls-certificates-from-ibm-i/)
 to add the new certificate as needed. 
 
-## Installing ca-certificates-mozilla by disabling SSL verification
+## Temporarily disabling SSL verification to install ca-certificates-mozilla
+
+To resolve certificate validation errors, usually installing ca-certificate-mozilla will resolve it, but if HTTPS is broken you can't install it resulting in a Catch-22. Temporarily disabling SSL verification can resolve the Catch-22 and allow you to install ca-certificates-mozilla.
 
 If you have the `ibmi-repos` package installed:
 
