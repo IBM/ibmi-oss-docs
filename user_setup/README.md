@@ -136,7 +136,7 @@ which bash
 Output should be:
 
 ```matlab
-/QOpenSys/pkgs/bin/yum
+/QOpenSys/pkgs/bin/bash
 ```
 
 ## Step 6 (optional): Configure password-less login
