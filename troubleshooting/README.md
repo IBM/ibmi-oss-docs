@@ -46,7 +46,11 @@ Add `/QOpenSys/pkgs/bin` to the beginning of your PATH environment variable. See
 
 Also, please don't use QSH for open source tools. Use an SSH terminal instead.
 
-## yum can't connect to the repository
+## yum connectivity issues
+
+See [this doc](YUM.md)
+
+## yum can't connect to the repository (with thread error)
 
 When running yum from QSH, any commands that connect to the repository (install
 upgrade, etc) fail with a message like so:
