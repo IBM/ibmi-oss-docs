@@ -184,8 +184,7 @@ If you have `ibmi-repos` installed
 If you do not have `ibmi-repos` installed 
 ```
 /QOpenSys/pkgs/bin/yum-config-manager --save --setopt=ibm.sslverify=0
-/QOpenSys/pkgs/bin/yum install ca-certificates-mozilla
-/QOpenSys/pkgs/bin/yum install ibmi-repos
+/QOpenSys/pkgs/bin/yum install ca-certificates-mozilla ibmi-repos
 /QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibm
 ```
 
