@@ -4,22 +4,40 @@
 :maxdepth: 1
 ```
 
-IBM provides a set of repositories to use with yum. Currently, this is one repo called "ibm" pointing [here](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo). This repo file is setup and enabled during the bootstrap
-installation, however admins are free to disable or change this file at their discretion.
+IBM provides a set of repositories to use with yum. Previously, there was one repo called
+"ibm" pointing [here](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo).
+Since the end of 2021, this repo has been deprecated and obsoleted by the repos provided
+by the ibmi-repos package.
 
-A change has been pushed out to yum and the bootstrap to install the "ibmi-repos" package which provides two new repos:
-- ibmi-base
+The ibmi-repos package is now required by yum and contains two repos:
+
 - ibmi-release
+- ibmi-base
 
-The ibmi-base repo will point to the same location as ibm (at least for now), making the ibm repo redundant and can be removed manually.
+The ibmi-release repo points to a release-specific directory. Depending on what IBM i
+version you are running, the repo will dynamically determine the correct path use. This
+repo will contain rpms which are applicable to that specific release.
 
-The ibmi-release is a new repo that points to a release-specific directory. Depending on what IBM i version you are running, the repo will dynamically determine the correct path to point to. This repo will contain rpms which are built specifically for each IBM i release.
+The ibmi-base repo will contain packages which are applicable to all releases supported by
+that repo (ie. there's a minimum release). Over time, this repo will change as older IBM i
+releases go out of support and a new minimum release base repo is created.
 
+Since August 18 2022, IBM i 7.3+ systems will see an ibmi-repos update in the ibmi-release
+repo. This update changes the ibmi-base repo URL from the old [7.2+ repo](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo)
+to the new [7.3+ repo](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo-base-7.3/).
+
+IBM i 7.2 users are unaffected, since the 7.2 ibmi-release repo does not have the update.
+Users still on IBM i 7.2 can continue using the old repo (and systems can still be bootstrapped
+using the [7.2 bootstrap](https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/bootstrap-7.2/)),
+however there will be no more updates to 7.2 packages - security or otherwise. Users still on
+IBM i 7.2 are encouraged to update to IBM i 7.3 or newer, supported release.
 
 ## Transition
 
-Currently, the ibm repo is provided by the bootstrap, but is not owned by a package. Because admins may have modified this file and it's not tracked by rpm, the decision was made to replace this file with a new repo file in the rpm. This means any modifications will not be overwritten by the new rpm, but it does mean that you may have a superfluous repo file that has to be cleaned up manually.
-
+Since December 2021, any system using a current bootstrap will start with the ibmi-repos
+package installed. Any system set up using a prior bootstrap will not have the ibmi-repos
+package and will instead have an ibm.repo file. See the FAQs below for how to deal with
+the old repo file.
 
 ## FAQs
 
