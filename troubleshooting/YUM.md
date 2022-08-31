@@ -59,7 +59,7 @@ Occasionally, you can use alternative protocols (http, ftp, or https without TLS
 **To check if you have HTTPs connectivity (without TLS verification):**
 
 ```python
-/QOpenSys/pkgs/bin/python2.7 -c "import socket; socket.create_connection(('public.dhe.ibm.com', 80), 30); print 'success'"
+/QOpenSys/pkgs/bin/python2.7 -c "import socket; socket.create_connection(('public.dhe.ibm.com', 443), 30); print 'success'"
 ```
 
 **To check for HTTP connectivity**
