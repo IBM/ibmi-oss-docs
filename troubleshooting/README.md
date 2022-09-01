@@ -88,7 +88,16 @@ probably want to set `bash` as your default shell. See
 Generally speaking, **open source programs do not work well in 5250 interfaces**
 such as QSH or Qp2Term. This may result in improper processing of control keys,
 phantom user input from previous commands, "garbage" characters printed to the
-screen, or a host of other issues. 
+screen, or a host of other issues. This strange behavior can affect `bash` or
+any open source software. 
+
+There may also be issues with process groups and job control. In particular,
+attempts to run `bash` in a 5250 environment may result in an error similar to
+the following:
+```
+bash: cannot set terminal process group (1319667): A system call received a parameter that is not valid.
+bash: no job control in this shell                                                                      
+```
 
 **Solution:**
 
