@@ -32,7 +32,9 @@ discussed further in the "[using](./using.md)" doc.
 
 ## Linux
 
-### Driver Manager for Linux
+IBM now has RPM and DEB repositories for Linux available directly from IBM for the
+IBM i Access Client Solutions application package, which includes the IBM i
+Access ODBC driver. 
 
 On Linux, we will be using unixODBC as our driver manager. Fortunately, unixODBC
 is automatically pulled in when you install the IBM i Access ODBC Driver for
@@ -40,20 +42,50 @@ Linux, so there isn't any set up that you have to do for this stage. If you want
 to develop applications using ODBC packages like pyODBC for Python or odbc for
 Node.js, you will have to manually use yum to install `unixODBC-devel` as well.
 
-### Driver for Linux
+### Installing the Repository
 
-To get both the unixODBC driver manager and the driver that allows ODBC to talk
-to Db2 for i, you will have to install the IBM i Access ODBC Driver for Linux.
-To get the driver, visit [the IBM i Access Client Solutions page](https://www-01.ibm.com/support/docview.wss?id=isg3T1026805)
-and select **Downloads for IBM i Access Client Solutions**. After logging in and
-redirected to the IBM I Access Client Solutions Download page, select the
-`Download using http` tab then scroll down and download the **ACS Linux App Pkg**.
+The repositories are located under
+<https://public.dhe.ibm.com/software/ibmi/products/odbc/>.
 
-In this package, there is a README that will help explain how to install the
-driver with either with RPMs or DEBs, depending on your Linux distribution. Just
-know that when you install the driver, it should pull in all of the packages you
-need to create an ODBC connection to Db2 for i from your Linux system.
+#### Red Hat-based Distribution Setup
 
+```shell
+curl https://public.dhe.ibm.com/software/ibmi/products/odbc/rpms/ibmi-acs.repo | sudo tee /etc/yum.repos.d/ibmi-acs.repo
+```
+
+#### SUSE-based Distribution Setup
+
+```shell
+curl https://public.dhe.ibm.com/software/ibmi/products/odbc/rpms/ibmi-acs.repo | sudo tee /etc/zypp/repos.d/ibmi-acs.repo
+```
+
+#### Debian-based and Ubuntu-based Distribution Setup
+
+```shell
+curl https://public.dhe.ibm.com/software/ibmi/products/odbc/debs/dists/1.1.0/ibmi-acs-1.1.0.list | sudo tee /etc/apt/sources.list.d/ibmi-acs-1.1.0.list
+```
+
+### Installing the ODBC driver
+
+#### Red Hat-based Distribution Installation
+
+```shell
+sudo dnf install --refresh ibm-iaccess
+```
+
+#### SUSE-based Distribution Installation
+
+```shell
+sudo zypper refresh
+sudo zypper install ibm-iaccess
+```
+
+#### Debian-based and Ubuntu-based Distribution Installation
+
+```shell
+sudo apt update
+sudo apt install ibm-iaccess
+```
 ## Windows
 
 ### Driver Manager for Windows
