@@ -6,13 +6,18 @@ due to connection problems. That is, you are having trouble getting RPM packages
 There are several `yum` problems that may not be connection related, and those are documented
 on [the main troubleshooting page](README.md)
 
-## Before you go further.....
+## Before you go further... make sure you have `ibmi-repos` installed
 
 To make sure you're seeing the latest updates available for your operating system, make sure you have
-the latest version of `yum` and `ibmi-repos` installed, if you are able to. If you are unable to, read on. 
-This page may still help
+the latest version of `yum` and `ibmi-repos` installed, if you are able to.
 ```
 /QOpenSys/pkgs/bin/yum upgrade yum ibmi-repos
+```
+
+Once the `ibmi-repos` package is installed, you may need to upgrade again to make sure you are at the
+latest version available for your release:
+```
+/QOpenSys/pkgs/bin/yum upgrade ibmi-repos
 ```
 
 If you are able to successfully install the `ibmi-repos` package, you can consider removing the
@@ -20,6 +25,18 @@ legacy repo definition by running:
 
 ```
 mv /QOpenSys/etc/yum/repos.d/ibm.repo /QOpenSys/etc/yum/repos.d/ibm.repo.backup
+```
+
+If you cannot install the `ibmi-repos` package, for some reason,  you can try using http:
+
+```
+/QOpenSys/pkgs/bin/yum-config-manager --setopt=ibm.baseurl=http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
+```
+
+Or ftp:
+
+```
+/QOpenSys/pkgs/bin/yum-config-manager --setopt=ibm.baseurl=http://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo
 ```
 
 
