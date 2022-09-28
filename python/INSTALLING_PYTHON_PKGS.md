@@ -30,20 +30,16 @@ documented [here](http://ibm.biz/ibmioss)!
 
 ### reportlab
 
+When installing reportlab, you may encounter a compile error such as:
+
+```c
+    src/rl_addons/renderPM/libart_lgpl/art_pixbuf.h:38:41: error: expected ';', ',' or ')' before '.' token
+    typedef void (*ArtDestroyNotify) (void *func_data, void *data);
+                                            ^
+```
+
+This is due to a conflict in the reportlab source code and the AIX header files. As a workaround, you can define `_LINUX_SOURCE_COMPAT` to prevent the conflicting definition:
+
 ```bash
-CFLAGS="-D_LINUX_SOURCE_COMPAT" pip3.9 install reportlab
-```
-
-Defining `_LINUX_SOURCE_COMPAT` disables `func_data` from being defined in `/usr/include/sys/timer.h` `func_data` is refrenced in `src/rl_addons/renderPM/libart_lgpl/art_pixbuf.h` and `timer.h` is included indirectly from `Python.h`.
-
-```c
-// /usr/include/sys/timer.h
-#ifndef  _LINUX_SOURCE_COMPAT
-#define func_data       t_union.data
-#endif
-```
-
-```c
-src/rl_addons/renderPM/libart_lgpl/art_pixbuf.h:38:41: error: expected ';', ',' or ')' before '.' token
- typedef void (*ArtDestroyNotify) (void *func_data, void *data);
+ CFLAGS=-D_LINUX_SOURCE_COMPAT pip3.9 install reportlab
 ```
