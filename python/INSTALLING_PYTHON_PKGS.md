@@ -26,3 +26,24 @@ You will also need to set the following environment variables for build:
 
 If you have issues that you cannot debug, feel free to join the community channels
 documented [here](http://ibm.biz/ibmioss)!
+
+
+### reportlab
+
+```bash
+CFLAGS="-D_LINUX_SOURCE_COMPAT" pip3.9 install reportlab
+```
+
+Defining `_LINUX_SOURCE_COMPAT` disables `func_data` from being defined in `/usr/include/sys/timer.h` `func_data` is refrenced in `src/rl_addons/renderPM/libart_lgpl/art_pixbuf.h` and `timer.h` is included indirectly from `Python.h`.
+
+```c
+// /usr/include/sys/timer.h
+#ifndef  _LINUX_SOURCE_COMPAT
+#define func_data       t_union.data
+#endif
+```
+
+```c
+src/rl_addons/renderPM/libart_lgpl/art_pixbuf.h:38:41: error: expected ';', ',' or ')' before '.' token
+ typedef void (*ArtDestroyNotify) (void *func_data, void *data);
+```
