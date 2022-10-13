@@ -46,8 +46,8 @@ When installing gevent, you may encounter a compile error such as:
   ╰─> cffi
 ```
 
-This occurs because gevent uses cffi as a build requirement. Build requirements are built in an isolated enironment
-We package cffi as an RPM. To use the cffi package as rpm do the following:
+This occurs because gevent uses cffi as a build requirement. Build requirements are built in an isolated environment.
+We already package cffi as an RPM, do the following to use it:
 
 ```bash
 # install python39-cffi
