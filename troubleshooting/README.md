@@ -282,7 +282,16 @@ rsync: connection unexpectedly closed (0 bytes received so far) [sender]
 rsync error: error in rsync protocol data stream (code 12) at io.c(228) [sender=3.2.3]
 ```
 
-**Solution #1 (adjust your PATH):** 
+**Solution #1 (recommended):** 
+
+Install the `rsync-compat` package on your IBM i system.
+
+```fortran
+/QOpenSys/pkgs/bin/yum install rsync-compat
+```
+
+
+**Solution #2 (adjust your PATH):** 
 
 First, make sure that the `rsync` RPM package is installed on IBM i.
 Ensure that the `PATH` environment variable is set to include the `/QOpenSys/pkgs/bin` path.
@@ -290,7 +299,7 @@ The most prescriptive technique for doing so is documented [here](SETTING_PATH.m
 bash-specific approaches (use of .bash_profile, for instance) will not work if your default
 shell is `bsh` or some other non-bash option.
 
-**Solution #2 (explicitly set remote rsync path):**
+**Solution #3 (explicitly set remote rsync path):**
 
 First, make sure that the `rsync` RPM package is installed on IBM i.
 When invoking the rsync command, use the following option on the command line:
@@ -301,7 +310,7 @@ When invoking the rsync command, use the following option on the command line:
 
 For instance:
 ```fortran
-rsync -a src user@ibmiserver:/path/to/destination
+rsync --rsync-path=/QOpenSys/pkgs/bin/rsync -a src user@ibmiserver:/path/to/destination
 ```
 
 ## I'm still having issues
