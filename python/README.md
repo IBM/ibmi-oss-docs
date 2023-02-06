@@ -79,7 +79,7 @@ See [Installing Python Packages](INSTALLING_PYTHON_PKGS.md)
 
 - Be sure to use the `itoolkit` package from PyPI (installable via pip) for accessing RPG, CL, etc.
 - For database access with `odbc`:
-    -  if running on IBM i: Install the `python3-pyodbc` or `python3.9-pyodbc` RPM package, depending on which version of Python you are using. This will be much easier than installing with `pip`, which will require you to compile these components. 
+    -  if running on IBM i: Install the `python3-pyodbc` or `python39-pyodbc` RPM package, depending on which version of Python you are using. This will be much easier than installing with `pip`, which will require you to compile these components. 
     -  If connceting remotely: install `pyodbc` through any supported method, and use the IBM i Access ODBC driver.
     -  (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC).
 - For database access with `ibm_db`:
