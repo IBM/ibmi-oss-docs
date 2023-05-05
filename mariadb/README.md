@@ -42,6 +42,8 @@ We now ship the disk plugin as its enabled by default and seems to work ok.
 - https://mariadb.com/kb/en/upgrading-from-mariadb-104-to-mariadb-105/#incompatible-changes-between-104-and-105
 - https://mariadb.com/kb/en/upgrading-from-mariadb-10-5-to-mariadb-10-6/#incompatible-changes-between-105-and-106
 
+Also checkout the [MariaDB 10.6 release notes](https://mariadb.com/kb/en/changes-improvements-in-mariadb-106/) for more info.
+
 
 ### Migration Steps
 
