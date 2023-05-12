@@ -21,7 +21,8 @@ Since 10.4 MariaDB, switched to use the [unix_socket authentication plugin](http
 
 #### [Reserved Word](https://mariadb.com/kb/en/upgrading-from-mariadb-10-5-to-mariadb-10-6/#reserved-word)
 New reserved word: OFFSET. This can no longer be used as an identifier without being quoted.
-InnoDB COMPRESSED Row Format
+
+#### [InnoDB COMPRESSED Row Format](https://mariadb.com/kb/en/upgrading-from-mariadb-10-5-to-mariadb-10-6/#innodb-compressed-row-format)
 From MariaDB 10.6.0 until MariaDB 10.6.5, tables that are of the COMPRESSED row format are read-only by default. This was intended to be the first step towards removing write support and deprecating the feature.
 
 This plan has been scrapped, and from MariaDB 10.6.6, COMPRESSED tables are no longer read-only by default.
