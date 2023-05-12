@@ -47,7 +47,7 @@ Also checkout the [MariaDB 10.6 release notes](https://mariadb.com/kb/en/changes
 
 ### Migration Steps
 
-MariaDB 10.6 conflicts and is not co-installable with MariaDB 10.3.
+MariaDB 10.6 conflicts with and is not co-installable with MariaDB 10.3.
 
 1. Backup your existing data using [mysqldump](https://mariadb.com/kb/en/backup-and-restore-overview/#mysqldump)
 	```sh
