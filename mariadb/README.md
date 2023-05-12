@@ -35,7 +35,7 @@ From MariaDB 10.6, the utf8 character set (and related collations) is by default
 For IBM builds the default character set and collations are set to utf8mb4 by default.
 
 #### [Disks Plugin](https://mariadb.com/kb/en/disks-plugin/)
-We now ship the disk plugin as its enabled by default and seems to work ok.
+The disk plugin as is now enabled by default and seems to function well.
 
 #### For full list of changes take a look at MariaDB upgrading docs:
 - https://mariadb.com/kb/en/upgrading-from-mariadb-103-to-mariadb-104/#incompatible-changes-between-103-and-104
