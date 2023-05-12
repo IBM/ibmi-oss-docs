@@ -32,7 +32,7 @@ From MariaDB 10.6.0 to MariaDB 10.6.5, set the innodb_read_only_compressed varia
 From MariaDB 10.6, the utf8 character set (and related collations) is by default an alias for utf8mb3 rather than the other way around. It can be set to imply utf8mb4 by changing the value of the old_mode system variable.
 
 **NOTE**:
-For our builds we set the default charcter set and collations to utf8mb4.
+For IBM builds the default character set and collations are set to utf8mb4 by default.
 
 #### [Disks Plugin](https://mariadb.com/kb/en/disks-plugin/)
 We now ship the disk plugin as its enabled by default and seems to work ok.
