@@ -77,7 +77,7 @@ MariaDB 10.6 conflicts with and is not co-installable with MariaDB 10.3.
 
 	```sh
 	mariadbd-safe &
- 	# NOTE: If the IPv6 interface is disabled on your system you will need explicity set the bind_address
+ 	# NOTE: If the IPv6 interface is disabled you will need to explicity set the bind address
  	# For example:
  	# mariadbd-safe --bind-address=0.0.0.0 &
  	# Refer the mariadb docs for more info
