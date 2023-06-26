@@ -80,7 +80,7 @@ MariaDB 10.6 conflicts with and is not co-installable with MariaDB 10.3.
  	# NOTE: If the IPv6 interface is disabled you will need to explicity set the bind address
  	# For example:
  	# mariadbd-safe --bind-address=0.0.0.0 &
- 	# Refer the mariadb docs for more info
+ 	# Refer to the MariaDB docs for more info
  	# https://mariadb.com/kb/en/configuring-mariadb-for-remote-client-access/
  	# https://mariadb.com/kb/en/server-system-variables/#bind_address
 	```
