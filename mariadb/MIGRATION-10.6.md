@@ -76,6 +76,12 @@ MariaDB 10.6 conflicts with and is not co-installable with MariaDB 10.3.
 
 	```sh
 	mariadbd-safe &
+ 	# NOTE: If IPv6 is disabled you will need to explicitly set the bind address
+ 	# For example:
+ 	# mariadbd-safe --bind-address=0.0.0.0 &
+ 	# Refer to the MariaDB docs for more info
+ 	# https://mariadb.com/kb/en/configuring-mariadb-for-remote-client-access/
+ 	# https://mariadb.com/kb/en/server-system-variables/#bind_address
 	```
 	
 6. Run `mariadb-upgrade`  
