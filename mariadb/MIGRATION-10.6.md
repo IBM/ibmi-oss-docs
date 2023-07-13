@@ -51,7 +51,7 @@ MariaDB 10.6 conflicts with and is not co-installable with MariaDB 10.3.
 1. Backup your existing data using [mysqldump](https://mariadb.com/kb/en/backup-and-restore-overview/#mysqldump)
 	```sh
 	# you will be prompted to enter the password
-	mysqldump --all-databases --routines --events --user root --password
+	mysqldump --all-databases --routines --events --user root --password > db.bak
 	```
 
 2. Stop the MariaDB Server
