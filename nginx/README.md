@@ -102,7 +102,7 @@ http {
     ssl_session_cache shared:SSL:50m;
     ssl_prefer_server_ciphers on;
     location / {
-      proxy_pass http://node_servers;
+      proxy_pass http://$node_servers;
     }
   }
 }
