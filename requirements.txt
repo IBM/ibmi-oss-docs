@@ -1,6 +1,6 @@
 alabaster==0.7.12
 Babel==2.9.1
-certifi==2020.6.20
+certifi>=2023.7.22
 chardet==3.0.4
 commonmark==0.9.1
 docutils==0.16
@@ -8,11 +8,11 @@ idna==2.10
 imagesize==1.2.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
+myst-parser==0.17.2
 packaging==20.4
 Pygments==2.7.4
 pyparsing==2.4.7
 pytz==2020.1
-myst-parser==0.17.2
 requests>=2.25.1
 six==1.15.0
 snowballstemmer==2.0.0
@@ -24,5 +24,5 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
-urllib3==1.26.5
+urllib3==1.26.17
 sphinx-reredirects==0.0.1
