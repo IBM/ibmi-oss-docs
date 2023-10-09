@@ -10,7 +10,7 @@ Jinja2==2.11.3
 MarkupSafe==1.1.1
 myst-parser==0.17.2
 packaging==20.4
-Pygments==2.7.4
+Pygments==2.16.1
 pyparsing==2.4.7
 pytz==2020.1
 requests>=2.25.1
