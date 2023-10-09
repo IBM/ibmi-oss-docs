@@ -74,6 +74,7 @@ html_static_path = ['_static']
 redirects = {
     'java11/JAVA11_EARLY_ACCESS': "../java/JAVA11_EARLY_ACCESS.html",
     'yum/RELEASE_REPOS': "../yum/IBM_REPOS.html",
+    'index': 'README.html',
 }
 
 # Allow MyST to generate links to subheadings up to 3 deep (H3 / ###)
