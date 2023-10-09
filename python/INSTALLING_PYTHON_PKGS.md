@@ -17,9 +17,9 @@ it using pip.
 If you must install using pip, make sure to invoke pip correctly (see
 [Python usage notes](./README.md))
 
-Also, you may need to install develompent tools, like gcc and automake, which you
+Also, you may need to install development tools, like gcc and automake, which you
 can often do a la carte (`yum install gcc automake`) or you may need to install
-the "Developer Tools" group (`yum install "Developer Tools"`). 
+the "Development Tools" group (`yum group install "Development Tools"`). 
 
 You will also need to set the following environment variables for build:
 - `OBJECT_MODE=64`
