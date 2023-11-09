@@ -8,6 +8,7 @@
 There are several approaches to streaming data from Db2 transactions to Kafka, including but not limited to:
 1. [Db2 triggers and Apache Camel](KAFKA_CAMEL_DTAQ.md): stream events in real-time
 1. [Kafka Connect JDBC Source connector](KAFKA_CONNECT_JDBC.md): Simple, polling-based technique for importing Db2 data into Kafka
+1. [Debesium Connector for IBM i](https://github.com/jhc-systems/debezium-connector-ibmi): leverages the [Debezium](https://debezium.io/) ecosystem for change data capture.
 1. [Db2 WebQuery](https://techchannel.com/SMB/02/2023/IBM%E2%80%99s-DataMigrator-for-IBM-i) (external link): (**commercial offering**) Has a DataMigrator ETL extension that includes the ability to perform both bulk loads and incremental updates of data to Kafka.
 1. [InfoSphere Data Replication and the CDC Replication Engine for Kafka](https://www.ibm.com/docs/en/idr/11.4.0?topic=replication-cdc-engine-kafka) (external link): (**commercial offering**) a CDC-based approach that may be a good options for current IBM CDC customers. Currently, this approach is unverified
 1. [Native ILE Kafka client (unsupported)](https://github.com/AlexeiBaranov/librdkafka/blob/port-os400/packaging/os400/README.md) (external link): call Kafka functions directly from ILE programs.
