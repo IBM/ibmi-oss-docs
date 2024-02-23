@@ -20,20 +20,37 @@ Consult the [Node.js release schedule](https://github.com/nodejs/Release) for gu
 ## Setting the Node.js major version
 
 - To switch the default version of Node.js for all users, use the
-`/QOpenSys/pkgs/bin/nodever` utility. For instance, for Node.js version 10 to be
-the default, run `/QOpenSys/pkgs/bin/nodever 14`
+`/QOpenSys/pkgs/bin/alternatives` utility. For instance, for Node.js version 20 to be
+the default, run:
+
+```bash
+$ /QOpenSys/pkgs/bin/alternatives --config node
+There are 3 choices for the alternative node (providing /QOpenSys/pkgs/bin/node).
+
+  Selection    Path                                  Priority   Status
+------------------------------------------------------------
+  0            /QOpenSys/pkgs/lib/nodejs20/bin/node   20        auto mode
+  1            /QOpenSys/pkgs/lib/nodejs16/bin/node   16        manual mode
+* 2            /QOpenSys/pkgs/lib/nodejs18/bin/node   18        manual mode
+  3            /QOpenSys/pkgs/lib/nodejs20/bin/node   20        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 3
+update-alternatives: using /QOpenSys/pkgs/lib/nodejs20/bin/node to provide /QOpenSys/pkgs/bin/node (node) in manual mode
+$ node --version
+v20.8.1
+```
 - If you need to explicitly invoke a specific major version of Node.js, the
 executable is found at `/QOpenSys/pkgs/lib/nodejs<version>/bin/node`, where
-`<version>` is the major version. For instance, to run Node.js version 10, one
-could run `/QOpenSys/pkgs/lib/nodejs10/bin/node`
+`<version>` is the major version. For instance, to run Node.js version 20, one
+could run `/QOpenSys/pkgs/lib/nodejs20/bin/node`
 - To switch the default version of Node.js for a specific user, place
 `/QOpenSys/pkgs/lib/nodejs<version>/bin` at the beginning of the user's PATH
 environment variable, similar to what's documented [here](../troubleshooting/SETTING_PATH.md).
 For instance, that user could run the following from the shell to set their
-default to version 16:
+default to version 20:
 
 ```bash
-echo 'PATH=/QOpenSys/pkgs/lib/nodejs16/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
+echo 'PATH=/QOpenSys/pkgs/lib/nodejs20/bin:/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 echo 'export PATH' >> $HOME/.profile
 ```
 
