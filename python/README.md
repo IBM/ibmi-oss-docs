@@ -10,7 +10,7 @@ All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.
 Currently, Python versions 3.6 and 3.9 are available, 
 via the `python3` and `python39` packages, respectively.
 
-**Important Note**
+**Important Note:**
 Performing a `yum upgrade` operation will not upgrade
 currently-installed versions of Python to a new major
 version. This would break existing apps. 
@@ -36,7 +36,6 @@ source /path/to/venv/bin/activate
 ```
 Once completed, you should be able to run the `python` and `pip` commands. They will use the version of Python that was used to create the virtual environment. 
 
-
 ## Which Python command to use outside of a virtual environment?
 ### Python interpreter
 
@@ -47,9 +46,7 @@ either `python3.9` or `python3.6`, since the `python` or
 on what packages are installed or what the current environment
 contains.
 
-
-
-**Alternatives if `python39` is not installed**
+**Alternatives if `python39` is not installed:**
 Use `python3.6`. One can alternatively use the shorthand
 `python3`, but including the major and minor version
 in the python command is more explicit and is best practice.
@@ -58,7 +55,7 @@ For instance, launch your python program via:
 python3.6 myprogram.py
 ```
 
-**Alternatives if `python39` is installed** 
+**Alternatives if `python39` is installed:** 
 Use `python3.9` or simply `python`, since the `python39` package
 creates a `python` via `update-alternatives`. 
 ```
@@ -79,10 +76,9 @@ See [Installing Python Packages](INSTALLING_PYTHON_PKGS.md)
 
 - Be sure to use the `itoolkit` package from PyPI (installable via pip) for accessing RPG, CL, etc.
 - For database access with `odbc`:
-    -  if running on IBM i: Install the `python3-pyodbc` or `python39-pyodbc` RPM package, depending on which version of Python you are using. This will be much easier than installing with `pip`, which will require you to compile these components. 
-    -  If connceting remotely: install `pyodbc` through any supported method, and use the IBM i Access ODBC driver.
-    -  (see [the ODBC doc](../odbc/README.md) for further guidance on ODBC).
+    -  If running on IBM i: Install the `python3-pyodbc` or `python39-pyodbc` RPM package, depending on which version of Python you are using. This will be much easier than installing with `pip`, which will require you to compile these components. 
+    -  If connecting remotely: Install `pyodbc` through any supported method, and use the IBM i Access ODBC driver.
+    -  See [the ODBC doc](../odbc/README.md) for further guidance on ODBC.
 - For database access with `ibm_db`:
-    -  if running on IBM i: install the `python3-ibm_db` or `python39-ibm_db` RPM package, depending on which version of Python you are using. **DO NOT INSTALL WITH `pip`!! This will not work.**
+    -  If running on IBM i: Install the `python3-ibm_db` or `python39-ibm_db` RPM package, depending on which version of Python you are using. **DO NOT INSTALL WITH `pip`!! This will not work.**
     -  If connecting remotely: Install the `ibm_db` package in any supported fashion. Db2 Connect licensing is required.
-
