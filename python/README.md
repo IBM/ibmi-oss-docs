@@ -4,7 +4,7 @@
 :maxdepth: 1
 ```
 
-All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md)
+All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md).
 
 ## Which versions are available?
 Currently, Python versions 3.6 and 3.9 are available, 
