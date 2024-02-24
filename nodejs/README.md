@@ -2,6 +2,7 @@
 
 ```{toctree}
 :maxdepth: 1
+Known Issues <KNOWN-ISSUES.md>
 ```
 
 All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md)
