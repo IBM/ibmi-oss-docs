@@ -18,5 +18,5 @@ See migration page for details about upgrading from 10.3 to 10.6.
 
 ```{toctree}
 :maxdepth: 1
-Migrating from MariaDB 10.3.x MariaDB 10.6.x <MIGRATION-10.6.md>
+Migrating from MariaDB 10.3.x to MariaDB 10.6.x <MIGRATION-10.6.md>
 ```
