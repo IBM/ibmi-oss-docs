@@ -115,8 +115,9 @@ should be available to see on your ODBC Data Source Administrator application.
 
 On macOS, you will need unixODBC as your ODBC driver manager. Many macOS ODBC
 programs use another driver manager called **iodbc**, but *the IBM i ODBC driver
-will not work with iodbc*. unixODBC is available on `homebrew`, and can be
-installed running the following command:
+will not work with iodbc*. unixODBC is available from
+[Homebrew](https://brew.sh), and can be installed running the following
+command:
 
 ```shell
 brew install unixodbc
@@ -124,10 +125,22 @@ brew install unixodbc
 
 ### Driver for macOS
 
-You will also have to install the macOS ODBC driver that allows unixODBC to talk
-to Db2 on i. To get the driver, visit [the IBM i Access Client Solutions page](https://www-01.ibm.com/support/docview.wss?uid=isg3T1026805)
-and select **Downloads for IBM i Access Client Solutions**. After logging in and
-redirected to the IBM I Access Client Solutions download page, scroll down and
-download the **ACS Mac App Pkg**. The package will include a standard macOS
-installer package, which can be installed by double clicking orby running the
-`pkgutil` command.
+IBM now has a repository for the macOS driver as well. This repository is set
+up as a [Tap](https://docs.brew.sh/Tap).
+
+
+### Installing the Repository
+
+The repositories are located under
+<https://public.dhe.ibm.com/software/ibmi/products/odbc/macos>.
+
+
+```shell
+brew tap ibm/iaccess https://public.dhe.ibm.com/software/ibmi/products/odbc/macos/tap/
+```
+
+### Installing the ODBC driver
+
+```shell
+brew install ibm-iaccess
+```
