@@ -60,7 +60,7 @@ Alternatively, use Access Client Solutions to install these packages.
 (change the version number, if needed, to the version you would like to install)
 ```bash
 cd $DOWNLOAD
-wget https://github.com/wildfly/wildfly/releases/download/26.0.0.Final/wildfly-26.0.0.Final.tar.gz
+wget https://github.com/wildfly/wildfly/releases/download/28.0.0.Final/wildfly-28.0.0.Final.tar.gz
 ```
 
 ## Technique 2: Manual download
@@ -74,7 +74,7 @@ Download the latest version in .tar.gz format. Once downloaded, place in the dow
 (change the version number in the filename, if needed, to the proper version)
 ```bash
 cd $DOWNLOAD
-tar --strip-components=1 -C $WILDFLY -xzvf wildfly-26.0.0.Final.tar.gz
+tar --strip-components=1 -C $WILDFLY -xzvf wildfly-28.0.0.Final.tar.gz
 ```
 
 # Step 4: Configure WildFly to use Java of choice
@@ -132,7 +132,7 @@ system. In the default configuration, these interfaces are only accessible from 
             <inet-address value="${jboss.bind.address.management:0.0.0.0}"/>
         </interface>
         <interface name="public">
-            <inet-address value="${jboss.bind.address:171.20.0.10}"/>
+            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
         </interface>
 ```
 
