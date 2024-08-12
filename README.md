@@ -40,6 +40,7 @@ PostgreSQL <postgresql.md>
 MariaDB <mariadb/README.md>
 Certbot (LetsEncrypt) <certbot.md>
 ACS Clone Repo Tool <acscloner/README.md>
+OpenSSL 3 Migration <yum/OPENSSL3_MIGRATION.md>
 IBM Repos <yum/IBM_REPOS.md>
 Third Party Repos <yum/3RD_PARTY_REPOS.md>
 Porting Software to PASE <porting/README.md>
