@@ -71,7 +71,7 @@ A typical backtrace might look something like this:
 ```
 
 Here, a function at frame 3 is in libcrypto.so.3 and then at frame 2, is in
-libcrypto.so.1.1.So somehow an OpenSSL 3 function is inadvertently calling an
+libcrypto.so.1.1. So somehow an OpenSSL 3 function is inadvertently calling an
 OpenSSL 1.1.1 function, causing a segmentation fault due to improperly
 initialized memory or binary incompatibilities between version 3.0 and 1.1.1 of
 OpenSSL. Luckily, this _specific_ problem shown from Python should no longer be
