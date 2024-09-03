@@ -29,6 +29,7 @@ Setting up a User's Environment (SSH) <user_setup/README.md>
 Troubleshooting <troubleshooting/README.md>
 Node.js <nodejs/README.md>
 Python <python/README.md>
+PHP <http://ibm.biz/ibmi-php>
 Setting up TLS <tls/README.md>
 ODBC <odbc/README.md>
 Java <java/README.md>
