@@ -9,7 +9,7 @@ All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.
 
 ## Choosing which major version of Node.js to use
 There are two ways to install Node.js:
-1. Through the [package manager](https://nodejs.org/en/download/package-manager/#ibm-i) (recommended for production. Note that there are different packages for different major versions. A simple `yum upgrade` will not upgrade any existing versions to a new major version. 
+1. Through the [package manager](https://nodejs.org/en/download/package-manager/all#ibm-i) (recommended for production. Note that there are different packages for different major versions. A simple `yum upgrade` will not upgrade any existing versions to a new major version. 
 2. Using [nvm](#using-node-version-manager-nvm)
 
 Consult the [Node.js release schedule](https://github.com/nodejs/Release) for guidance on which version of Node.js to use. Generally speaking:
