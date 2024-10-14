@@ -85,7 +85,7 @@ is the case, refer to steps in "Offline Install Instructions (without ACS)".*
 - From a 5250 terminal run the following.
 
 ```text
-    QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1')
+    QSH CMD('exec /QOpenSys/usr/bin/ksh -c "/QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1"')
 ```
 
 - If you see message QSH005: "Command ended normally with exit status 0" in the
@@ -103,7 +103,7 @@ is the case, refer to steps in "Offline Install Instructions (without ACS)".*
 - From a 5250 terminal run the following.
 
 ```text
-    QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1')
+    QSH CMD('exec /QOpenSys/usr/bin/ksh -c "/QOpenSys/usr/bin/ksh /tmp/bootstrap.sh > /tmp/bootstrap.log 2>&1"')
 ```
 
 - If you see message QSH005: "Command ended normally with exit status 0" in the
