@@ -48,8 +48,9 @@ echo 'export PATH' >> /QOpenSys/etc/profile
 ```
 
 Another way to make this change for all users that will also affect PASE programs called
-directly via QP2SHELL is to add the PASE_PATH environment variable at *SYS level. Run
-this as a *SECOFR class user:
+directly via QP2SHELL is to add the PASE_PATH environment variable at *SYS level. You
+may want to do this in addition to the above, make test all your use cases to ensure the path
+is as desired (ie QP2TERM, QP2SHELL, and SSH). Run this as a *SECOFR class user:
 
 ```
 ADDENVVAR ENVVAR(PASE_PATH) VALUE('/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin') LEVEL(*SYS)
