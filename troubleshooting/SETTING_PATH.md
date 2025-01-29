@@ -41,10 +41,10 @@ To make this change for all users, put these lines in `/QOpenSys/etc/profile.loc
 like so:
 
 ```bash
-touch /QOpenSys/etc/profile
-setccsid 1208 /QOpenSys/etc/profile
-echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile
-echo 'export PATH' >> /QOpenSys/etc/profile
+touch /QOpenSys/etc/profile.local
+setccsid 1208 /QOpenSys/etc/profile.local
+echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile.local
+echo 'export PATH' >> /QOpenSys/etc/profile.local
 ```
 
 Another way to make this change for all users that will also affect PASE programs called
