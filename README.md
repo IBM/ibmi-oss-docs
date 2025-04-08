@@ -54,7 +54,9 @@ Migrating from 5733-OPS <troubleshooting/5733OPS_MIGRATION.md>
 ## Collaboration
 
 - [Questions/comments about this site](https://github.com/IBM/ibmi-oss-docs/issues/new/choose).
-- [Ryver forum](http://ibm.biz/ibmioss-chat) (join [here](http://ibm.biz/ibmioss-chat-join))
+- [Zulip Forum](https://chat.ibmioss.org) (replaces the Ryver forum)
+- [Ryver forum (Archive only)](https://ibmioss.ryver.com) 
+
 
 ## Where to find examples
 
