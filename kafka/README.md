@@ -20,16 +20,14 @@ integration are:
  of the ksqlDB clients, such as the provided Java client.
     - [Kafka REST APIs](https://docs.confluent.io/platform/current/kafka-rest/index.html), which provides a REST interface for doing Kafka streaming operations. The REST interfaces can then be called from anywhere, including from Db2 triggers by way of [SQL HTTP functions in Db2](https://techchannel.com/Trends/09/2021/sql-http-part-2) (example below).
 
-## Kafka REST example with SQL
+## Kafka via SQL
 
-If using the Kafka REST API gateway, you can call use SQL to post data to the Kafka streams. For example:
+You can use the new Db2 SDK to post messages to Kafka. See the docs [here](https://ibm.github.io/AI-SDK-Db2-IBMi/) for more information. 
 
 ```sql
-VALUES QSYS2.HTTP_POST('http://myrestserver:8082/topics/fromrest',
-                       '{"records":[{"key":"my_key","value":"Just some data to stream to Kafka"}]}',
-                       '{"header":"Content-Type,application/vnd.kafka.json.v2+json" ,
-                         "header":"Accept,application/vnd.kafka.v2+json" 
-                         }');
+values(dbsdk_v1.kafka_publish( TOPIC   => 'fun_facts',
+                              KEY     => 'baritone43',
+                              MSGDATA => 'The baritone is a very interesting musical instrument!'));
 ```
 
 This can also be embedded as needed in a Db2 trigger.
