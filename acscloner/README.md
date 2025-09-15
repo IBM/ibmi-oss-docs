@@ -25,19 +25,19 @@ Specify the original repository that you'd like to take a clone/snapshot of.
 
 Specify a target directory on IBM i for the clone/snapshot.
 
-### Additional Operations -> Create or Update Repository Definition
+### Additional Operations -> Configure package manager to use this cloned repository
 
 The YUM package manager only knows about repos that are defined in YUM's
 repository list. The repository list is simply a set of `.repo` files in the `/QOpenSys/etc/yum/repos.d/`
 
-### Additional Operations -> Disable Repositories that Require Internet Access from the IBM i System
+### Additional Operations -> Allow package manager to skip repositories that may require Internet access
 
 By default, YUM will fail any operations if it can't read from all the
 configured repositories. This options disables Internet-requiring repos, so that
 YUM operations continue to work. Keep this option checked if your IBM i system
 can't access the Internet.
 
-### Additional Operations -> Create nginx configuration file
+### Additional Operations -> Create nginx configuration files for serving this cloned repository to other IBM i systems
 
 Creates a configuration for the nginx http server to allow you to host this repo
 clone via http, so that other systems in your network can access it (more
