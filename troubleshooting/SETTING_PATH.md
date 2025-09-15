@@ -37,14 +37,24 @@ echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> $HOME/.profile
 echo 'export PATH' >> $HOME/.profile
 ```
 
-To make this change for all users, put these lines in `/QOpenSys/etc/profile`,
+To make this change for all users, put these lines in `/QOpenSys/etc/profile.local`,
 like so:
 
 ```bash
-touch /QOpenSys/etc/profile
-setccsid 1208 /QOpenSys/etc/profile
-echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile
-echo 'export PATH' >> /QOpenSys/etc/profile
+touch /QOpenSys/etc/profile.local
+setccsid 1208 /QOpenSys/etc/profile.local
+echo 'PATH=/QOpenSys/pkgs/bin:$PATH' >> /QOpenSys/etc/profile.local
+echo 'export PATH' >> /QOpenSys/etc/profile.local
+```
+
+Another way to make this change for all users that will also affect PASE programs called
+directly via QP2SHELL is to add the PASE_PATH environment variable at *SYS level. You
+may want to do this in addition to the above, make sure to test all your use cases
+(eg. QP2TERM, QP2SHELL, and SSH) to ensure the path is as desired. Run this as a *SECOFR
+class user:
+
+```text
+ADDENVVAR ENVVAR(PASE_PATH) VALUE('/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin') LEVEL(*SYS)
 ```
 
 **Need to run globally-installed Node.js modules,
