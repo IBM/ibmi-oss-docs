@@ -26,3 +26,32 @@ You will also need to set the following environment variables for build:
 
 If you have issues that you cannot debug, feel free to join the community channels
 documented [here](http://ibm.biz/ibmioss)!
+
+### gevent
+
+When installing gevent, you may encounter a compile error such as:
+
+```c
+        c/_cffi_backend.c:15:17: fatal error: ffi.h: No such file or directory
+         #include <ffi.h>
+                         ^
+        compilation terminated.
+        error: command '/QOpenSys/pkgs/bin/gcc' failed with exit code 1
+        [end of output]
+
+    note: This error originates from a subprocess, and is likely not a problem with pip.
+  error: legacy-install-failure
+
+  × Encountered error while trying to install package.
+  ╰─> cffi
+```
+
+This occurs because gevent uses cffi as a build requirement. Build requirements are built in an isolated environment.
+We already package cffi as an RPM, do the following to use it:
+
+```bash
+# install python39-cffi
+yum install python39-cffi
+# disable build isolation to use system cffi
+pip3.9 install --no-build-isolation gevent
+```
