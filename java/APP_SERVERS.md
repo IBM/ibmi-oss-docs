@@ -1,9 +1,5 @@
 # Open Source Java Application Servers
 
-```{toctree}
-:maxdepth: 1
-```
-
 This page documents open source Java application servers. All items on this page are known to work on IBM i. 
 
 ```{eval-rst}
@@ -30,6 +26,11 @@ This page documents open source Java application servers. All items on this page
 .. _Support: https://ibm.biz/ibmi-oss-support
 ```
 
-# Deployment Guides
-- [WildFly](wildfly/DEPLOYMENT.md)
-- [TomCat](tomcat/DEPLOYMENT.md)
+```{toctree}
+:maxdepth: 1
+:titlesonly:
+:caption: Deployment Guides
+
+wildfly/DEPLOYMENT.md
+tomcat/DEPLOYMENT.md
+```

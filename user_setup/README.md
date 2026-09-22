@@ -46,12 +46,12 @@ On Windows, this varies based on which tool you are using. For instance:
 - WSL: press `<windows_key>+r` and type `bash`
 - git bash: press `<windows_key>` and search apps for `git bash`
 - Cygwin: press `<windows_key>` and search apps for `Cygwin64 Terminal`
-- PuTTY: See [these steps (external link)]([PUTTY_CONFIGURE_CONNECTION.md](https://cuit.columbia.edu/putty)) for more info.
+- PuTTY: See their [docs](https://the.earth.li/~sgtatham/putty/latest/htmldoc/Chapter2.html#gs) for more info.
 
 Once a terminal window is open, connect to the IBM i system with the following
 command:
 
-```ssh
+```bash
 ssh user@system
 ```
 

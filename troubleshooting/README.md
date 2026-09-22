@@ -1,8 +1,15 @@
-# Common Open Source Problems (and how to fix them)
+# Troubleshooting
 
 ```{toctree}
 :maxdepth: 1
+:hidden:
+
+YUM.md
+SETTING_BASH.md
+SETTING_PATH.md
 ```
+
+Common Open Source Problems (and how to fix them)
 
 ## Things to always check first when troubleshooting
 
@@ -55,7 +62,7 @@ See [this doc](YUM.md)
 When running yum from QSH, any commands that connect to the repository (install
 upgrade, etc) fail with a message like so:
 
-```sh
+```shell-session
 yum install python3
 https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/repodata/repomd.xml: [Errno 14] curl#6 - "getaddrinfo() thread failed to start"
 Trying other mirror.
@@ -248,7 +255,7 @@ If you installed the open source "bootstrap" from a very early version, and have
 upgraded to IBM i 7.4, you may see errors like the following when trying to
 install a package:
 
-```fortran
+```shell-session
 Transaction Check Error:
   package make-gnu-4.2-2.ppc64 is intended for a different operating system
 ```
@@ -276,7 +283,7 @@ When using rsync from another operating system (Linux, for instance), rsync may 
 unable to locate the `rsync` executable on IBM i and will therefore fail. The error
 message may resemble something like this:
 
-```fortran
+```shell-session
 bsh: rsync: not found
 rsync: connection unexpectedly closed (0 bytes received so far) [sender]
 rsync error: error in rsync protocol data stream (code 12) at io.c(228) [sender=3.2.3]
@@ -286,7 +293,7 @@ rsync error: error in rsync protocol data stream (code 12) at io.c(228) [sender=
 
 Install the `rsync-compat` package on your IBM i system.
 
-```fortran
+```bash
 /QOpenSys/pkgs/bin/yum install rsync-compat
 ```
 
@@ -304,12 +311,12 @@ shell is `bsh` or some other non-bash option.
 First, make sure that the `rsync` RPM package is installed on IBM i.
 When invoking the rsync command, use the following option on the command line:
 
-```fortran
+```bash
 --rsync-path=/QOpenSys/pkgs/bin/rsync
 ```
 
 For instance:
-```fortran
+```bash
 rsync --rsync-path=/QOpenSys/pkgs/bin/rsync -a src user@ibmiserver:/path/to/destination
 ```
 

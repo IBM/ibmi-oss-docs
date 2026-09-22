@@ -16,7 +16,7 @@ using an ODBC database connector, you should be able to pass an identical
 connection string in language or technology and be confident that it will
 correctly connect to Db2 on i. A common connection string may look something like:
 
-```ODBC connection string
+```
 DRIVER=IBM i Access ODBC Driver;SYSTEM=my.ibmi.system;UID=foo;PWD=bar;
 ```
 
@@ -147,7 +147,7 @@ your username and passwords, threading, default library, and so on.
 Once you have DSNs defined with the connection options you want, you can simply
 pass a connection string to your ODBC connections that references the DSN:
 
-```ODBC connection string
+```
 DSN=MYDSN
 ```
 
@@ -160,7 +160,7 @@ Additional options can be added to your connection string even if you use a DSN.
 In this way, you can extend your DSNs with options that make sense for a given
 use. To add more options, simply list them as you would any normal connection string:
 
-```ODBC connection string
+```
 DSN=MYDSN;DBQ=MYLIB,OTHERLIB;CCSID=1208;
 ```
 

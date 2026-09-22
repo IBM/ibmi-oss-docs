@@ -2,6 +2,10 @@
 
 ```{toctree}
 :maxdepth: 1
+:hidden:
+
+KAFKA_CAMEL_DTAQ.md
+KAFKA_CONNECT_JDBC.md
 ```
 
 ## Streaming data to Kafka from IBM i
@@ -51,28 +55,28 @@ Also, note that this deploys with the default "out of the box" settings for Zook
 and Kafka. Please refer to the Zookeeper and Kafka documentation to learn about customizing
 these appropriately for a production deployment as needed. 
 
-#### 1. Download requisite software
+### 1. Download requisite software
 ```
 yum install wget ca-certificates-mozilla gzip tar-gnu openjdk-11 coreutils-gnu sed-gnu grep-gnu
 ```
 
-#### 2. Change to your installation directory
+### 2. Change to your installation directory
 ```
 cd /home/myusr/mydir
 ```
 
-#### 3. Download kafka
+### 3. Download kafka
 ```
 wget https://dlcdn.apache.org/kafka/3.0.1/kafka_2.13-3.0.1.tgz
 ```
 (you may need to update the version number on this and subsequent steps based on [the latest version](https://kafka.apache.org/downloads).
 
-#### 4. extract Kafka
+### 4. extract Kafka
 ```
 tar xzvf kafka_2.13-3.0.1.tgz
 ```
 
-#### 5. Set up environment to use OpenJDK
+### 5. Set up environment to use OpenJDK
 ```
 JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
@@ -80,18 +84,18 @@ PATH=$JAVA_HOME/bin:$PATH
 export PATH
 ```
 
-#### 6. Start a Zookeeper server
+### 6. Start a Zookeeper server
 ```
 cd kafka_2.13-3.0.1/config
 ../bin/zookeeper-server-start.sh zookeeper.properties
 ```
 
-#### 7. Open a new session and change to your installation directory from earlier
+### 7. Open a new session and change to your installation directory from earlier
 ```
 cd /home/myusr/mydir
 ```
 
-#### 8. Set up environment to use OpenJDK and start a Kafka server
+### 8. Set up environment to use OpenJDK and start a Kafka server
 ```
 JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
