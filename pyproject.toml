@@ -1,0 +1,37 @@
+[project]
+name = "ibmi-oss-docs"
+version = "0.1.0"
+description = "IBM i OSS Docs"
+readme = "README.md"
+requires-python = "==3.11.*"
+dependencies = [
+    "alabaster==0.7.12",
+    "babel==2.9.1",
+    "certifi>=2023.7.22",
+    "chardet==3.0.4",
+    "commonmark==0.9.1",
+    "docutils==0.16",
+    "idna==2.10",
+    "imagesize==1.2.0",
+    "jinja2==2.11.3",
+    "markupsafe==1.1.1",
+    "myst-parser==0.17.2",
+    "packaging==20.4",
+    "pygments==2.16.1",
+    "pyparsing==2.4.7",
+    "pytz==2020.1",
+    "requests>=2.25.1",
+    "six==1.15.0",
+    "snowballstemmer==2.0.0",
+    "sphinx==3.2.1",
+    "sphinx-reredirects==0.0.1",
+    "sphinx-rtd-theme==0.5.0",
+    "sphinxcontrib-applehelp==1.0.2",
+    "sphinxcontrib-devhelp==1.0.2",
+    "sphinxcontrib-htmlhelp==1.0.3",
+    "sphinxcontrib-jsmath==1.0.1",
+    "sphinxcontrib-qthelp==1.0.3",
+    "sphinxcontrib-serializinghtml==1.1.4",
+    "urllib3==1.26.18",
+    "setuptools<82.0.0",
+]
