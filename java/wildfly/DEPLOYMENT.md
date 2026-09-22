@@ -1,16 +1,16 @@
-# Deploying WildFly on IBM i (using GitBucket as a sample application)
+# Deploying WildFly on IBM i
 
 This simple guide is intended to help you deploy your first application in WildFly standalone mode. For
 this exercise, we use [GitBucket](https://github.com/gitbucket/gitbucket) as a sample application.
 You can similarly deploy any .war file using these steps
 
 
-# Prerequisite setup
+## Prerequisite setup
 As with any open source software, it is recommended that you use an SSH
 terminal session to perform these tasks. QSH or other 5250 interfaces may
 work, but can be problematic.
 
-## Run bash and set appropriate environment variables
+### Run bash and set appropriate environment variables
 These steps assume you are running with SSH and
 [using bash as your default shell](../../troubleshooting/SETTING_BASH.md). 
 
@@ -24,7 +24,7 @@ you can do that temporarily:
 ```bash
 export PATH=/QOpenSys/pkgs/bin:$PATH
 ```
-## Choose installation and download directories
+### Choose installation and download directories
 Save your installation and download directory in environment variables
 (these are only used for convenience during the steps in this guide):
 ```bash
@@ -41,35 +41,35 @@ Just change these values accordingly.
 (subsequent steps assume you are using this same SSH session)
 
 
-## Create installation directory and download directory
+### Create installation directory and download directory
 ```bash
 mkdir -p $DOWNLOAD
 mkdir -p $WILDFLY
 ```
 
-# Step 1: Install Required Software
+## Step 1: Install Required Software
 ```bash
 yum install wget tar-gnu gzip nano openjdk-11
 ```
 
 Alternatively, use Access Client Solutions to install these packages.
 
-# Step 2: Download WildFly
+## Step 2: Download WildFly
 
-## Technique 1: Using `wget`
+### Technique 1: Using `wget`
 (change the version number, if needed, to the version you would like to install)
 ```bash
 cd $DOWNLOAD
 wget https://github.com/wildfly/wildfly/releases/download/28.0.0.Final/wildfly-28.0.0.Final.tar.gz
 ```
 
-## Technique 2: Manual download
+### Technique 2: Manual download
 Just navigate to [the WildFly website](https://www.wildfly.org/downloads/) and access the downloads.
 Download the latest version in .tar.gz format. Once downloaded, place in the download directory chosen earlier.
 ![image](https://user-images.githubusercontent.com/17914061/146617098-cbd084eb-4529-47ee-b226-cf9bf3f837d3.png)
 
 
-# Step 3: Install WildFly
+## Step 3: Install WildFly
 
 (change the version number in the filename, if needed, to the proper version)
 ```bash
@@ -77,7 +77,7 @@ cd $DOWNLOAD
 tar --strip-components=1 -C $WILDFLY -xzvf wildfly-28.0.0.Final.tar.gz
 ```
 
-# Step 4: Configure WildFly to use Java of choice
+## Step 4: Configure WildFly to use Java of choice
 Open the `standalone.conf` file located in the `/bin` directory of the WildFly installation directory.
 For this, you can use the editor of your choice (assuming you have a drive mapped with sshfs or NetServer),
 or you can use a terminal-based editor like nano:
@@ -97,7 +97,7 @@ For JV1:
 JAVA_HOME="/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit"
 ```
 
-# Step 5 : Configure server address (optional)
+## Step 5 : Configure server address (optional)
 This step is recommended so that WildFly's default behavior is to bind to the correct addresses. If you do
 not do this step, you will need to specify the addresses on the command line later when you start WildFly.
 
@@ -136,7 +136,7 @@ system. In the default configuration, these interfaces are only accessible from 
         </interface>
 ```
 
-# Step 6: Create a management user
+## Step 6: Create a management user
 First, set `JAVA_HOME` to the value you configured in `standalone.conf`:
 ```bash
 export JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
@@ -156,7 +156,7 @@ Follow these steps:
 - Enter `a` to choose "a) Update the existing user password and roles"
 - Follow the remaining prompts to choose a password. Just press [enter] to accept the defaults for all other questions.
 
-# Step 7: (optional) Deploy GitBucket by downloading and placing in deployments directory
+## Step 7: (optional) Deploy GitBucket by downloading and placing in deployments directory
 If you skip this step, you can deploy GitBucket through WildFly's management interface later
 
 ```bash
@@ -168,7 +168,7 @@ Alternatively, manually download the latest `gitbucket.war` and place in the `st
 
 Now, the GitBucket application will be deployed when WildFly is started.
 
-# Step 8: Start WildFly
+## Step 8: Start WildFly
 
 If you configured the server addresses in step 5, you can now start WildFly
 in standalone mode by doing the following:
@@ -205,16 +205,16 @@ If you didn't deploy GitBucket, you can do so through the management interface b
 - Once deployed, it will show up in deployments and you can manage through the management console
 ![image](https://user-images.githubusercontent.com/17914061/146620666-63c8004a-ddd4-4460-8f36-bdd605b19d42.png)
 
-# You should now be running GitBucket with WildFly!
+## You should now be running GitBucket with WildFly!
 ![image](https://user-images.githubusercontent.com/17914061/146620767-e7d2487f-704f-48c4-8125-5836c98bb698.png)
 
 
-# Managing with Service Commander (optional)
+## Managing with Service Commander (optional)
 You can elect to manage your WildFly instance with Service Commander. If you are unfamiliar with Service Commander,
 you can read more [here](https://theprez.github.io/ServiceCommander-IBMi/#service-commander-for-ibm-i). 
 The steps to leverage this tool include:
 - Install the `service-commander` package:
-```yum
+```bash
 yum install service-commander
 ```
 

@@ -12,7 +12,7 @@ system and connected to IBM i.
 * [IBM i](#ibm-i)
 * [Linux](#linux)
 * [Windows](#windows)
-* [macOS](#macOS)
+* [macOS](#macos)
 
 ## IBM i
 

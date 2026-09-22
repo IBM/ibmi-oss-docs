@@ -1,5 +1,9 @@
 # Troubleshooting Yum connection problems
 
+```{toctree}
+:maxdepth: 1
+```
+
 This page is designed to help you do problem determination for scenarios where yum itself is not working
 due to connection problems. That is, you are having trouble getting RPM packages installed. 
 
@@ -40,7 +44,7 @@ Or ftp:
 ```
 
 
-# Checking Connectivity
+## Checking Connectivity
 
 The most common cause of issue with yum is related to network connectivity. Errors will state something like
 ```
@@ -68,7 +72,7 @@ The output from this command can help you figure out next steps:
 - If the output contains `ssl.CertificateError: hostname '______________' doesn't match 'public.dhe.ibm.com'`, a separate entity is injecting an SSL certificate
 - If the output contains another CertificateError, you need to install the `ca-certificates-mozilla` package
 
-## Checking Connectivity for alternative protocols
+### Checking Connectivity for alternative protocols
 
 Occasionally, you can use alternative protocols (http, ftp, or https without TLS verification) to circumvent connectivity issues.
 
@@ -96,7 +100,7 @@ The output from this command can help you figure out next steps:
 - If the output contains `timed out` or `connection refused` then you cannot reach IBM's server
 
 
-### DNS not configured properly
+#### DNS not configured properly
 
 If DNS is not configured properly, please work with your IBM i system administrator or networking team to resolve the problem correctly. 
 
@@ -114,16 +118,16 @@ From 5250 CL:
 ADDTCPHTE INTNETADR('129.35.224.112') HOSTNAME((public.dhe.ibm.com))
 ```
 
-### Cannot reach IBM's server with any protocol
+#### Cannot reach IBM's server with any protocol
 
 Please work with your networking team to resolve the problem.
 
-### A separate entity is enjecting an SSL certificate
+#### A separate entity is enjecting an SSL certificate
 
 Follow [these steps](https://www.seidengroup.com/2021/04/26/how-to-validate-self-signed-ssl-tls-certificates-from-ibm-i/)
 to add the new certificate as needed. 
 
-## Temporarily disabling SSL verification to install ca-certificates-mozilla
+### Temporarily disabling SSL verification to install ca-certificates-mozilla
 
 To resolve certificate validation errors, usually installing ca-certificate-mozilla will resolve it, but if HTTPS is broken you can't install it resulting in a Catch-22. Temporarily disabling SSL verification can resolve the Catch-22 and allow you to install ca-certificates-mozilla.
 
@@ -154,9 +158,9 @@ Otherwise:
 ```
  
 
-## Other Networking problems
+### Other Networking problems
 
-### Operation too slow
+#### Operation too slow
 
 Sometimes, corporate network firewalls don't explicitly block ports, but they can drastically interfere with
 traffic throughput, resulting in:
@@ -167,7 +171,7 @@ traffic throughput, resulting in:
 
 You can try working around this issue by enabling alternative protocols.
 
-## Enabling alternative protocols
+### Enabling alternative protocols
 
 Assuming you have a modern version of `ibmi-repos` installed, you can try connecting with http or ftp if https does not work. To enable http and ftp mirrors:
 ```
@@ -176,7 +180,7 @@ Assuming you have a modern version of `ibmi-repos` installed, you can try connec
 ```
 (note this is unsecure and should be a temporary workaround until the http protocol issue is resolved by your networking team)
 
-## Debug tool
+### Debug tool
 
 You can download [this debug tool](https://raw.githubusercontent.com/ThePrez/IBMiOSS-utils/master/yum_conncheck.py), save it to IFS,
 and run
@@ -185,7 +189,7 @@ and run
 ```
 It will provide guidance
 
-## TL;DR Steps that will fix most people that have a working DNS setup
+### TL;DR Steps that will fix most people that have a working DNS setup
 
 If you have `ibmi-repos` installed
 ```
@@ -205,6 +209,6 @@ If you do not have `ibmi-repos` installed
 /QOpenSys/pkgs/bin/yum-config-manager --disable-repo=ibm
 ```
 
-## What if I cannot access the Internet from my IBM i system?
+### What if I cannot access the Internet from my IBM i system?
 
 Doc forthcoming...

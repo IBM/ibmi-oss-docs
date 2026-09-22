@@ -83,7 +83,7 @@ you have everything set up on that system.
 ### DSNs on IBM i
 
 Like on your development machine, you will have to install your driver manager
-and driver. Steps to do that can be found in [installation on IBM i](#installation-on-ibm-i)
+and driver. Steps to do that can be found in [installation on IBM i](installation.md#ibm-i)
 section. That section will also cover instructions for downloading the Db2 for i
 driver and how to configure your DSNs, though this example will use the default
 `*LOCAL` DSN.

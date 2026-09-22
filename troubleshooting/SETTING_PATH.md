@@ -14,7 +14,7 @@ export PATH
 After that, typing commands should find RPM-installed open source tools
 (if using bash already, you may need to run `hash -r`, like the following example
 
-```bash
+```shell-session
 $ bash --version
 GNU bash, version 4.4.12(1)-release (powerpc-ibm-os400)
 Copyright (C) 2016 Free Software Foundation, Inc.

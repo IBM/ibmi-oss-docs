@@ -18,7 +18,7 @@ certificates.
 
 Run the following steps to generate a self-signed certificate for development (not production):
 
-```openssl
+```bash
 openssl genrsa -out my-key.pem 2048
 openssl req -new -sha256 -key my-key.pem -out my-csr.pem
 openssl x509 -req -in my-csr.pem -signkey my-key.pem -out my-cert.pem
@@ -26,7 +26,7 @@ openssl x509 -req -in my-csr.pem -signkey my-key.pem -out my-cert.pem
 
 ## Setting up TLS with NGINX (uses OpenSSL)
 
-See [the NGINX notes](../nginx.md).
+See [the NGINX notes](../nginx/README.md).
 
 ## Setting up IBM i HTTP Server (uses Digital Certificate Manager)
 

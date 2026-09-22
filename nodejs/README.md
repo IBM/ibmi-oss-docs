@@ -24,7 +24,7 @@ Consult the [Node.js release schedule](https://github.com/nodejs/Release) for gu
 `/QOpenSys/pkgs/bin/alternatives` utility. For instance, for Node.js version 20 to be
 the default, run:
 
-```bash
+```shell-session
 $ /QOpenSys/pkgs/bin/alternatives --config node
 There are 3 choices for the alternative node (providing /QOpenSys/pkgs/bin/node).
 

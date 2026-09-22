@@ -1,7 +1,10 @@
-# Python usage notes
+# Python
 
 ```{toctree}
 :maxdepth: 1
+:hidden:
+
+INSTALLING_PYTHON_PKGS.md
 ```
 
 All things assume you have [PATH set correctly](../troubleshooting/SETTING_PATH.md).
