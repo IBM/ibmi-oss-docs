@@ -53,6 +53,57 @@ Add `/QOpenSys/pkgs/bin` to the beginning of your PATH environment variable. See
 
 Also, please don't use QSH for open source tools. Use an SSH terminal instead.
 
+## The wrong version of a command runs, or a command works in SSH but not in QSH or QP2TERM
+
+You may see one of these:
+
+- `python3 --version`, `node --version` or `git --version` shows a different version
+  than the one you installed with yum, often an old 5733-OPS version.
+- A command works in your SSH terminal, but QSH or QP2TERM cannot find it
+  (for example `qsh: 001-0019 Error found searching for command python3. No such path or directory.`),
+  or the other way round.
+
+The shell runs the first program with that name that it finds in the directories
+listed in `PATH`, and each environment can start with a different `PATH`. For
+example, on a system where `PATH` was never set, QSH started with:
+
+```text
+/usr/bin:.:/QOpenSys/usr/bin
+```
+
+and a command run over SSH (`ssh user@system 'command'`) started with:
+
+```text
+/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin
+```
+
+Neither contains `/QOpenSys/pkgs/bin`, so `python3` and `git` were not found in
+either environment.
+
+**To check which program runs**, run these in the environment that behaves
+differently:
+
+```bash
+echo $PATH
+command -v python3
+```
+
+(In QSH, give `command -v` one name at a time.) If the result is not in
+`/QOpenSys/pkgs/bin`, run `ls -l` on it: it may be a symbolic link to the RPM
+version, or a different program.
+
+**Solution:**
+
+- Put `/QOpenSys/pkgs/bin` at the beginning of `PATH` for every environment you
+  use. See [Setting your PATH](SETTING_PATH.md), including `PASE_PATH` for
+  QP2TERM and QP2SHELL.
+- If an old 5733-OPS version is found first, see
+  [Migrating from 5733-OPS](5733OPS_MIGRATION.md).
+- In scripts and batch jobs (CI pipelines, `SBMJOB`, `ssh user@system 'command'`),
+  do not depend on the `PATH` of the environment that starts them: set `PATH` at
+  the top of the script, or call the program with its full path, for example
+  `/QOpenSys/pkgs/bin/python3`.
+
 ## yum connectivity issues
 
 See [this doc](YUM.md)
