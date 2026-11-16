@@ -53,3 +53,13 @@ have been accepted upstream to enable them to run on i.
 **Software offered:** [ibmi-dotfiles](https://github.com/jbh/ibmi-dotfiles)
 
 **Install**: `yum-config-manager --add-repo http://rpms.sobo.red/ibmi/`
+
+### deno-ibmi
+
+**Brought to you by:** [Sylvain AKTEPE](https://github.com/Handedge)
+
+**Software offered:** [Deno](https://deno.com), the JavaScript and TypeScript runtime (V8 engine),
+for IBM i 7.5 and later, with a Db2 for i module (`/QOpenSys/pkgs/share/deno/db2.ts`).
+Source, build and documentation: [deno-ibmi](https://github.com/Handedge/deno-ibmi)
+
+**Install**: `yum-config-manager --add-repo https://yum.job-i.fr/deno-ibmi/deno-ibmi.repo`
